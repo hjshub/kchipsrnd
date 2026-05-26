@@ -1,0 +1,18 @@
+@use 'generated/icon';
+@use 'font';
+@use 'utility';
+@use 'component';
+@use 'header';
+@use 'footer';
+@use 'layout';
+
+
+/* ─── Tailwind CSS ─────────────────────────────────── */
+/*! reset */
+@tailwind base;
+
+/*! components */
+@tailwind components;
+
+/*! utilities */
+@tailwind utilities;

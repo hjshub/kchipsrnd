@@ -1,0 +1,129 @@
+@use 'core' as c;
+@use 'generated/svg-icons' as s;
+
+// ─── header ───────────────────────────────────
+.gnb {
+    @include c.fl;
+    position:absolute;
+    width:100%;
+    height:60px;
+    padding-left:20px;
+    padding-right:20px;
+    background-color:transparent;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(228, 234, 239, 0.2);
+    color:#fff;
+    backdrop-filter: blur(5px);
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+
+    @at-root {
+        .up {
+            .gnb {
+                position:fixed;
+                z-index:999;
+            }
+        }
+    }
+
+    .h-logo {
+        @include c.icon-svg(s.$icon-logo);
+    }
+
+    .menu {
+        @include c.fl(80px);
+        position:absolute;
+        top:0;
+        left:50%;
+        transform:translateX(-50%);
+        align-items:center;
+        color:currentColor;
+        font-weight:600;
+
+        li {
+            @include c.fl;
+            align-items:center;
+            height:60px;
+            position:relative;
+            a {
+                &.on,
+                &:hover,
+                &:focus {
+                    color:#01489D;
+                }
+            }
+            
+            &:has(a.on),
+            &:has(a:hover),
+            &:has(a:focus) {
+                &::before {
+                    width:100%;
+                    height:4px;
+                    background-color:#01489D;
+                    position:absolute;
+                    left:0;
+                    bottom:1px;
+                    content:'';
+                }
+            }
+        }
+    }
+
+    .util-menu {
+        @include c.fl(25px);
+        align-items:center;
+        
+        li {
+            @include c.fl(7px);
+            align-items:center;
+
+            .u-sign-in {
+                @include c.icon-svg(s.$icon-u-sign-in,  $variant: 'white');
+            }
+            .u-sign-out {
+                @include c.icon-svg(s.$icon-u-sign-out,  $variant: 'white');
+            }
+            .u-mypage {
+                @include c.icon-svg(s.$icon-u-mypage,  $variant: 'white');
+            }
+            .u-language {
+                @include c.icon-svg(s.$icon-u-language,  $variant: 'white');
+            }
+            .u-search {
+                @include c.icon-svg(s.$icon-u-search,  $variant: 'white');
+            }
+        }
+    }
+
+    &.white {
+        background-color:#fff;
+        border-color:#B1BCC4;
+        color:#3B3B3B;
+
+        .h-logo {
+            @include c.icon-svg(s.$icon-logo, $variant: 'blue');
+        }
+
+        .util-menu {
+            li {
+                .u-sign-in {
+                    @include c.icon-svg(s.$icon-u-sign-in, $variant: 'primary');
+                }
+                .u-sign-out {
+                    @include c.icon-svg(s.$icon-u-sign-out, $variant: 'primary');
+                }
+                .u-mypage {
+                    @include c.icon-svg(s.$icon-u-mypage, $variant: 'primary');
+                }
+                .u-language {
+                    @include c.icon-svg(s.$icon-u-language, $variant: 'primary');
+                }
+                .u-search {
+                    @include c.icon-svg(s.$icon-u-search, $variant: 'primary');
+                }
+            }
+        }
+    }
+}

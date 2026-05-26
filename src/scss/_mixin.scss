@@ -1,0 +1,87 @@
+@use 'variables' as *;
+@use 'sass:list';
+@use 'sass:map';
+
+// ─── mixin ───────────────────────────────────
+
+// breakpoint
+@mixin on-mobile {
+    @media (max-width: $bp-mobile) {
+        @content;
+    }
+}
+
+// flex
+@mixin fl($val: 0){
+    display:flex;
+    gap: $val;
+}
+@mixin fl-row($val: 0){
+    display:flex;
+    gap: $val;
+
+    @include on-mobile {
+        flex-direction:column;
+    }
+}
+@mixin fl-wrap($val: 0){
+    display:flex;
+    flex-wrap:wrap;
+    gap: $val;
+}
+@mixin fl-col($val: 0){
+    display:flex;
+    flex-direction:column;
+    gap: $val;
+}
+
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+@mixin bg($color: null, $image: null, $position: center, $size: cover, $repeat: no-repeat){
+    @if $color != null {
+        background-color: $color;
+    }
+    @if $image != null {
+        background-image: url($image);
+        background-position: $position;
+        background-size: $size;
+        background-repeat: $repeat;
+    }
+}
+
+// $icon : svg-icons.$icon-{name} (map)
+// $variant : 'fff' 등 colorVariants 키 (기본 null = 원본색)
+// $fit : background-size (기본 100% auto)
+@mixin icon-svg ($icon, $variant: null, $fit: 100% auto, $position: center, $repeat: no-repeat, $pseudo: before) {
+    display:inline-flex;
+    align-items:center;
+    line-height:1;
+    &::#{$pseudo} {
+        content: '';
+        $key: 'url';
+        @if $variant != null {
+            $key: 'url--#{$variant}';
+        }
+        $url: map.get($icon, $key);
+        width: map.get($icon, 'w');
+        height: map.get($icon, 'h');
+        background-image: $url;
+        background-repeat: $repeat;
+        background-position: $position;
+        background-size: $fit;
+        pointer-events: none;
+    }
+}
+
+

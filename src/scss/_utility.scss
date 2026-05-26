@@ -1,0 +1,36 @@
+@use 'core' as c;
+
+// ─── utility ───────────────────────────────────
+select {
+    appearance:none;
+}
+i, em {
+    font-style:normal;
+}
+
+.--uppercase {
+    text-transform: uppercase;
+}
+
+.--in {
+    width:100%;
+    padding:0 20px;
+}
+
+.--inner {
+    width:100%;
+    max-width:1300px;
+    margin:0 auto;
+
+    &.md {
+        max-width:856px;
+    }
+}
+
+.--col {
+    @include c.fl-col;
+}
+
+.--row {
+    @include c.fl-wrap;
+}

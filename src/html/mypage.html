@@ -1,0 +1,698 @@
+@@include('./inc/head.html', {
+  "title": "KCHIPSRND | Mypage"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html', {
+  "isLoggedIn": true,
+  "gnbWhite": true
+})
+
+<main id="contents">
+  <h1 class="sr-only">Mypage</h1>
+  <section class="mypage-hero">
+    <div class="--inner">
+      <div class="mypage-profile">
+        <div class="mypage-thumb"><i class="icon icon-user"><em class="sr-only">프로필</em></i></div>
+        <div class="mypage-info">
+          <p class="mypage-hello">Hello. <strong>JM Kim</strong> <button type="button" class="btn-setting"><em class="sr-only">설정</em></button></p>
+          <p class="mypage-desc">나의 연구 분야에 최적화된 파트너와 협력 기회를 안내해 드립니다.</p>
+        </div>
+      </div>
+
+      <div class="mypage-keyword">
+        <dl>
+          <dt>My Interest Keywords</dt>
+          <dd>
+            <span>Design/EDA</span>
+            <span>Optical Semiconductor</span>
+            <span>Discrete Device</span>
+            <span>LLM Inference Chip</span>
+            <span>Glass substrate</span>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="mypage-partners">
+        <div class="section-head">
+          <h2>나의 관심 분야를 연구하는 분들이에요.</h2>
+          <div class="slide-control opacity-50" data-slide-match="partners-list">
+            <button type="button" class="prev"><i class="icon icon-slide-prev"><em class="sr-only">이전</em></i></button>
+            <button type="button" class="next"><i class="icon icon-slide-next"><em class="sr-only">다음</em></i></button>
+          </div>
+        </div>
+
+        <div class="partners-list">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-us"><em class="sr-only">US</em></i>
+                    California Microelectronics Lab
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    Next-Generation Logic Devices
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    a.johnson@cmi.edu
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-eu"><em class="sr-only">EU</em></i>
+                    Munich Advanced Photonics Center
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    EUV Lithography Technologies
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    k.weber@mapc.research.eu
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-kor"><em class="sr-only">KOR</em></i>
+                    Seoul Semiconductor Research Center
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    Advanced Packaging &amp; System IC
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    jw.kim@ssrc.re.kr
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-us"><em class="sr-only">US</em></i>
+                    NexGen Silicon Technologies
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    Neuromorphic Computing Material
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    david.chen@nexgensilicon.com
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-eu"><em class="sr-only">EU</em></i>
+                    Delft Quantum &amp; Nano Lab
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    Semiconductor Quantum Dots
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    s.vanderberg@dqnl.nl
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-us"><em class="sr-only">US</em></i>
+                    California Microelectronics Lab
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    Next-Generation Logic Devices
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    a.johnson@cmi.edu
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-eu"><em class="sr-only">EU</em></i>
+                    Munich Advanced Photonics Center
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    EUV Lithography Technologies
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    k.weber@mapc.research.eu
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-kor"><em class="sr-only">KOR</em></i>
+                    Seoul Semiconductor Research Center
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    Advanced Packaging &amp; System IC
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    jw.kim@ssrc.re.kr
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-us"><em class="sr-only">US</em></i>
+                    NexGen Silicon Technologies
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    Neuromorphic Computing Material
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    david.chen@nexgensilicon.com
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="partners-list-inner">
+                <a href="javascript:void(0);" class="partner-card">
+                  <strong class="name">
+                    <i class="icon icon-member-eu"><em class="sr-only">EU</em></i>
+                    Delft Quantum &amp; Nano Lab
+                  </strong>
+                  <span>
+                    <b class="label">Research Area</b>
+                    Semiconductor Quantum Dots
+                  </span>
+                  <span>
+                    <b class="label">E-mail</b>
+                    s.vanderberg@dqnl.nl
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mypage-content">
+    <div class="--inner">
+      <div class="mypage-news-section">
+        <article class="news-block">
+          <div class="section-head col">
+            <h2>Tailored<br>News</h2>
+            <div class="slide-control" data-slide-match="news-list">
+              <button type="button" class="prev"><i class="icon icon-slide-prev"><em class="sr-only">이전</em></i></button>
+            <button type="button" class="next"><i class="icon icon-slide-next"><em class="sr-only">다음</em></i></button>
+            </div>
+          </div>
+          <div class="news-list">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="news-item">
+                  <a href="javascript:void(0);">
+                    <span class="thumb"><img src="../img/thumb/@thumb_news_01.png" alt=""></span>
+                    <span class="news-info">
+                      <strong>반도체 초격차 위해 뭉쳤다…한-EU 차세대 메모리 전략회의 성공적 개최</strong>
+                      <em>2025-04-13</em>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="news-item">
+                  <a href="javascript:void(0);">
+                    <span class="thumb"><img src="../img/thumb/@thumb_news_02.png" alt=""></span>
+                    <span class="news-info">
+                      <strong>한-EU 반도체 포럼…AI가수가 차세대 메모리 협력 공동</strong>
+                      <em>2025-03-24</em>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="news-item">
+                  <a href="javascript:void(0);">
+                    <span class="thumb"><img src="../img/thumb/@thumb_news_03.png" alt=""></span>
+                    <span class="news-info">
+                      <strong>제2회 한-EU 반도체 연구자 포럼</strong>
+                      <em>2025-03-07</em>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="news-item">
+                  <a href="javascript:void(0);">
+                    <span class="thumb"><img src="../img/thumb/@thumb_news_01.png" alt=""></span>
+                    <span class="news-info">
+                      <strong>반도체 초격차 위해 뭉쳤다…한-EU 차세대 메모리 전략회의 성공적 개최</strong>
+                      <em>2025-04-13</em>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="news-item">
+                  <a href="javascript:void(0);">
+                    <span class="thumb"><img src="../img/thumb/@thumb_news_02.png" alt=""></span>
+                    <span class="news-info">
+                      <strong>한-EU 반도체 포럼…AI가수가 차세대 메모리 협력 공동</strong>
+                      <em>2025-03-24</em>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="news-item">
+                  <a href="javascript:void(0);">
+                    <span class="thumb"><img src="../img/thumb/@thumb_news_03.png" alt=""></span>
+                    <span class="news-info">
+                      <strong>제2회 한-EU 반도체 연구자 포럼</strong>
+                      <em>2025-03-07</em>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="mypage-recommend-grid">
+        <article class="network-block">
+          <div class="section-head">
+            <h2>Matched Network</h2>
+          </div>
+          <div class="customed-scroll">
+            <ul class="network-list">
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_network_01.png" alt="">
+                  </div>
+                  <div class="network-info">
+                    <span class="badge">
+                      <em>Research Institute</em>
+                      <i class="icon icon-network-kor"><em class="sr-only">kor</em></i>
+                    </span>
+                    <strong class="title">SNU Semiconductor Research Center</strong>
+                    <span class="research-area">
+                      <b>Research Area</b>Next-Generation Logic Devices
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_network_02.png" alt="">
+                  </div>
+                  <div class="network-info">
+                    <span class="badge">
+                      <em>Corporation</em>
+                      <i class="icon icon-network-eu"><em class="sr-only">eu</em></i>
+                    </span>
+                    <strong class="title">Euro Nanotech Institute</strong>
+                    <span class="research-area">
+                      <b>Research Area</b>EUV Lithography Technologies
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_network_03.png" alt="">
+                  </div>
+                  <div class="network-info">
+                    <span class="badge">
+                      <em>University</em>
+                      <i class="icon icon-network-us"><em class="sr-only">us</em></i>
+                    </span>
+                    <strong class="title">Microelectronics at Arizona State University</strong>
+                    <span class="research-area">
+                      <b>Research Area</b>Advanced Packaging & System IC
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_network_01.png" alt="">
+                  </div>
+                  <div class="network-info">
+                    <span class="badge">
+                      <em>Research Institute</em>
+                      <i class="icon icon-network-kor"><em class="sr-only">kor</em></i>
+                    </span>
+                    <strong class="title">SNU Semiconductor Research Center</strong>
+                    <span class="research-area">
+                      <b>Research Area</b>Next-Generation Logic Devices
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_network_02.png" alt="">
+                  </div>
+                  <div class="network-info">
+                    <span class="badge">
+                      <em>Corporation</em>
+                      <i class="icon icon-network-eu"><em class="sr-only">eu</em></i>
+                    </span>
+                    <strong class="title">Euro Nanotech Institute</strong>
+                    <span class="research-area">
+                      <b>Research Area</b>EUV Lithography Technologies
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_network_03.png" alt="">
+                  </div>
+                  <div class="network-info">
+                    <span class="badge">
+                      <em>University</em>
+                      <i class="icon icon-network-us"><em class="sr-only">us</em></i>
+                    </span>
+                    <strong class="title">Microelectronics at Arizona State University</strong>
+                    <span class="research-area">
+                      <b>Research Area</b>Advanced Packaging & System IC
+                    </span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="program-block">
+          <div class="section-head">
+            <h2>Recommended Programs</h2>
+          </div>
+          <div class="customed-scroll">
+            <ul class="program-list">
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_program_01.png" alt="">
+                  </div>
+                  <div class="program-info">
+                    <span class="badge emp-blue">
+                      <em>연구</em>
+                    </span>
+                    <strong class="title">한-EU 차세대 뉴로모픽 소자 공동 연구</strong>
+                    <span class="date">
+                      <b>일정</b>2026.06.01 ~ 2026.12.31
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_program_02.png" alt="">
+                  </div>
+                  <div class="program-info">
+                    <span class="badge emp-orange">
+                      <em>사업공고</em>
+                    </span>
+                    <strong class="title">2026 글로벌 팹리스 스타트업 유럽 진출 지원사업</strong>
+                    <span class="date">
+                      <b>일정</b>2026.05.10 ~ 2026.06.15
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb">
+                    <img src="../img/thumb/@thumb_program_03.png" alt="">
+                  </div>
+                  <div class="program-info">
+                    <span class="badge emp-teal">
+                      <em>교육</em>
+                    </span>
+                    <strong class="title">시스템 반도체 물리 AI(Physical AI) 설계  전문가 과정</strong>
+                    <span class="date">
+                      <b>일정</b>2026.07.01 ~ 2026.08.21
+                    </span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mypage-community">
+    <div class="--inner">
+      <article class="community-block">
+        <div class="section-head">
+          <h2>Community Lounge</h2>
+          <a href="" class="btn--rounded bg-primary"><em>Community</em></a>
+        </div>
+        <div class="tab-nav tab-nav-customed">
+          <span><a href="javascript:void(0);" id="recommendedPosts" role="tab" aria-selected="true" aria-controls="recommendedPostsPanel" class="on">Recommended Posts</a></span>
+          <span><a href="javascript:void(0);" id="myPosts" role="tab" aria-selected="false" aria-controls="myPostsPanel">My Posts</a></span>
+        </div>
+        <div class="tab-contents">
+          <div class="tab-inner" id="recommendedPostsPanel" role="tabpanel" aria-labelledby="recommendedPosts" hidden>
+            <div class="list-wrap">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span class="num">24</span>
+                    <strong class="title">유럽 나노테크 인스티튜트 공동연구 파트너십 후기</strong>
+                    <span class="writer">JM Kim</span>
+                    <span class="etc">
+                      <em class="date">2026-05-09</em>
+                      <em class="reply">0</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">23</span>
+                    <strong class="title">[파트너 모집] 한-EU 반도체 공동 R&D 파트너십 구축 관련 질의응답 한-EU 반도체 공동 R&D 파트너십</strong>
+                    <span class="writer">David Kim</span>
+                    <span class="etc">
+                      <em class="date">2026-05-04</em>
+                      <em class="reply">2</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">22</span>
+                    <strong class="title">2026년 EU 칩스법(Chips Act) 보조금 신청 가이드라인 핵심 요약</strong>
+                    <span class="writer">Elena Rossi</span>
+                    <span class="etc">
+                      <em class="date">2026-04-30</em>
+                      <em class="reply">0</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">21</span>
+                    <strong class="title">전력 반도체(SiC) 신뢰성 평가 유럽 표준 관련해서 선배님들의 조언을 구하고 싶습니다</strong>
+                    <span class="writer">Michael Lee</span>
+                    <span class="etc">
+                      <em class="date">2026-04-24</em>
+                      <em class="reply">0</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">20</span>
+                    <strong class="title">Fraunhofer 연구소 공동 R&D 컨소시엄 파트너사 모집 안내 (AI 반도체)</strong>
+                    <span class="writer">Kevin Park</span>
+                    <span class="etc">
+                      <em class="date">2026-04-20</em>
+                      <em class="reply">2</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">19</span>
+                    <strong class="title">벨기에 IMEC이랑 초기 미팅 세팅할 때 팁이 있을까요? 메일 회신이 좀 늦네요.</strong>
+                    <span class="writer">Sarah Choi</span>
+                    <span class="etc">
+                      <em class="date">2026-04-17</em>
+                      <em class="reply">0</em>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="list-more-view">
+              <a href="javascript:void(0);"><span>MORE VIEW<em>(9/24)</em></span></a>
+            </div>
+          </div>
+          <div class="tab-inner" id="myPostsPanel" role="tabpanel" aria-labelledby="myPosts" hidden>
+            <div class="list-wrap">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span class="num">24</span>
+                    <strong class="title">유럽 나노테크 인스티튜트 공동연구 파트너십 후기</strong>
+                    <span class="writer">JM Kim</span>
+                    <span class="etc">
+                      <em class="date">2026-05-09</em>
+                      <em class="reply">0</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">23</span>
+                    <strong class="title">[파트너 모집] 한-EU 반도체 공동 R&D 파트너십 구축 관련 질의응답 한-EU 반도체 공동 R&D 파트너십</strong>
+                    <span class="writer">David Kim</span>
+                    <span class="etc">
+                      <em class="date">2026-05-04</em>
+                      <em class="reply">2</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">22</span>
+                    <strong class="title">2026년 EU 칩스법(Chips Act) 보조금 신청 가이드라인 핵심 요약</strong>
+                    <span class="writer">Elena Rossi</span>
+                    <span class="etc">
+                      <em class="date">2026-04-30</em>
+                      <em class="reply">0</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">21</span>
+                    <strong class="title">전력 반도체(SiC) 신뢰성 평가 유럽 표준 관련해서 선배님들의 조언을 구하고 싶습니다</strong>
+                    <span class="writer">Michael Lee</span>
+                    <span class="etc">
+                      <em class="date">2026-04-24</em>
+                      <em class="reply">0</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">20</span>
+                    <strong class="title">Fraunhofer 연구소 공동 R&D 컨소시엄 파트너사 모집 안내 (AI 반도체)</strong>
+                    <span class="writer">Kevin Park</span>
+                    <span class="etc">
+                      <em class="date">2026-04-20</em>
+                      <em class="reply">2</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="num">19</span>
+                    <strong class="title">벨기에 IMEC이랑 초기 미팅 세팅할 때 팁이 있을까요? 메일 회신이 좀 늦네요.</strong>
+                    <span class="writer">Sarah Choi</span>
+                    <span class="etc">
+                      <em class="date">2026-04-17</em>
+                      <em class="reply">0</em>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="list-more-view">
+              <a href="javascript:void(0);"><span>MORE VIEW<em>(9/24)</em></span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<script defer>
+  (function() {
+    document.addEventListener('DOMContentLoaded', () => {
+      const commonFunction = window.commonFunction;
+      const setSwiper = commonFunction.setSwiper;
+
+      // 나의 관심분야 slide
+      setSwiper('partners-list', { 
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        freeMode: false,
+        freeModeMomentum: false,
+        loop: true,
+        speed: 800,
+      });
+
+      // Tailored News slide
+      setSwiper('news-list', { 
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        freeMode: false,
+        freeModeMomentum: false,
+        loop: true,
+        speed: 800,
+        on: {
+          init(swiper) {
+            commonFunction.updateDimByCount(swiper, 2);
+          },
+          slideChange(swiper) {
+            commonFunction.updateDimByCount(swiper, 2);
+          },
+          resize(swiper) {
+            commonFunction.updateDimByCount(swiper, 2);
+          }
+        }
+      });
+    }); 
+  })();
+</script>
+@@include('./inc/footer.html')

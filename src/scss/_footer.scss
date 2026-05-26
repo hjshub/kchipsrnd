@@ -1,0 +1,81 @@
+@use 'core' as c;
+@use 'generated/svg-icons' as s;
+
+// ─── footer ───────────────────────────────────
+footer {
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:300px;
+    padding-left:160px;
+    padding-right:160px;
+    color:#fff;
+    background-color:#3D576B;
+
+    .footer-inner {
+        @include c.fl;
+        width:100%;
+        justify-content:space-between;
+
+        .footer-company {
+            @include c.fl(85px);
+            align-items:flex-start;
+
+            .f-logo {
+                @include c.icon-svg(s.$icon-logo);
+                position:relative;
+                top:-10px;
+
+                &::before {
+                    width:252px;
+                    height:90px;
+                }
+            }
+            
+            .footer-details {
+                @include c.fl-col(12px);
+                justify-content:center;
+
+                .icon {
+                    mix-blend-mode:luminosity;
+                }
+
+                .footer- {
+                    &name {
+                        font-size:24px;
+                    }
+                    &address {
+                        @include c.fl(10px);
+                        align-items:center;
+                        font-size:18px;
+                        font-style:normal;
+                    }
+                    &contact-list {
+                        @include c.fl(30px);
+                        font-size:18px;
+                        
+                        span {
+                            @include c.fl(10px);
+                            align-items:center;
+                        }
+                    }
+                    &meta {
+                        @include c.fl(30px);
+                        font-size:14px;
+                        margin-top:15px;
+                        color:#B2C5D3;
+                    }
+                }
+            }
+        }
+
+        .select-wrap {
+            select {
+                min-width:207px;
+                border-bottom:1px solid #B2C5D3;
+                border-style:solid;
+                padding-bottom:15px;
+            }
+        }
+    }
+}

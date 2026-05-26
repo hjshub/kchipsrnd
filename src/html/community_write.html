@@ -1,0 +1,216 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | Community"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html', {
+    "isLoggedIn": true,
+    "gnbWhite": false
+})
+
+<main id="contents">
+    <h1 class="sr-only">Community</h1>
+    <section class="top-kv community">
+        <div class="--inner">
+            <div class="breadcrumb">
+                <span class="home"><em class="sr-only">홈</em></span>
+                <span>My page</span>
+                <span class="current">Community</span>
+            </div>
+
+            <div class="heading-title">
+                <h2>Community</h2>
+                <span class="desc">다양한 전문가들과 자유롭게 의견을 나누고 정보를 교류해 보세요.</span>
+            </div>
+        </div>
+    </section>
+    <section class="section write">
+        <div class="--inner">
+            <article>
+                <header>
+                    <h3>Create a New Post</h3>
+                </header>
+
+                <div class="write-form">
+                    <dl class="items-center">
+                        <dt>Title</dt>
+                        <dd><input title="Title" type="text" placeholder="Enter text here"></dd>
+                    </dl>
+                    <dl>
+                        <dt class="items-center">Content</dt>
+                        <dd><textarea title="Content" rows="5" placeholder="Enter text here"></textarea></dd>
+                    </dl>
+                    <dl>
+                        <dt>Files</dt>
+                        <dd>
+                            <div class="flex flex-col gap-[10px]">
+                                <div class="file-box">
+                                    <span class="file-name">Click to upload files</span>
+                                    <input class="sr-only" type="file" id="file-input1">
+                                    <label class="btn-attach-file" for="file-input1">Upload File</label>
+                                </div>
+                                <div class="file-box">
+                                    <span class="file-name">Click to upload files</span>
+                                    <input class="sr-only" type="file" id="file-input2">
+                                    <label class="btn-attach-file" for="file-input2">Upload File</label>
+                                </div>
+                                <div class="file-box">
+                                    <span class="file-name">Click to upload files</span>
+                                    <input class="sr-only" type="file" id="file-input3">
+                                    <label class="btn-attach-file" for="file-input3">Upload File</label>
+                                </div>
+                                <p class="desc">Max file size: 5MB / Supported formats : pdf, hwp, doc, ppt, xls, jpg, png, gif</p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Keyword</dt>
+                        <dd>
+                            <ul class="keyword-wrap">
+                                <li>
+                                    <div class="subject">Semiconductor Value chain</div>
+                                    <div class="chk-grp-block col-5">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-1" id="keyword-1">
+                                            <label for="keyword-1">Material</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-2" id="keyword-2">
+                                            <label for="keyword-2">Equipment</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-3" id="keyword-3">
+                                            <label for="keyword-3">Design/EDA</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-4" id="keyword-4">
+                                            <label for="keyword-4">Process</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-5" id="keyword-5">
+                                            <label for="keyword-5">Packaging</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-6" id="keyword-6">
+                                            <label for="keyword-6">Test &amp; Reliability</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-7" id="keyword-7">
+                                            <label for="keyword-7">Application</label>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="subject">Devices type</div>
+                                    <div class="chk-grp-block col-5">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-8" id="keyword-8">
+                                            <label for="keyword-8">Memory</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-9" id="keyword-9">
+                                            <label for="keyword-9">Microcomponent</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-10" id="keyword-10">
+                                            <label for="keyword-10">Analog IC/EDA</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-11" id="keyword-11">
+                                            <label for="keyword-11">Logic IC(ASIC/ASSP)</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-12" id="keyword-12">
+                                            <label for="keyword-12">Optical Semiconductor</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-13" id="keyword-13">
+                                            <label for="keyword-13">Discrete Device</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-14" id="keyword-14">
+                                            <label for="keyword-14">Imerging Device</label>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="subject">Trend keyword</div>
+                                    <div class="chk-grp-block col-5">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-15" id="keyword-15">
+                                            <label for="keyword-15">Al accelerator/ NPU</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-16" id="keyword-16">
+                                            <label for="keyword-16">In-Memory computing</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-17" id="keyword-17">
+                                            <label for="keyword-17">LLM Inference Chip</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-18" id="keyword-18">
+                                            <label for="keyword-18">Edge AI / On-device AI</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-19" id="keyword-19">
+                                            <label for="keyword-19">ASIC</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-20" id="keyword-20">
+                                            <label for="keyword-20">hybrid Bonding</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-21" id="keyword-21">
+                                            <label for="keyword-21">CoWoS/SoIC/EMIB</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-22" id="keyword-22">
+                                            <label for="keyword-22">CPO</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-23" id="keyword-23">
+                                            <label for="keyword-23">SoW</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-24" id="keyword-24">
+                                            <label for="keyword-24">Glass substrate</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-25" id="keyword-25">
+                                            <label for="keyword-25">GAA</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-26" id="keyword-26">
+                                            <label for="keyword-26">CFET</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-27" id="keyword-27">
+                                            <label for="keyword-27">2D Materials</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-28" id="keyword-28">
+                                            <label for="keyword-28">BSPDN</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="keyword-29" id="keyword-29">
+                                            <label for="keyword-29">DTCO/STCO</label>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p class="desc">Select up to 5 keywords</p>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="btn-wrap">
+                    <button type="button" class="btn--cancel"><em>Cancel</em></button>
+                    <button type="button" class="btn--submit"><em>Post</em></button>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+@@include('./inc/footer.html')

@@ -1,0 +1,422 @@
+@@include('./inc/head.html', {
+  "title": "KCHIPSRND | Guide"
+})
+<main id="guide">
+  <h1 class="--uppercase --in">component guide</h1>
+
+  <section>
+    <div class="--in comp-list">
+      <div class="--row">
+        <dl class="comp-item !w-full">
+          <dt>gnb (로그인 전) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd class="bg-black">
+            @@include('./inc/header.html', {
+              "isLoggedIn": false,
+              "gnbWhite": false
+            })
+          </dd>
+        </dl>
+        <dl class="comp-item !w-full">
+          <dt>gnb (로그인 후) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            @@include('./inc/header.html', {
+              "isLoggedIn": true,
+              "gnbWhite": true
+            })
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="--in comp-list">
+      <div class="--row">
+        <dl class="comp-item !w-full">
+          <dt>footer <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <footer class="footer">
+              <div class="footer-inner">
+                <div class="footer-company">
+                  <h3 class="f-logo"><em class="sr-only">Korea-EU Semiconductor R&amp;D Cooperation Center</em></h3>
+                  <div class="footer-details">
+                    <strong class="footer-name">Korea-EU Semiconductor R&amp;D Cooperation Center</strong>
+                    <address class="footer-address">
+                      <i class="icon icon-address"><em class="sr-only">주소</em></i>
+                      Rue de la science 14A, 1st fl. 1040 Brussels, Belgium
+                    </address>
+                    <div class="footer-contact-list">
+                      <span><i class="icon icon-tel"><em class="sr-only">전화번호</em></i>+32 (0)2 880 39 15</span>
+                      <span><i class="icon icon-email"><em class="sr-only">이메일</em></i>support@kchipsrnd.org</span>
+                    </div>
+                    <div class="footer-meta">
+                      <small>@KESRCC All Rights Reserved.</small>
+                      <a href="#" class="footer-link">이용약관</a>
+                      <a href="#" class="footer-link"><strong>개인정보처리방침</strong></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-family-site">
+                  <span class="select-wrap customed" aria-label="패밀리 사이트">
+                    <label for="family-site-select"><em class="sr-only">패밀리 사이트 선택</em></label>
+                    <select name="family-site" id="family-site-select">
+                      <option value="" selected disabled hidden>Family Site</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                    </select>
+                  </span>
+                </div>
+              </div>
+            </footer>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="--in comp-list">
+      <div class="--row">
+        <dl class="comp-item">
+          <dt>breadcrumb <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd class="bg-black px-[20px]">
+            <div class="breadcrumb">
+              <span class="home"><em class="sr-only">홈</em></span>
+              <span>My page</span>
+              <span class="current">Community</span>
+            </div>
+          </dd>
+        </dl>
+        <dl class="comp-item">
+          <dt>pagination <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <div class="pagination">
+              <a href="javascript:void(0);" class="pg-first"></a>
+              <a href="javascript:void(0);" class="pg-prev"></a>
+              <span><em>1</em></span>
+              <span><a href="javascript:void(0);">2</a></span>
+              <span><a href="javascript:void(0);">3</a></span>
+              <span><a href="javascript:void(0);">4</a></span>
+              <span><a href="javascript:void(0);">5</a></span>
+              <span><a href="javascript:void(0);">6</a></span>
+              <span><a href="javascript:void(0);">7</a></span>
+              <span><a href="javascript:void(0);">8</a></span>
+              <span><a href="javascript:void(0);">9</a></span>
+              <span><a href="javascript:void(0);">10</a></span>
+              <a href="javascript:void(0);" class="pg-next"></a>
+              <a href="javascript:void(0);" class="pg-last"></a>
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <div class="--row">
+        <dl class="comp-item">
+          <dt>tab (default) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <div class="tab-nav tab-nav-default">
+              <span><a href="javascript:void(0);" class="on">Find ID</a></span>
+              <span><a href="javascript:void(0);">Find Password</a></span>
+            </div>
+          </dd>
+        </dl>
+        <dl class="comp-item --inner !w-full !m-0">
+          <dt>tab (customed) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <div class="tab-nav tab-nav-customed">
+              <span><a href="javascript:void(0);" class="on">Recommended Posts</a></span>
+              <span><a href="javascript:void(0);">My Posts</a></span>
+            </div>
+          </dd>
+        </dl>
+        <dl class="comp-item --inner !w-full !m-0">
+          <dt>more view <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd class="">
+            <div class="list-more-view">
+              <a href="javascript:void(0);"><span>MORE VIEW<em>(9/24)</em></span></a>
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <div class="--row">
+        <dl class="comp-item w-[414px] max-w-full">
+          <dt>input (default) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <input type="text" placeholder="아이디를 입력해 주세요" autocomplete="off">
+          </dd>
+        </dl>
+        <dl class="comp-item w-[414px] max-w-full">
+          <dt>input (값이 있는 경우) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <input type="text" placeholder="아이디를 입력해 주세요" value="홍길동" autocomplete="off">
+          </dd>
+        </dl>
+        <dl class="comp-item w-[414px] max-w-full">
+          <dt>input (disabled) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <input type="text" placeholder="아이디를 입력해 주세요" autocomplete="off" disabled>
+          </dd>
+        </dl>
+        <dl class="comp-item --inner !w-full !m-0">
+          <dt>textarea (default) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <textarea title="Content" placeholder="내용을 입력해 주세요" autocomplete="off"></textarea>
+          </dd>
+        </dl>
+      </div>
+      <div class="--row">
+        <dl class="comp-item --inner !w-full !m-0">
+          <dt>file box <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <div class="file-box">
+                <span class="file-name">Click to upload files</span>
+                <input class="sr-only" type="file" id="file-upload">
+                <label class="btn-attach-file" for="file-upload">Upload File</label>
+            </div>
+          </dd>
+        </dl>
+        <dl class="comp-item --inner !w-full !m-0">
+          <dt>count + search <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <div class="count-combo">
+              <span class="counter"><b>Total</b><em class="num">24</em></span>
+              <span class="search-wrap">
+                <label for="search"><em class="sr-only">검색</em></label>
+                <input type="text" placeholder="Search" id="search" autocomplete="off">
+                <button type="button"><em class="sr-only">검색 버튼</em></button>
+              </span>
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <div class="--row">
+        <dl class="comp-item --inner !w-full !m-0">
+          <dt>count + button <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <div class="count-combo">
+              <span class="counter"><b>Total</b><em class="num">24</em></span>
+              <button class="btn--default"><em>New Post</em></button>
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <div class="--row">
+        <dl class="comp-item w-[414px] max-w-full">
+          <dt>select_date (flatpickr) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <div class="date-field">
+              <input type="text" class="js-datepicker" placeholder="YYYY-MM-DD" readonly inputmode="none" autocomplete="off">
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <div class="--row">
+        <dl class="comp-item w-[414px] max-w-full">
+          <dt>select_box (default) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <span class="select-wrap default">
+              <label for="default-select"><em class="sr-only">선택</em></label>
+              <select name="" id="default-select" required>
+                <option value="" selected disabled hidden>country code</option>
+                <option value="">1</option>
+                <option value="">2</option>
+              </select>
+            </span>
+          </dd>
+        </dl>
+        <dl class="comp-item w-[414px] max-w-full">
+          <dt>select_box (선택 값이 있는 경우) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <span class="select-wrap default">
+              <label for="default-select"><em class="sr-only">선택</em></label>
+              <select name="" id="default-select" required>
+                <option value="" disabled hidden>country code</option>
+                <option value="" selected>1</option>
+                <option value="">2</option>
+              </select>
+            </span>
+          </dd>
+        </dl>
+        <dl class="comp-item w-[414px] max-w-full">
+          <dt>select_box (disabled) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <span class="select-wrap default">
+              <label for="default-select"><em class="sr-only">선택</em></label>
+              <select name="" id="default-select" disabled required>
+                <option value="" selected disabled hidden>country code</option>
+                <option value="">1</option>
+                <option value="">2</option>
+              </select>
+            </span>
+          </dd>
+        </dl>
+        <dl class="comp-item">
+          <dt>select_box (customed) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <span class="select-wrap customed">
+              <label for="customed-select"><em class="sr-only">선택</em></label>
+              <select name="" id="customed-select">
+                <option value="" selected disabled hidden>country code</option>
+                <option value="">1</option>
+                <option value="">2</option>
+              </select>
+            </span>
+          </dd>
+        </dl>
+      </div>
+      <div class="--row">
+        <dl class="comp-item">
+          <dt>btn <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <button class="btn--default"><em>Login</em></button>
+          </dd>
+        </dl>
+        <dl class="comp-item">
+          <dt>btn (type2) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <button class="btn--type2"><em>Verify</em></button>
+          </dd>
+        </dl>
+        <dl class="comp-item">
+          <dt>btn_취소 <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <button class="btn--cancel"><em>cancel</em></button>
+          </dd>
+        </dl>
+        <dl class="comp-item">
+          <dt>btn_등록 <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <button class="btn--submit"><em>Post</em></button>
+          </dd>
+        </dl>
+        <dl class="comp-item">
+          <dt>btn (rounded) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <button class="btn--rounded bg-primary"><em>Community</em></button>
+          </dd>
+        </dl>
+      </div>
+      <div class="--row">
+          <dl class="comp-item">
+            <dt>checkbox <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+            <dd>
+              <div class="chk-grp">
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-1" id="checkbox-1" checked>
+                  <label for="checkbox-1">checked</label>
+                </span>
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                  <label for="checkbox-2">unchecked</label>
+                </span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="comp-item">
+            <dt>radio <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+            <dd>
+              <div class="radio-grp">
+                <span class="radio-wrap">
+                  <input type="radio" name="radio" id="radio-1" checked>
+                  <label for="radio-1">checked</label>
+                </span>
+                <span class="radio-wrap">
+                  <input type="radio" name="radio" id="radio-2">
+                  <label for="radio-2">unchecked</label>
+                </span>
+              </div>
+            </dd>
+          </dl>
+      </div>
+      <div class="--row">
+        <dl class="comp-item w-[856px]">
+            <dt>키워드선택 (checkbox) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+            <dd>
+              <div class="chk-grp-block">
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-keyword-1" id="checkbox-keyword-1" checked>
+                  <label for="checkbox-keyword-1">Material</label>
+                </span>
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-keyword-2" id="checkbox-keyword-2">
+                  <label for="checkbox-keyword-2">Equipment</label>
+                </span>
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-keyword-3" id="checkbox-keyword-3">
+                  <label for="checkbox-keyword-3">Design/EDA</label>
+                </span>
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-keyword-4" id="checkbox-keyword-4">
+                  <label for="checkbox-keyword-4">Process</label>
+                </span>
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-keyword-5" id="checkbox-keyword-5">
+                  <label for="checkbox-keyword-5">Packaging</label>
+                </span>
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-keyword-6" id="checkbox-keyword-6">
+                  <label for="checkbox-keyword-6">Test & Reliability</label>
+                </span>
+                <span class="chk-wrap">
+                  <input type="checkbox" name="checkbox-keyword-7" id="checkbox-keyword-7">
+                  <label for="checkbox-keyword-7">Application</label>
+                </span>
+              </div>
+            </dd>
+          </dl>
+        <dl class="comp-item w-[856px]">
+            <dt>키워드선택 (radio) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+            <dd>
+              <div class="radio-grp-block">
+                <span class="radio-wrap">
+                  <input type="radio" name="radio-keyword" id="radio-keyword-1" checked>
+                  <label for="radio-keyword-1">EU</label>
+                </span>
+                <span class="radio-wrap">
+                  <input type="radio" name="radio-keyword" id="radio-keyword-2">
+                  <label for="radio-keyword-2">US</label>
+                </span>
+                <span class="radio-wrap">
+                  <input type="radio" name="radio-keyword" id="radio-keyword-3">
+                  <label for="radio-keyword-3">KR</label>
+                </span>
+              </div>
+            </dd>
+          </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+      const commonFunction = window.commonFunction;
+      
+      const guide = document.querySelector('#guide');
+      if (!guide) return;
+
+      guide.addEventListener('click', async (event) => {
+        const copyLink = event.target.closest('dt a[title="컴포넌트 복사하기"]');
+        if (!copyLink) return;
+
+        event.preventDefault();
+
+        const dt = copyLink.closest('dt');
+        const dd = dt?.nextElementSibling;
+        if (!dd || dd.tagName !== 'DD') return;
+
+        const componentMarkup = dd.innerHTML.trim();
+        const copied = await commonFunction.copyTextToClipboard(componentMarkup);
+
+        if (!copied) return;
+
+        const originalTitle = copyLink.getAttribute('title') || '';
+        copyLink.setAttribute('title', '복사 완료');
+        copyLink.classList.add('is-copied');
+
+        window.setTimeout(() => {
+          copyLink.setAttribute('title', originalTitle || '컴포넌트 복사하기');
+          copyLink.classList.remove('is-copied');
+        }, 1200);
+      });
+  });
+</script>
