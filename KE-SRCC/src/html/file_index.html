@@ -1,0 +1,260 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | File Index"
+})
+
+<style>
+    table th,
+    table td {
+        border:1px solid #ccc;
+        height:50px;
+        padding: 0 20px;
+        text-align:center;
+
+        &.link,
+        &.desc {
+            text-align:left;
+        }
+    }
+
+    table {
+        counter-reset: rowNumber 0;
+    }
+
+    table .num {
+        text-align: center;
+        counter-increment: rowNumber 1;
+    }
+    table .num::before {
+        content: counter(rowNumber);
+    }
+</style>
+
+<main id="guide">
+    <h1 class="--uppercase --in">File Index</h1>
+
+    <section>
+        <table class="w-full">
+            <colgroup>
+                <col style="width: 10%;">
+                <col style="width: 12%;">
+                <col style="width: 12%;">
+                <col style="width: 12%;">
+                <col style="width: 20%;">
+                <col style="width: auto;">
+                <col style="width: 10%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>no.</th>
+                    <th>1depth</th>
+                    <th>2depth</th>
+                    <th>screen id</th>
+                    <th>description</th>
+                    <th>경로</th>
+                    <th>완료 여부</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>Guide</td>
+                    <td></td>
+                    <td></td>
+                    <td class="desc">컴포넌트 가이드</td>
+                    <td class="link"><a href="guide.html">guide.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>Gate</td>
+                    <td></td>
+                    <td>gate</td>
+                    <td class="desc">유럽/한국/미국 이동 게이트</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="3">main</td>
+                    <td>main</td>
+                    <td>ke_main</td>
+                    <td class="desc">메인페이지</td>
+                    <td class="link"><a href="index.html">index.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>Login</td>
+                    <td>ke_login</td>
+                    <td class="desc">사용자 로그인</td>
+                    <td class="link"><a href="login.html">login.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>Join</td>
+                    <td>ke_join</td>
+                    <td class="desc">사용자 회원가입</td>
+                    <td class="link"><a href="register.html">register.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="6">Information</td>
+                    <td rowspan="2">network</td>
+                    <td>ke_network_list</td>
+                    <td class="desc">네트워크 리스트, 관련 연구소 및 학교 / 관련 정보</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>ke_network_view</td>
+                    <td class="desc">네트워크 상세보기</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="2">Programs</td>
+                    <td>ke_programs_list</td>
+                    <td class="desc">프로그램 리스트, 사업공고/교육프로그램 등</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>ke_programs_view</td>
+                    <td class="desc">프로그램 상세보기</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="2">News</td>
+                    <td>ke_news_list</td>
+                    <td class="desc">뉴스 리스트</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>ke_news_view</td>
+                    <td class="desc">뉴스 상세보기</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="4">resource</td>
+                    <td rowspan="2">publication</td>
+                    <td>ke_publication_list</td>
+                    <td class="desc">센터 발행 보고서 리스트</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>ke_publication_view</td>
+                    <td class="desc">센터 발행 보고서 상세보기</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="2">trend report</td>
+                    <td>ke_trend_list</td>
+                    <td class="desc">동향 보고서 리스트</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>ke_trend_view</td>
+                    <td class="desc">동향 보고서 상세보기</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="5">about</td>
+                    <td>about us</td>
+                    <td>ke_about</td>
+                    <td class="desc">센터 소개</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="2">notice</td>
+                    <td>ke_notice_list</td>
+                    <td class="desc">공지사항 리스트</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>ke_notice_view</td>
+                    <td class="desc">공지사항 상세보기</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>FAQ</td>
+                    <td>ke_faq</td>
+                    <td class="desc">자주묻는 질문</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>contact</td>
+                    <td>ke_notice_contact</td>
+                    <td class="desc">연락처 및 문의</td>
+                    <td class="link"><a href=""></a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="5">my page</td>
+                    <td>my page</td>
+                    <td>ke_my page</td>
+                    <td class="desc">마이페이지 메인 대시보드</td>
+                    <td class="link"><a href="mypage.html">mypage.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>setting</td>
+                    <td>ke_setting</td>
+                    <td class="desc">나의 정보 설정</td>
+                    <td class="link"><a href="settings.html">setting.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="3">community</td>
+                    <td>ke_community_list</td>
+                    <td class="desc">회원 게시판 리스트</td>
+                    <td class="link"><a href="community_list.html">community_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>ke_community_view</td>
+                    <td class="desc">회원 게시판 상세보기</td>
+                    <td class="link"><a href="community_view.html">community_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>ke_community_write</td>
+                    <td class="desc">회원 게시판 작성</td>
+                    <td class="link"><a href="community_write.html">community_write.html</a></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>

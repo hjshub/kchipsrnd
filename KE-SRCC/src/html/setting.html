@@ -1,0 +1,514 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | settings"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html', {
+    "isLoggedIn": true,
+    "gnbWhite": true
+})
+
+<main id="contents">
+    <h1 class="sr-only">settings</h1>
+    <section class="section register">
+        <div class="--inner md">
+            <div class="heading-title">
+                <h2>Profile Settings</h2>
+            </div>
+
+            <article>
+                <form method="post" action="">
+                    <div class="tab-nav tab-nav-customed">
+                        <span><a href="javascript:void(0);" id="editProfile" role="tab" aria-selected="true" aria-controls="editProfilePanel" class="on">Edit Profile</a></span>
+                        <span><a href="javascript:void(0);" id="editKeywords" role="tab" aria-selected="false" aria-controls="editKeywordsPanel">Edit Keywords</a></span>
+                    </div>
+                    <div class="tab-contents">
+                        <div class="tab-inner" id="editProfilePanel" role="tabpanel" aria-labelledby="editProfile" hidden>
+                            <header><h3>Basic Information</h3></header>
+                            <div class="register-form">
+                                <dl>
+                                    <dt class="req">ID</dt>
+                                    <dd>
+                                        <div>
+                                            <input type="text" placeholder="Please enter your ID in English only" value="smartlain" autocomplete="off" required>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Password</dt>
+                                    <dd>
+                                        <input type="password" placeholder="Please enter your password" autocomplete="off" required>
+                                        <p class="desc">Use 6-16 characters with a mix of letters, numbers, and symbols.</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Confirm Password</dt>
+                                    <dd>
+                                        <input type="password" placeholder="Confirm your password to proceed" autocomplete="off" required>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Name (English)</dt>
+                                    <dd>
+                                        <input type="text" placeholder="Please enter your english name" value="JM Kim" autocomplete="off" required>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>Name (Korean)</dt>
+                                    <dd>
+                                        <input type="text" placeholder="Please enter your korean name" value="김정민" autocomplete="off">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Nationality</dt>
+                                    <dd>
+                                        <input type="text" placeholder="Please enter your nationality" value="South Korea" autocomplete="off" required>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Date of Birth</dt>
+                                    <dd>
+                                        <div class="date-field">
+                                            <input type="text" class="js-datepicker flatpickr-input" placeholder="Select your date of birth" value="1991-01-09" readonly="readonly" inputmode="none" autocomplete="off" required>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>Gender</dt>
+                                    <dd>
+                                        <span class="select-wrap default">
+                                            <label for="gender-select"><em class="sr-only">선택</em></label>
+                                            <select name="" id="gender-select">
+                                                <option value="" disabled hidden>Select your gender...</option>
+                                                <option value="">Male</option>
+                                                <option value="" selected>Female</option>
+                                                <option value="">Not answer</option>
+                                            </select>
+                                        </span>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">E-mail</dt>
+                                    <dd>
+                                        <input type="text" placeholder="ex) abc123@gmail.com" value="jmkim@smartlain.com" autocomplete="off" required>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>Phone</dt>
+                                    <dd>
+                                        <div class="flex flex-col gap-[10px]">
+                                            <span class="select-wrap default">
+                                                <label for="countryCode-select"><em class="sr-only">선택</em></label>
+                                                <select name="" id="countryCode-select">
+                                                    <option value="" disabled hidden>Country code</option>
+                                                    <option value="" selected>Korea(+82)</option>
+                                                    <option value="">United States(+1)</option>
+                                                </select>
+                                            </span>
+                                            <input type="text" placeholder="Please enter without dashes" value="1012341234" autocomplete="off">
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <header><h3>Affiliation &amp; Position</h3></header>
+                            <div class="register-form">
+                                <dl>
+                                    <dt class="req">Organization Type</dt>
+                                    <dd>
+                                        <span class="select-wrap default">
+                                            <label for="org-select"><em class="sr-only">선택</em></label>
+                                            <select name="" id="org-select" required>
+                                                <option value="" disabled hidden>Select Organization Type...</option>
+                                                <option value="" selected>University</option>
+                                                <option value="">Research Institute</option>
+                                                <option value="">Corporation</option>
+                                                <option value="">Etc.</option>
+                                            </select>
+                                        </span>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Organization Name</dt>
+                                    <dd>
+                                        <input type="text" placeholder="Please enter your Organization" value="smartlainLab" autocomplete="off" required>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Current Region</dt>
+                                    <dd>
+                                        <span class="select-wrap default">
+                                            <label for="region-select"><em class="sr-only">선택</em></label>
+                                            <select name="" id="region-select" required>
+                                                <option value="" disabled hidden>Select Current Region...</option>
+                                                <option value="" selected>EU</option>
+                                                <option value="">US</option>
+                                                <option value="">KR</option>
+                                                <option value="">Etc.</option>
+                                            </select>
+                                        </span>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Specific Country</dt>
+                                    <dd>
+                                        <input type="text" placeholder="Please enter your country (e.g., Belgium)" value="Belgium" autocomplete="off" required>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="req">Research Area</dt>
+                                    <dd>
+                                        <input type="text" placeholder="Please enter your Research Area" value="Next-Generation Logic Devices" autocomplete="off" required>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <header>
+                                <h3>Researcher DB Registration</h3>
+                                <p>※ The information below is collected solely for the Researcher Database and will not be made public. (Optional)</p>
+                            </header>
+                            <div class="register-form">
+                                <dl>
+                                    <dt>Department</dt>
+                                    <dd>
+                                        <input type="text" placeholder="e.g., Advanced Materials R&D Center" value="Advanced Materials R&D Center" autocomplete="off">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>Position</dt>
+                                    <dd>
+                                        <input type="text" placeholder="e.g., Senior Engineer" value="Senior Engineer" autocomplete="off">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>Employment Period</dt>
+                                    <dd>
+                                        <input type="text" placeholder="e.g., 2020.03 - Present" value="2020.03 - Present" autocomplete="off">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>Highest Degree</dt>
+                                    <dd>
+                                        <span class="select-wrap default">
+                                            <label for="degree-select"><em class="sr-only">선택</em></label>
+                                            <select name="" id="degree-select">
+                                                <option value="" disabled hidden>Select your highest degree...</option>
+                                                <option value="" selected>Bachelor's Degree</option>
+                                                <option value="">Master's Degree</option>
+                                                <option value="">Doctorate / Ph.D</option>
+                                                <option value="">Other</option>
+                                            </select>
+                                        </span>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>Institution</dt>
+                                    <dd>
+                                        <input type="text" placeholder="e.g., KAIST, Stanford University" value="KAIST, Stanford University" autocomplete="off">
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>Field of Study</dt>
+                                    <dd>
+                                        <input type="text" placeholder="e.g., Materials Science and Engineering" value="Materials Science and Engineering" autocomplete="off">
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tab-inner" id="editKeywordsPanel" role="tabpanel" aria-labelledby="editKeywords" hidden>
+                            <header>
+                                <h3>My Research Fields</h3>
+                                <p>※ Please select keywords for your current research areas. (Select up to 5)</p>
+                            </header>
+                            <div class="register-form">
+                                <dl>
+                                    <dt class="emp-blue">Semiconductor Value chain</dt>
+                                    <dd>
+                                        <div class="chk-grp-block">
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-1">
+                                                <label for="keyword-1">Material</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-2">
+                                                <label for="keyword-2">Equipment</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-3">
+                                                <label for="keyword-3">Design/EDA</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-4">
+                                                <label for="keyword-4">Process</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-5">
+                                                <label for="keyword-5">Packaging</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-6">
+                                                <label for="keyword-6">Test &amp; Reliability</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-7">
+                                                <label for="keyword-7">Application</label>
+                                            </span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="emp-blue">Devices type</dt>
+                                    <dd>
+                                        <div class="chk-grp-block">
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-8">
+                                                <label for="keyword-8">Memory</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-9">
+                                                <label for="keyword-9">Microcomponent</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-10">
+                                                <label for="keyword-10">Analog IC/EDA</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-11">
+                                                <label for="keyword-11">Logic IC(ASIC/ASSP)</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-12">
+                                                <label for="keyword-12">Optical Semiconductor</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-13">
+                                                <label for="keyword-13">Discrete Device</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-14">
+                                                <label for="keyword-14">Imerging Device</label>
+                                            </span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="emp-blue">Trend keyword</dt>
+                                    <dd>
+                                        <div class="chk-grp-block">
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-15">
+                                                <label for="keyword-15">Al accelerator/ NPU</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-16">
+                                                <label for="keyword-16">In-Memory computing</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-17">
+                                                <label for="keyword-17">LLM Inference Chip</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-18">
+                                                <label for="keyword-18">Edge AI / On-device AI</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-19">
+                                                <label for="keyword-19">ASIC</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-20">
+                                                <label for="keyword-20">hybrid Bonding</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-21">
+                                                <label for="keyword-21">CoWoS/SoIC/EMIB</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-22">
+                                                <label for="keyword-22">CPO</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-23">
+                                                <label for="keyword-23">SoW</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-24">
+                                                <label for="keyword-24">Glass substrate</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-25">
+                                                <label for="keyword-25">GAA</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-26">
+                                                <label for="keyword-26">CFET</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-27">
+                                                <label for="keyword-27">2D Materials</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-28">
+                                                <label for="keyword-28">BSPDN</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="research_keywords" id="keyword-29">
+                                                <label for="keyword-29">DTCO/STCO</label>
+                                            </span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <header>
+                                <h3>My Interest Research Field</h3>
+                                <p>※ Please select keywords for the research fields you are interested in. (Select up to 5)</p>
+                            </header>
+                            <div class="register-form">
+                                <dl>
+                                    <dt class="emp-blue">Semiconductor Value chain</dt>
+                                    <dd>
+                                        <div class="chk-grp-block">
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-1">
+                                                <label for="keyword2-1">Material</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-2">
+                                                <label for="keyword2-2">Equipment</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-3">
+                                                <label for="keyword2-3">Design/EDA</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-4">
+                                                <label for="keyword2-4">Process</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-5">
+                                                <label for="keyword2-5">Packaging</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-6">
+                                                <label for="keyword2-6">Test &amp; Reliability</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-7">
+                                                <label for="keyword2-7">Application</label>
+                                            </span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="emp-blue">Devices type</dt>
+                                    <dd>
+                                        <div class="chk-grp-block">
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-8">
+                                                <label for="keyword2-8">Memory</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-9">
+                                                <label for="keyword2-9">Microcomponent</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-10">
+                                                <label for="keyword2-10">Analog IC/EDA</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-11">
+                                                <label for="keyword2-11">Logic IC(ASIC/ASSP)</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-12">
+                                                <label for="keyword2-12">Optical Semiconductor</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-13">
+                                                <label for="keyword2-13">Discrete Device</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-14">
+                                                <label for="keyword2-14">Imerging Device</label>
+                                            </span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="emp-blue">Trend keyword</dt>
+                                    <dd>
+                                        <div class="chk-grp-block">
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-15">
+                                                <label for="keyword2-15">Al accelerator/ NPU</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-16">
+                                                <label for="keyword2-16">In-Memory computing</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-17">
+                                                <label for="keyword2-17">LLM Inference Chip</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-18">
+                                                <label for="keyword2-18">Edge AI / On-device AI</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-19">
+                                                <label for="keyword2-19">ASIC</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-20">
+                                                <label for="keyword2-20">hybrid Bonding</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-21">
+                                                <label for="keyword2-21">CoWoS/SoIC/EMIB</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-22">
+                                                <label for="keyword2-22">CPO</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-23">
+                                                <label for="keyword2-23">SoW</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-24">
+                                                <label for="keyword2-24">Glass substrate</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-25">
+                                                <label for="keyword2-25">GAA</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-26">
+                                                <label for="keyword2-26">CFET</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-27">
+                                                <label for="keyword2-27">2D Materials</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-28">
+                                                <label for="keyword2-28">BSPDN</label>
+                                            </span>
+                                            <span class="chk-wrap">
+                                                <input type="checkbox" name="interest_keywords" id="keyword2-29">
+                                                <label for="keyword2-29">DTCO/STCO</label>
+                                            </span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn--default !w-full" type="submit"><em>Save Changes</em></button>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </section>
+</main>
+
+@@include('./inc/footer.html')

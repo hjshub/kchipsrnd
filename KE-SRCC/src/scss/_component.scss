@@ -207,20 +207,22 @@
         height:70px;
         padding-left:30px;
         padding-right:30px;
-        background-color:#fff;
         border:1px solid;
         border-style:solid;
         color:#3B3B3B;
-        border-color:#B1BCC4;
+        background-color:#F7F7F7;
+        border-color:#F7F7F7;
         
         &[disabled] {
-            background-color:#F7F7F7;
-            color:#9D9D9D;
-            border:0;
+            background-color:#F7F7F7 !important;
+            color:#9D9D9D !important;
+            border-color:#F7F7F7 !important;
         }
 
+        &:focus,
         &.active,
         &:not(:placeholder-shown) {
+            background-color:#fff;
             border-color:#003197;
         }
     }
@@ -267,7 +269,16 @@
         padding-left:0;
         padding-right:0;
         border:0;
+        background-color:transparent;
         width:calc(100% - 40px);
+        outline:none;
+    }
+
+    &:has(input[type="text"]:focus),
+    &:has(input[type="text"].active),
+    &:has(input[type="text"]:not(:placeholder-shown)) {
+        background-color:#fff;
+        border-color:#003197;
     }
 
     button {
@@ -338,6 +349,7 @@
     &.is-attached {
         .file-name {
             color:#3D576B;
+            border-color:#003197;
         }
     }
 
@@ -364,6 +376,12 @@
 
     input[type=text] {
         padding-right:80px;
+        background-color:#fff;
+        border-color:#003197;
+
+        &::placeholder {
+            color:#3B3B3B;
+        }
     }
     
     @include c.icon-svg(s.$icon-calendar);
@@ -454,20 +472,21 @@ a, button, input[type=button], input[type=submit] {
     
     &.default {
         width:100%;
-        color:#1F1F1F;
+        color:#3B3B3B;
         background-color:#fff;
         border:1px solid;
         border-style:solid;
-        border-color:#B1BCC4;
+        // border-color:#B1BCC4;
+        border-color:#003197;
 
-        &:has(select:disabled) {
-            border:0;
-        }
+        // &:has(select.active),
+        // &:has(select:required:valid) {
+        //     border-color:#003197;
+        // }
 
-        &:has(select.active),
-        &:has(select:required:valid) {
-            border-color:#003197;
-        }
+        // &:has(select:required:invalid) {
+        //     color:#9D9D9D;
+        // }
 
         select {
             width:100%;
@@ -499,7 +518,7 @@ a, button, input[type=button], input[type=submit] {
                 height:9px;
                 border-width:0 0 2px 2px;
                 border-style:solid;
-                border-color:currentColor;
+                border-color:#1F1F1F;
                 content:'';
             }
         }

@@ -650,19 +650,29 @@ section {
             margin-top:80px;
 
             header {
+                color:#3B3B3B;
                 margin-top:80px;
-                padding-bottom:17px;
-                border-bottom:1px solid #3D576B;
-
+                
                 h3 {
                     font-size:30px;
                     font-weight:700;
                     line-height:1;
+                    padding-bottom:17px;
+                    border-bottom:1px solid #3D576B;
+                }
+
+                p {
+                    margin-top:15px;
+                    font-size:16px;
                 }
             }
 
             .register-form {
                 margin-top:40px;
+
+                &:has(.emp-blue) {
+                    margin-top:30px;
+                }
 
                 > dl {
                     @include c.fl-col(15px);
@@ -678,6 +688,11 @@ section {
                                 margin-left:4px;
                             }
                         }
+
+                        &.emp-blue {
+                            font-size:20px;
+                            color:#0088FF;
+                        }
                     }
 
                     & ~ dl {
@@ -689,6 +704,89 @@ section {
                     font-size:16px;
                     color:#003197;
                     margin-top:18px;
+                }
+                
+                .error {
+                    font-size:16px;
+                    color:#FF383C;
+                    margin-top:18px;
+                }
+            }
+
+            .btn-wrap {
+                margin-top:80px;
+            }
+
+            .consent-box {
+                margin-top:80px;
+                box-shadow:0 0 12px 0 rgba(#3D576B, 0.2);
+                border-radius:10px;
+                padding:40px;
+                color:#3B3B3B;
+
+                & ~ .consent-box {
+                    margin-top:40px;
+                }
+
+                header {
+                    margin-top:0;
+                    padding-bottom:20px;
+                    border-bottom:1px solid #3D576B;
+                    
+                    h4 {
+                        font-size:24px;
+                        font-weight:700;
+                        line-height:1;
+                    }
+
+                    p {
+                        margin-top:15px;
+                        font-size:16px;
+                    }
+                }
+
+                .consent-desc {
+                    display:flex;
+                    gap:10px;
+                    font-size:16px;
+                    margin-top:20px;
+                    align-items: baseline;
+                    line-height:1.4;
+
+                    &::before {
+                        width:2px;
+                        height:15px;
+                        background-color:#003197;
+                        content:'';
+                    }
+                }
+
+                .consent-info {
+                    margin-top:20px;
+                    margin-bottom:30px;
+
+                    dl {
+                        display:flex;
+                        flex-direction:column;
+                        gap:10px;
+
+                        dt {
+                            font-size:18px;
+                            font-weight:700;
+                        }
+                        dd {
+                            font-size:16px;
+                        }
+
+                        & ~ dl {
+                            margin-top:20px;
+                        }
+                    }
+                }
+
+                .agreement-box {
+                    padding-top:30px;
+                    border-top:1px solid #3D576B;
                 }
             }
         }

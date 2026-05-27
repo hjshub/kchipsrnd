@@ -208,12 +208,27 @@ const commonFunction = (() => {
 			});
 		});
 	}
+	const toggleCheck = () => {
+		const toggleCheckBox = document.querySelectorAll('input[type="checkbox"][name^="toggle-agreement"]');
+
+		toggleCheckBox.forEach((el) => {
+			el.addEventListener('change', () => {
+				const group = document.querySelectorAll(`input[name="${el.name}"]`);
+				group.forEach((checkbox) => {
+					if(checkbox !== el) {
+						if(el.checked) checkbox.checked = false;
+					}
+				});
+			});
+		});
+	}
 	/*! E 공통 스크립트 */
 
 	const init = () => { // 초기화 함수
 		setGnb();
 		setFlatPickr();
 		setTabControl();
+		toggleCheck();
 		fileUpload();
 	}
 
