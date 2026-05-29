@@ -25,6 +25,15 @@ i, em {
     &.md {
         max-width:856px;
     }
+
+    &.sm {
+        max-width:414px;
+    }
+}
+
+.--divider {
+    border-top:4px solid #01489D;
+    margin:20px 0;
 }
 
 .--col {

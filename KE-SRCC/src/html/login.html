@@ -1,0 +1,43 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | login"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html', {
+    "isLoggedIn": false,
+    "gnbWhite": true
+})
+
+<main id="contents">
+    <h1 class="sr-only">login</h1>
+    <section class="section register login">
+        <div class="--inner sm">
+            <div class="heading-title">
+                <h2>Login</h2>
+            </div>
+            <article>
+                <form method="post" action="">
+                    <div class="register-form">
+                        <div class="flex flex-col gap-[5px]">
+                            <input type="text" placeholder="Please enter your ID" autocomplete="off" required>
+                            <input type="password" placeholder="Please enter your Password" autocomplete="off" required>
+                            <div class="chk-grp">
+                                <span class="chk-wrap">
+                                    <input type="checkbox" name="rememberId" id="rememberId">
+                                    <label for="rememberId">Remember ID</label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn--default" type="submit"><em>Login</em></button>
+                        <a href="find_id.html">Forgot ID/Password?</a>
+                        <a href="register.html" class="text-[#01489D]">Register</a>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </section>
+</main>
+
+@@include('./inc/footer.html')

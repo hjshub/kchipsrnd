@@ -3,29 +3,49 @@
 })
 
 <style>
-    table th,
-    table td {
-        border:1px solid #ccc;
-        height:50px;
-        padding: 0 20px;
-        text-align:center;
-
-        &.link,
-        &.desc {
-            text-align:left;
-        }
-    }
-
     table {
         counter-reset: rowNumber 0;
-    }
 
-    table .num {
-        text-align: center;
-        counter-increment: rowNumber 1;
-    }
-    table .num::before {
-        content: counter(rowNumber);
+        th,
+        td {
+            border:1px solid #ccc;
+            height:50px;
+            padding: 0 20px;
+            text-align:center;
+
+            &.link,
+            &.desc {
+                text-align:left;
+            }
+        }
+
+        th {
+            background-color:#3D576B;
+            color:#fff;
+        }
+
+        .num {
+            text-align: center;
+            counter-increment: rowNumber 1;
+
+            &::before {
+                content: counter(rowNumber);
+            }
+        }
+
+        .has-link td:last-of-type {
+            &::before {
+                display:inline-flex;
+                width:15px;
+                height:13px;
+                background-color:transparent;
+                background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.3125L4.25 8.5625L10.1875 1' stroke='%233D576B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-size:cover;
+                background-position:center;
+                background-repeat:no-repeat;
+                content:'';
+            }
+        }
     }
 </style>
 
@@ -57,76 +77,106 @@
             <tbody>
                 <tr>
                     <td></td>
-                    <td>Guide</td>
+                    <td>guide</td>
                     <td></td>
                     <td></td>
                     <td class="desc">컴포넌트 가이드</td>
-                    <td class="link"><a href="guide.html">guide.html</a></td>
+                    <td class="link"><a href="guide.html" target="_blank" rel="noopener noreferrer">guide.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
-                    <td>Gate</td>
+                    <td>gate</td>
                     <td></td>
                     <td>gate</td>
                     <td class="desc">유럽/한국/미국 이동 게이트</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
-                    <td rowspan="3">main</td>
+                    <td rowspan="7">main</td>
                     <td>main</td>
                     <td>ke_main</td>
                     <td class="desc">메인페이지</td>
-                    <td class="link"><a href="index.html">index.html</a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer">index.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
-                    <td>Login</td>
+                    <td>login</td>
                     <td>ke_login</td>
                     <td class="desc">사용자 로그인</td>
-                    <td class="link"><a href="login.html">login.html</a></td>
+                    <td class="link"><a href="login.html" target="_blank" rel="noopener noreferrer">login.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
-                    <td>Join</td>
+                    <td rowspan="3">join</td>
                     <td>ke_join</td>
                     <td class="desc">사용자 회원가입</td>
-                    <td class="link"><a href="register.html">register.html</a></td>
+                    <td class="link"><a href="register.html" target="_blank" rel="noopener noreferrer">register.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
-                    <td rowspan="6">Information</td>
+                    <td>ke_join_complete</td>
+                    <td class="desc">사용자 회원가입 완료</td>
+                    <td class="link"><a href="register_complete.html" target="_blank" rel="noopener noreferrer">register_complete.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td></td>
+                    <td class="desc">관심키워드 선택</td>
+                    <td class="link"><a href="keyword_select.html" target="_blank" rel="noopener noreferrer">keyword_select.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>find id</td>
+                    <td>ke_login_Find ID</td>
+                    <td class="desc">사용자 아이디 찾기</td>
+                    <td class="link"><a href="find_id.html" target="_blank" rel="noopener noreferrer">find_id.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td>find password</td>
+                    <td></td>
+                    <td class="desc">사용자 비밀번호 찾기</td>
+                    <td class="link"><a href="find_password.html" target="_blank" rel="noopener noreferrer">find_password.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="num"></td>
+                    <td rowspan="6">information</td>
                     <td rowspan="2">network</td>
                     <td>ke_network_list</td>
                     <td class="desc">네트워크 리스트, 관련 연구소 및 학교 / 관련 정보</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="network_list.html" target="_blank" rel="noopener noreferrer">network_list.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
                     <td>ke_network_view</td>
                     <td class="desc">네트워크 상세보기</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="network_view.html" target="_blank" rel="noopener noreferrer">network_view.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
-                    <td rowspan="2">Programs</td>
+                    <td rowspan="2">programs</td>
                     <td>ke_programs_list</td>
                     <td class="desc">프로그램 리스트, 사업공고/교육프로그램 등</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
                     <td>ke_programs_view</td>
                     <td class="desc">프로그램 상세보기</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -134,14 +184,14 @@
                     <td rowspan="2">News</td>
                     <td>ke_news_list</td>
                     <td class="desc">뉴스 리스트</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
                     <td>ke_news_view</td>
                     <td class="desc">뉴스 상세보기</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -150,14 +200,14 @@
                     <td rowspan="2">publication</td>
                     <td>ke_publication_list</td>
                     <td class="desc">센터 발행 보고서 리스트</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
                     <td>ke_publication_view</td>
                     <td class="desc">센터 발행 보고서 상세보기</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -165,14 +215,14 @@
                     <td rowspan="2">trend report</td>
                     <td>ke_trend_list</td>
                     <td class="desc">동향 보고서 리스트</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
                     <td>ke_trend_view</td>
                     <td class="desc">동향 보고서 상세보기</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -181,7 +231,7 @@
                     <td>about us</td>
                     <td>ke_about</td>
                     <td class="desc">센터 소개</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -189,14 +239,14 @@
                     <td rowspan="2">notice</td>
                     <td>ke_notice_list</td>
                     <td class="desc">공지사항 리스트</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
                     <td>ke_notice_view</td>
                     <td class="desc">공지사항 상세보기</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -204,7 +254,7 @@
                     <td>FAQ</td>
                     <td>ke_faq</td>
                     <td class="desc">자주묻는 질문</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -212,7 +262,7 @@
                     <td>contact</td>
                     <td>ke_notice_contact</td>
                     <td class="desc">연락처 및 문의</td>
-                    <td class="link"><a href=""></a></td>
+                    <td class="link"><a href="" target="_blank" rel="noopener noreferrer"></a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -221,7 +271,7 @@
                     <td>my page</td>
                     <td>ke_my page</td>
                     <td class="desc">마이페이지 메인 대시보드</td>
-                    <td class="link"><a href="mypage.html">mypage.html</a></td>
+                    <td class="link"><a href="mypage.html" target="_blank" rel="noopener noreferrer">mypage.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -229,7 +279,7 @@
                     <td>setting</td>
                     <td>ke_setting</td>
                     <td class="desc">나의 정보 설정</td>
-                    <td class="link"><a href="settings.html">setting.html</a></td>
+                    <td class="link"><a href="setting.html" target="_blank" rel="noopener noreferrer">setting.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -237,24 +287,33 @@
                     <td rowspan="3">community</td>
                     <td>ke_community_list</td>
                     <td class="desc">회원 게시판 리스트</td>
-                    <td class="link"><a href="community_list.html">community_list.html</a></td>
+                    <td class="link"><a href="community_list.html" target="_blank" rel="noopener noreferrer">community_list.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
                     <td>ke_community_view</td>
                     <td class="desc">회원 게시판 상세보기</td>
-                    <td class="link"><a href="community_view.html">community_view.html</a></td>
+                    <td class="link"><a href="community_view.html" target="_blank" rel="noopener noreferrer">community_view.html</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="num"></td>
                     <td>ke_community_write</td>
                     <td class="desc">회원 게시판 작성</td>
-                    <td class="link"><a href="community_write.html">community_write.html</a></td>
+                    <td class="link"><a href="community_write.html" target="_blank" rel="noopener noreferrer">community_write.html</a></td>
                     <td></td>
                 </tr>
             </tbody>
         </table>
     </section>
 </main>
+
+<script defer>
+    const link = document.querySelectorAll('table .link a');
+    link.forEach((item) => {
+        if(item.getAttribute('href') !== '') {
+            item.closest('tr').classList.add('has-link');
+        }
+    })
+</script>

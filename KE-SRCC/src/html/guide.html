@@ -377,12 +377,68 @@
             </dd>
           </dl>
       </div>
+      <div class="--row">
+        <dl class="comp-item w-[856px]">
+          <dt>키워드선택 type2 (checkbox) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+          <dd>
+            <div class="chk-grp-rounded">
+              <span class="chk-wrap">
+                <input type="checkbox" name="checkbox-keyword-other-1" id="checkbox-keyword-other-1" checked>
+                <label for="checkbox-keyword-other-1">Material</label>
+              </span>
+              <span class="chk-wrap">
+                <input type="checkbox" name="checkbox-keyword-other-2" id="checkbox-keyword-other-2">
+                <label for="checkbox-keyword-other-2">Equipment</label>
+              </span>
+              <span class="chk-wrap">
+                <input type="checkbox" name="checkbox-keyword-other-3" id="checkbox-keyword-other-3">
+                <label for="checkbox-keyword-other-3">Design/EDA</label>
+              </span>
+              <span class="chk-wrap">
+                <input type="checkbox" name="checkbox-keyword-other-4" id="checkbox-keyword-other-4">
+                <label for="checkbox-keyword-other-4">Process</label>
+              </span>
+              <span class="chk-wrap">
+                <input type="checkbox" name="checkbox-keyword-other-5" id="checkbox-keyword-other-5">
+                <label for="checkbox-keyword-other-5">Packaging</label>
+              </span>
+              <span class="chk-wrap">
+                <input type="checkbox" name="checkbox-keyword-other-6" id="checkbox-keyword-other-6">
+                <label for="checkbox-keyword-other-6">Test & Reliability</label>
+              </span>
+              <span class="chk-wrap">
+                <input type="checkbox" name="checkbox-keyword-other-7" id="checkbox-keyword-other-7">
+                <label for="checkbox-keyword-other-7">Application</label>
+              </span>
+            </div>
+          </dd>
+        </dl>
+        <dl class="comp-item w-[856px]">
+            <dt>키워드선택 type2 (radio) <a href="javascript:void(0);" title="컴포넌트 복사하기"><em class="sr-only">컴포넌트 복사하기</em></a></dt>
+            <dd>
+              <div class="radio-grp-rounded">
+                <span class="radio-wrap">
+                  <input type="radio" name="radio-keyword-other" id="radio-keyword-other-1" checked>
+                  <label for="radio-keyword-other-1">EU</label>
+                </span>
+                <span class="radio-wrap">
+                  <input type="radio" name="radio-keyword-other" id="radio-keyword-other-2">
+                  <label for="radio-keyword-other-2">US</label>
+                </span>
+                <span class="radio-wrap">
+                  <input type="radio" name="radio-keyword-other" id="radio-keyword-other-3">
+                  <label for="radio-keyword-other-3">KR</label>
+                </span>
+              </div>
+            </dd>
+          </dl>
+      </div>
     </div>
   </section>
 </main>
 
-<script defer>
-  document.addEventListener('DOMContentLoaded', () => {
+<script>
+  window.addEventListener('load', () => {
       const commonFunction = window.commonFunction;
       
       const guide = document.querySelector('#guide');

@@ -421,6 +421,12 @@ a, button, input[type=button], input[type=submit] {
             background-color:#01489D;
             color:#FECC2F;
         }
+
+        &.active,
+        &.active:hover {
+            background-color:#0088FF;
+            color:#fff;
+        }
     }
 
     &.btn--type2 {
@@ -665,6 +671,48 @@ a, button, input[type=button], input[type=submit] {
     }
 }
 
+/*! checkbox round type */ 
+.chk-grp-rounded {
+    @include c.fl-wrap;
+    gap:10px 5px;
+    width:100%;
+
+    .chk-wrap {
+        @include c.fl;
+    }
+
+    input[type=checkbox] {
+        @include c.sr-only;
+        appearance:none;
+
+        &:checked {
+            & + label {
+                font-weight:700;
+                background-color:#003197;
+                color:#fff;
+            }
+        }
+    }
+
+    label {
+        @include c.fl;
+        width:100%;
+        height:30px;
+        align-items:center;
+        justify-content:center;
+        padding:0 10px;
+        color:#3B3B3B;
+        font-size:14px;
+        background-color:transparent;
+        border-radius:50px;
+        text-align:center;
+
+        &::before {
+            content:'#';
+        }
+    }
+}
+
 /*! radio */
 .radio-grp {
     @include c.fl-wrap(20px);
@@ -761,7 +809,151 @@ a, button, input[type=button], input[type=submit] {
         text-align:center;
 
         &::before {
-            content:'#';
+            // content:'#';
         }
     }
+}
+
+/*! radio round type */ 
+.radio-grp-rounded {
+    @include c.fl-wrap;
+    gap:10px 5px;
+    width:100%;
+
+    .radio-wrap {
+        @include c.fl;
+    }
+
+    input[type=radio] {
+        @include c.sr-only;
+        appearance:none;
+
+        &:checked {
+            & + label {
+                font-weight:700;
+                background-color:#003197;
+                color:#fff;
+            }
+        }
+    }
+
+    label {
+        @include c.fl;
+        width:100%;
+        height:30px;
+        align-items:center;
+        justify-content:center;
+        padding:0 10px;
+        color:#3B3B3B;
+        font-size:14px;
+        background-color:transparent;
+        border-radius:50px;
+        text-align:center;
+
+        &::before {
+            // content:'#';
+        }
+    }
+}
+
+/*! modal */ 
+.modal {
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:414px;
+    transform:translate(-50%, -50%);
+    border-radius:10px;
+    background-color:#fff;
+    z-index:111;
+    padding:40px 0 50px;
+    color:#000;
+
+    &.modal-shown {
+        display:block;
+    }
+
+    &.dialog {
+        top:150px;
+        transform:translate(-50%, 0);
+    }
+
+    .modal-header {
+        position:absolute;
+        left:0;
+        top:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:100%;
+        height:40px;
+        padding:0 40px 0 20px;
+
+        a {
+            @include c.icon-svg(s.$icon-close);
+            position:absolute;
+            right:15px;
+            top:50%;
+            transform:translateY(-50%);
+        }
+
+        .modal-title {
+            line-height:1.4;
+            font-size: 20px;
+        }
+    }
+
+    .modal-body {
+        padding:25px 0 35px;
+
+        .modal-content {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:20px;
+        }
+
+        .modal-content-title {
+            font-size:24px;
+            text-align:center;
+        }
+
+        .modal-content-desc {
+            font-size:14px;
+            color:#9D9D9D;
+            text-align:center;
+        }
+    }
+
+    .modal-footer {
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        padding:0 20px;
+        .btn--default {
+            height:55px;
+            max-width:196px;
+        }
+    }
+
+    &.modal-shown + .modal-dimmed {
+        display:block;
+    }
+}
+
+.modal-dimmed {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.8);
+    z-index:10;
+}
+
+html.modal-open {
+    overflow:hidden;
+    height:100vh;
 }

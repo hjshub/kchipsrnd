@@ -20,7 +20,7 @@
     transition-timing-function: ease-in-out;
 
     @at-root {
-        .up {
+        :root.up {
             .gnb {
                 position:fixed;
                 z-index:999;

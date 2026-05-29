@@ -6,6 +6,8 @@ const { $, Swiper, gsap, flatpickr } = KchipsLib;
 const commonFunction = (() => {
 	let lastScroll = 0;
 	let prevDir = null; // 1: down, -1: up
+	let modalControl = null;
+	let pendingModalTargets = [];
 
 	/*! S helper */
 	const delay = (n) => { // delay
@@ -36,17 +38,17 @@ const commonFunction = (() => {
 		// 초기 1회 또는 방향 전환 시에만 실행
 		if (prevDir === null || dir !== prevDir) {
 			if (dir === 1) {
-				document.body.classList.remove('up');
-				document.body.classList.add('down');
+				document.documentElement.classList.remove('up');
+				document.documentElement.classList.add('down');
 				gsap.set(gnb, { y: 0 });
 			} else {
-				document.body.classList.remove('down');
-				document.body.classList.add('up');
+				document.documentElement.classList.remove('down');
+				document.documentElement.classList.add('up');
 				gsap.fromTo(gnb, { y: '-100%' }, { y: '0%', duration: 0.3 });
 			}
 		}
 
-		if(lastScroll == 0) document.body.classList.remove('up', 'down');
+		if(lastScroll == 0) document.documentElement.classList.remove('up', 'down');
 
 		prevDir = dir;
 
@@ -222,6 +224,98 @@ const commonFunction = (() => {
 			});
 		});
 	}
+	const setModalControl = () => {
+		const modalList = [...document.querySelectorAll('.modal')];
+
+		if (!modalList.length) {
+			return {
+				openModal: () => {},
+				closeModal: () => {},
+				closeAllModals: () => {},
+				getModal: () => null,
+			};
+		}
+
+		const getModal = (target) => {
+			if (!target) return null;
+
+			if (target instanceof Element) { // element
+				if (target.classList.contains('modal')) return target;
+				return target.closest('.modal'); // 없으면 null
+			}
+
+			if (typeof target === 'string') { // 문자열
+				return modalList.find((modal) => modal.dataset.modalMatch === target) || null;
+			}
+
+			return null;
+		};
+
+		const syncRootState = () => {
+			const hasShownModal = modalList.some((modal) => modal.classList.contains('modal-shown'));
+			document.documentElement.classList.toggle('modal-open', hasShownModal);
+		};
+
+		const closeModal = (target) => {
+			const modal = getModal(target);
+			if (!modal) return;
+
+			modal.classList.remove('modal-shown');
+			syncRootState();
+		};
+
+		const closeAllModals = () => {
+			modalList.forEach((modal) => {
+				modal.classList.remove('modal-shown');
+			});
+
+			syncRootState();
+		};
+
+		const openModal = (target) => {
+			const modal = getModal(target);
+			if (!modal) return;
+
+			closeAllModals();
+			modal.classList.add('modal-shown');
+			syncRootState();
+		};
+
+		document.addEventListener('click', (event) => {
+			const closeButton = event.target.closest('.btn-modal-close');
+			if (closeButton) {
+				closeModal(closeButton.closest('.modal'));
+				return;
+			}
+
+			const dimmed = event.target.closest('.modal-dimmed');
+			if (dimmed) {
+				const shownModal = modalList.find((el) => el.classList.contains('modal-shown'));
+				closeModal(shownModal);
+				return;
+			}
+
+			const trigger = event.target.closest('[data-modal-target]');
+			if (!trigger) return;
+
+			const rawTarget = trigger.getAttribute('data-modal-target') || '';
+			if (!rawTarget) return;
+
+			openModal(rawTarget);
+		});
+
+		const autoShowModal = modalList.find((modal) => modal.classList.contains('modal-shown'));
+		if (autoShowModal) {
+			openModal(autoShowModal);
+		}
+
+		return {
+			openModal,
+			closeModal,
+			closeAllModals,
+			getModal,
+		};
+	}
 	/*! E 공통 스크립트 */
 
 	const init = () => { // 초기화 함수
@@ -230,6 +324,14 @@ const commonFunction = (() => {
 		setTabControl();
 		toggleCheck();
 		fileUpload();
+		modalControl = setModalControl();
+
+		if (pendingModalTargets.length) {
+			pendingModalTargets.forEach((target) => {
+				modalControl.openModal(target);
+			});
+			pendingModalTargets = [];
+		}
 	}
 
 	return {
@@ -238,6 +340,18 @@ const commonFunction = (() => {
 		setSwiper,
 		updateDimByCount,
 		copyTextToClipboard,
+		openModal: (target) => {
+			if (modalControl) {
+				modalControl.openModal(target);
+				return;
+			}
+			// init (초기화) 전에 모달 호출 시도한 경우 배열로 저장
+			//  -> 보류 했다가 init 완료 시점에 차례로 실행
+			pendingModalTargets.push(target);
+		},
+		closeModal: (target) => modalControl?.closeModal(target),
+		closeAllModals: () => modalControl?.closeAllModals(),
+		getModal: (target) => modalControl?.getModal(target),
 	}
 })();
 
@@ -245,10 +359,10 @@ window.commonFunction = commonFunction;
 
 document.addEventListener('DOMContentLoaded', () => {
 	if ($) {
-		$('body').addClass('is-ready');
+		$('html').addClass('is-ready');
 	}
 
-	if (document.body.classList.contains('is-ready')) {
+	if (document.documentElement.classList.contains('is-ready')) {
 		commonFunction.init();
 	}
 });

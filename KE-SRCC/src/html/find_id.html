@@ -1,0 +1,68 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | find id"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html', {
+    "isLoggedIn": false,
+    "gnbWhite": true
+})
+
+<main id="contents">
+    <h1 class="sr-only">find id</h1>
+    <section class="section register login">
+        <div class="--inner sm">
+            <div class="heading-title">
+                <h2>Forgot ID/Password</h2>
+            </div>
+            <article>
+                <div class="tab-nav-default">
+                    <span><a href="find_id.html" class="on">Find ID</a></span>
+                    <span><a href="find_password.html">Find Password</a></span>
+                </div>
+                <div class="tab-contents">
+                    <form method="post" action="">
+                        <div class="register-form"> 
+                            <dl>
+                                <dt class="req">Name</dt>
+                                <dd>
+                                    <input type="text" placeholder="Please enter your name" autocomplete="off" required>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="req">E-Mail</dt>
+                                <dd>
+                                    <input type="text" placeholder="Please enter the email used to sign up" autocomplete="off" required>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="btn-wrap">
+                            <button class="btn--default on" type="submit"><em>Find ID</em></button>
+                            <a href="login.html" class="btn--default"><em>Login</em></a>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+@@include('./inc/footer.html')
+
+@@include('./inc/modal.html', {
+    "id": "findIdResult",
+    "show": false,
+    "label": "Find ID Result",
+    "title": "",
+    "contentTitle": "The ID you registered with,<br><b>JM Kim,</b> is <b class='text-[#01489D] underline'>ultralain.</b>",
+    "contentDesc": "Registration Date : 2026-03-31",
+    "footer": "<a href='login.html' class='btn--default'>Login</a>"
+})
+
+<script>
+    // 모달 오픈
+    window.addEventListener('load', () => {
+        const commonFunction = window.commonFunction;
+        commonFunction.openModal('findIdResult'); // 인자 값을 모달의 data-modal-match 값과 매칭
+    });
+</script>

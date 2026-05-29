@@ -1,0 +1,406 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | Network"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html', {
+    "isLoggedIn": true,
+    "gnbWhite": false
+})
+
+<main id="contents">
+    <h1 class="sr-only">Network</h1>
+    <section class="top-kv network">
+        <div class="--inner">
+            <div class="breadcrumb">
+                <span class="home"><em class="sr-only">홈</em></span>
+                <span>Information</span>
+                <span class="current">Network</span>
+            </div>
+
+            <div class="heading-title">
+                <h2>Network</h2>
+                <span class="desc">반도체 산업의 미래를 연결합니다. 주요 연구소, 학교, 기업 전문가 네트워크를 만나보세요.</span>
+            </div>
+        </div>
+    </section>
+    <section class="section mid">
+      <div class="filter-wrap --inner">
+        <div class="filter-list">
+          <dl>
+            <dt>Organization Type</dt>
+            <dd>
+              <div class="filter-block">
+                <div class="radio-grp-rounded">
+                  <span class="radio-wrap">
+                    <input type="radio" name="organization-type" id="organization-type-1">
+                    <label for="organization-type-1">University</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="organization-type" id="organization-type-2">
+                    <label for="organization-type-2">Research Institute</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="organization-type" id="organization-type-3">
+                    <label for="organization-type-3">Corporation</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="organization-type" id="organization-type-4">
+                    <label for="organization-type-4">Other</label>
+                  </span>
+                </div>
+              </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Current Region</dt>
+            <dd>
+              <div class="filter-block">
+                <div class="radio-grp-rounded">
+                  <span class="radio-wrap">
+                    <input type="radio" name="current-region" id="current-region-1">
+                    <label for="current-region-1">EU</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="current-region" id="current-region-2">
+                    <label for="current-region-2">US</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="current-region" id="current-region-3">
+                    <label for="current-region-3">KR</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="current-region" id="current-region-4">
+                    <label for="current-region-4">Other</label>
+                  </span>
+                </div>
+              </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Semiconductor Keywords</dt>
+            <dd>
+              <div class="filter-block">
+                <div class="keyword-category">Semiconductor Value chain</div>
+                <div class="chk-grp-rounded">
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="keyword-1-1" id="keyword-1-1" checked="">
+                    <label for="keyword-1-1">Material</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="keyword-1-2" id="keyword-1-2">
+                    <label for="keyword-1-2">Equipment</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="keyword-1-3" id="keyword-1-3">
+                    <label for="keyword-1-3">Design/EDA</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="keyword-1-4" id="keyword-1-4">
+                    <label for="keyword-1-4">Process</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="keyword-1-5" id="keyword-1-5">
+                    <label for="keyword-1-5">Packaging</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="keyword-1-6" id="keyword-1-6">
+                    <label for="keyword-1-6">Test &amp; Reliability</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="keyword-1-7" id="keyword-1-7">
+                    <label for="keyword-1-7">Application</label>
+                  </span>
+                </div>
+              </div>
+
+              <div class="filter-block">
+                <div class="keyword-category">Devices type</div>
+                <div class="chk-grp-rounded">
+                    <span class="chk-wrap">
+                        <input type="checkbox" name="keyword-2-1" id="keyword-2-1">
+                        <label for="keyword-2-1">Memory</label>
+                    </span>
+                    <span class="chk-wrap">
+                        <input type="checkbox" name="keyword-2-2" id="keyword-2-2">
+                        <label for="keyword-2-2">Microcomponent</label>
+                    </span>
+                    <span class="chk-wrap">
+                        <input type="checkbox" name="keyword-2-3" id="keyword-2-3">
+                        <label for="keyword-2-3">Analog IC/EDA</label>
+                    </span>
+                    <span class="chk-wrap">
+                        <input type="checkbox" name="keyword-2-4" id="keyword-2-4">
+                        <label for="keyword-2-4">Logic IC(ASIC/ASSP)</label>
+                    </span>
+                    <span class="chk-wrap">
+                        <input type="checkbox" name="keyword-2-5" id="keyword-2-5">
+                        <label for="keyword-2-5">Optical Semiconductor</label>
+                    </span>
+                    <span class="chk-wrap">
+                        <input type="checkbox" name="keyword-2-6" id="keyword-2-6">
+                        <label for="keyword-2-6">Discrete Device</label>
+                    </span>
+                    <span class="chk-wrap">
+                        <input type="checkbox" name="keyword-2-7" id="keyword-2-7">
+                        <label for="keyword-2-7">Imerging Device</label>
+                    </span>
+                </div>
+              </div>
+
+              <div class="filter-block">
+                <div class="keyword-category">Trend keyword</div>
+                <div class="chk-grp-rounded">
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-1" id="keyword-3-1">
+                      <label for="keyword-3-1">AI accelerator/ NPU</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-2" id="keyword-3-2">
+                      <label for="keyword-3-2">In-Memory computing</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-3" id="keyword-3-3">
+                      <label for="keyword-3-3">LLM Inference Chip</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-4" id="keyword-3-4">
+                      <label for="keyword-3-4">Edge AI / On-device AI</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-5" id="keyword-3-5">
+                      <label for="keyword-3-5">ASIC</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-6" id="keyword-3-6">
+                      <label for="keyword-3-6">hybrid Bonding</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-7" id="keyword-3-7">
+                      <label for="keyword-3-7">CoWoS/SoIC/EMIB</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-8" id="keyword-3-8">
+                      <label for="keyword-3-8">CPO</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-9" id="keyword-3-9">
+                      <label for="keyword-3-9">SoW</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-10" id="keyword-3-10">
+                      <label for="keyword-3-10">Glass substrate</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-11" id="keyword-3-11">
+                      <label for="keyword-3-11">GAA</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-12" id="keyword-3-12">
+                      <label for="keyword-3-12">CFET</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-13" id="keyword-3-13">
+                      <label for="keyword-3-13">2D Materials</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-14" id="keyword-3-14">
+                      <label for="keyword-3-14">BSPDN</label>
+                  </span>
+                  <span class="chk-wrap">
+                      <input type="checkbox" name="keyword-3-15" id="keyword-3-15">
+                      <label for="keyword-3-15">DTCO/STCO</label>
+                  </span>
+                </div>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="filter-button-area">
+          
+        </div>
+      </div>
+    </section>
+    <section class="section list">
+        <div class="--inner">
+            <div class="count-combo">
+              <span class="counter"><b>Total</b><em class="num">24</em></span>
+              <span class="search-wrap">
+                <label for="search"><em class="sr-only">검색</em></label>
+                <input type="text" placeholder="Search" id="search" autocomplete="off">
+                <button type="button"><em class="sr-only">검색 버튼</em></button>
+              </span>
+            </div>
+            <div class="--divider"><em class="sr-only">구분선</em></div>
+            <div class="list-wrap type-2">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_network_01.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge">
+                          <em>Research Institute</em>
+                          <i class="icon icon-network-kor"><em class="sr-only">kor</em></i>
+                        </span>
+                        <strong class="title">SNU Semiconductor Research Center</strong>
+                        <span class="research-area">
+                          <b>Research Area</b>Next-Generation Logic Devices
+                        </span>
+                        <span class="desc">
+                          최첨단 연구 시설을 기반으로 차세대 반도체 R&D와 교육 프로그램을 이끄는 핵심 연구 기관입니다.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_network_02.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge">
+                          <em>Corporation</em>
+                          <i class="icon icon-network-eu"><em class="sr-only">eu</em></i>
+                        </span>
+                        <strong class="title">Euro Nanotech Institute</strong>
+                        <span class="research-area">
+                          <b>Research Area</b>EUV Lithography Technologies
+                        </span>
+                        <span class="desc">
+                          친환경 반도체 신소재 개발과 초저전력 나노 소자 분야의 글로벌 공동 R&D를 주도하는 유럽 핵심 연구소입니다.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_network_03.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge">
+                          <em>University</em>
+                          <i class="icon icon-network-us"><em class="sr-only">us</em></i>
+                        </span>
+                        <strong class="title">Microelectronics at Arizona State University</strong>
+                        <span class="research-area">
+                          <b>Research Area</b>Advanced Packaging & System IC
+                        </span>
+                        <span class="desc">
+                          친환경 반도체 신소재 개발과 초저전력 나노 소자 분야의 글로벌 공동 R&D를 주도하는 유럽 핵심 연구소입니다.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_network_01.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge">
+                          <em>Research Institute</em>
+                          <i class="icon icon-network-kor"><em class="sr-only">kor</em></i>
+                        </span>
+                        <strong class="title">SNU Semiconductor Research Center</strong>
+                        <span class="research-area">
+                          <b>Research Area</b>Next-Generation Logic Devices
+                        </span>
+                        <span class="desc">
+                          최첨단 연구 시설을 기반으로 차세대 반도체 R&D와 교육 프로그램을 이끄는 핵심 연구 기관입니다.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_network_02.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge">
+                          <em>Corporation</em>
+                          <i class="icon icon-network-eu"><em class="sr-only">eu</em></i>
+                        </span>
+                        <strong class="title">Euro Nanotech Institute</strong>
+                        <span class="research-area">
+                          <b>Research Area</b>EUV Lithography Technologies
+                        </span>
+                        <span class="desc">
+                          친환경 반도체 신소재 개발과 초저전력 나노 소자 분야의 글로벌 공동 R&D를 주도하는 유럽 핵심 연구소입니다.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_network_03.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge">
+                          <em>University</em>
+                          <i class="icon icon-network-us"><em class="sr-only">us</em></i>
+                        </span>
+                        <strong class="title">Microelectronics at Arizona State University</strong>
+                        <span class="research-area">
+                          <b>Research Area</b>Advanced Packaging & System IC
+                        </span>
+                        <span class="desc">
+                          친환경 반도체 신소재 개발과 초저전력 나노 소자 분야의 글로벌 공동 R&D를 주도하는 유럽 핵심 연구소입니다.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_network_01.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge">
+                          <em>Research Institute</em>
+                          <i class="icon icon-network-kor"><em class="sr-only">kor</em></i>
+                        </span>
+                        <strong class="title">SNU Semiconductor Research Center</strong>
+                        <span class="research-area">
+                          <b>Research Area</b>Next-Generation Logic Devices
+                        </span>
+                        <span class="desc">
+                          최첨단 연구 시설을 기반으로 차세대 반도체 R&D와 교육 프로그램을 이끄는 핵심 연구 기관입니다.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_network_02.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge">
+                          <em>Corporation</em>
+                          <i class="icon icon-network-eu"><em class="sr-only">eu</em></i>
+                        </span>
+                        <strong class="title">Euro Nanotech Institute</strong>
+                        <span class="research-area">
+                          <b>Research Area</b>EUV Lithography Technologies
+                        </span>
+                        <span class="desc">
+                          친환경 반도체 신소재 개발과 초저전력 나노 소자 분야의 글로벌 공동 R&D를 주도하는 유럽 핵심 연구소입니다.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+            <div class="list-more-view">
+                <a href="javascript:void(0);"><span>MORE VIEW<em>(9/24)</em></span></a>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include('./inc/footer.html')
