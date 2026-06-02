@@ -1,0 +1,303 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | Calls & Events"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html', {
+    "isLoggedIn": true,
+    "gnbWhite": false
+})
+
+<main id="contents">
+    <h1 class="sr-only">Calls & Events</h1>
+    <section class="top-kv ecosystem">
+        <div class="--inner">
+            <div class="breadcrumb">
+                <span class="home"><em class="sr-only">홈</em></span>
+                <span>Ecosystem</span>
+                <span class="current">Calls &amp; Events</span>
+            </div>
+
+            <div class="heading-title">
+                <h2>Calls & Events</h2>
+                <span class="desc">반도체 분야의 주요 R&D 사업 공고와 맞춤형 교육 프로그램과 다양한 행사를 한눈에 확인해 보세요.</span>
+            </div>
+        </div>
+    </section>
+    <section class="section mid">
+      <div class="filter-wrap --inner" id="programFilter"> <!--  필터 영역 off 시 is-folded 클래스 추가-->
+        <div class="filter-list">
+          <dl>
+            <dt>Categorye</dt>
+            <dd>
+              <div class="filter-block">
+                <div class="chk-grp-rounded">
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-1" id="category-1">
+                    <label for="category-1">Research</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-2" id="category-2">
+                    <label for="category-2">Announcements</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-3" id="category-3">
+                    <label for="category-3">Education</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-4" id="category-4">
+                    <label for="category-4">Seminar</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-5" id="category-5">
+                    <label for="category-5">Forum</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-6" id="category-6">
+                    <label for="category-6">Info Session</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-7" id="category-7">
+                    <label for="category-7">Event</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-8" id="category-8">
+                    <label for="category-8">Promotion</label>
+                  </span>
+                  <span class="chk-wrap">
+                    <input type="checkbox" name="category-9" id="category-9">
+                    <label for="category-9">Other</label>
+                  </span>
+                </div>
+              </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Date Range</dt>
+            <dd>
+              <div class="filter-block">
+                <div class="radio-grp-rounded">
+                  <span class="radio-wrap">
+                    <input type="radio" name="date-range" id="date-range-1">
+                    <label for="date-range-1">All</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="date-range" id="date-range-2">
+                    <label for="date-range-2">This Week</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="date-range" id="date-range-3">
+                    <label for="date-range-3">Last Week</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="date-range" id="date-range-4">
+                    <label for="date-range-4">Last 1 Month</label>
+                  </span>
+                  <span class="radio-wrap">
+                    <input type="radio" name="date-range" id="date-range-5">
+                    <label for="date-range-5">Last 3 Months</label>
+                  </span>
+                </div>
+                <div class="date-range-fields">
+                  <span class="date-field">
+                    <input type="text" class="js-datepicker flatpickr-input" placeholder="Choose dates" readonly="readonly" inputmode="none" autocomplete="off">
+                  </span>
+                  <span>~</span>
+                  <span class="date-field">
+                    <input type="text" class="js-datepicker flatpickr-input" placeholder="Choose dates" readonly="readonly" inputmode="none" autocomplete="off">
+                  </span>
+                </div>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="filter-button-area">
+          <a href="javascript:void(0)" onclick="window.commonFunction.openFilter('#programFilter');" class="filter-search">Advanced Search</a>
+          <a href="javascript:void(0);" onclick="window.commonFunction.resetFilter('#programFilter');" class="filter-reset">Reset</a>
+          <a href="javascript:void(0);" onclick="window.commonFunction.closeFilter('#programFilter');" class="filter-close">Close</a>
+        </div>
+      </div>
+    </section>
+    <section class="section list">
+        <div class="--inner">
+            <div class="count-combo">
+              <span class="counter"><b>Total</b><em class="num">24</em></span>
+              <span class="search-wrap">
+                <label for="search"><em class="sr-only">검색</em></label>
+                <input type="text" placeholder="Search" id="search" autocomplete="off">
+                <button type="button"><em class="sr-only">검색 버튼</em></button>
+              </span>
+            </div>
+            <div class="--divider"><em class="sr-only">구분선</em></div>
+            <div class="list-wrap type-3">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_program_01.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge emp-blue">
+                          <em>Research</em>
+                        </span>
+                        <strong class="title">한-EU 차세대 뉴로모픽 소자 공동 연구</strong>
+                        <span class="desc">
+                          유럽 내 주요 나노기술 연구소와 연계하여 저전력·고효율 반도체 소자를 설계하고 프로토타입을 검증하는 공동 프로젝트입니다.
+                        </span>
+                        <span class="period">
+                          <b>Period</b>
+                          <em>2026-05-10 ~ 2026-06-15</em>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_program_02.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge emp-orange">
+                          <em>Announcements</em>
+                        </span>
+                        <strong class="title">2026 글로벌 팹리스 스타트업 유럽  진출 지원사업</strong>
+                        <span class="desc">
+                          독자적인 IP를 보유한 국내 팹리스 기업을 대상으로 유럽 현지 파트너십 매칭 및 현지화 마케팅 비용을 지원합니다.
+                        </span>
+                        <span class="period">
+                          <b>Period</b>
+                          <em>2026-05-10 ~ 2026-06-15</em>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_program_03.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge emp-lime">
+                          <em>Forum</em>
+                        </span>
+                        <strong class="title">2025 국제 반도체 연구자 포럼</strong>
+                        <span class="desc">
+                          반도체는 AI, 양자기술, 국방 등 전략 산업의 핵심 기반 기술로, 높은 개발 비용과 기술 복잡성에 대응하기 위해 국가 간, 산학연 간의 긴밀한 전략적 협력과 글로벌 연구 네트워크 구축이 필수적으로 요구되고 있습니다.
+                        </span>
+                        <span class="period">
+                          <b>Period</b>
+                          <em>2026-05-10 ~ 2026-06-15</em>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_program_04.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge emp-purple">
+                          <em>Promotion</em>
+                        </span>
+                        <strong class="title">한-EU 반도체 공동 연구 성과  전시회 (Korea-EU Tech Showcase 2026)</strong>
+                        <span class="desc">
+                          반도체는 AI, 양자기술, 국방 등 전략 산업의 핵심 기반 기술로, 높은 개발 비용과 기술 복잡성에 대응하기 위해 국가 간, 산학연 간의 긴밀한 전략적 협력과 글로벌 연구 네트워크 구축이 필수적으로 요구되고 있습니다.
+                        </span>
+                        <span class="period">
+                          <b>Period</b>
+                          <em>2026-05-10 ~ 2026-06-15</em>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_program_05.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge emp-teal">
+                          <em>Education</em>
+                        </span>
+                        <strong class="title">시스템 반도체 물리 AI(Physical AI) 설계 전문가 과정</strong>
+                        <span class="desc">
+                          실제 물리 환경에 최적화된 AI 알고리즘을 하드웨어로 구현하기 위한 시스템 반도체 설계 및 실습 교육 프로그램입니다.
+                        </span>
+                        <span class="period">
+                          <b>Period</b>
+                          <em>2026-05-10 ~ 2026-06-15</em>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_program_06.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge emp-lime">
+                          <em>Forum</em>
+                        </span>
+                        <strong class="title">2026 한-EU 차세대 반도체    전략 파트너십 포럼</strong>
+                        <span class="desc">
+                          반도체는 AI, 양자기술, 국방 등 전략 산업의 핵심 기반 기술로, 높은 개발 비용과 기술 복잡성에 대응하기 위해 국가 간, 산학연 간의 긴밀한 전략적 협력과 글로벌 연구 네트워크 구축이 필수적으로 요구되고 있습니다.
+                        </span>
+                        <span class="period">
+                          <b>Period</b>
+                          <em>2026-05-10 ~ 2026-06-15</em>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_program_06.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge emp-blue">
+                          <em>Research</em>
+                        </span>
+                        <strong class="title">지속 가능한 반도체 제조를 위한 ESG 공정 기술 개발</strong>
+                        <span class="desc">
+                          친환경 소재 도입 및 탄소 배출 저감을 위해 한국과 유럽의 핵심 기업들이 협업하는 중장기 기술 개발 과제입니다.
+                        </span>
+                        <span class="period">
+                          <b>Period</b>
+                          <em>2026-05-10 ~ 2026-06-15</em>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb/@thumb_program_06.png" alt="">
+                      </div>
+                      <div class="info">
+                        <span class="badge emp-green">
+                          <em>Seminar</em>
+                        </span>
+                        <strong class="title">벨기에 imec 연계 초미세 공정 기술  교류 세미나</strong>
+                        <span class="desc">
+                          반도체는 AI, 양자기술, 국방 등 전략 산업의 핵심 기반 기술로, 높은 개발 비용과 기술 복잡성에 대응하기 위해 국가 간, 산학연 간의 긴밀한 전략적 협력과 글로벌 연구 네트워크 구축이 필수적으로 요구되고 있습니다.
+                        </span>
+                        <span class="period">
+                          <b>Period</b>
+                          <em>2026-05-10 ~ 2026-06-15</em>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+            <div class="list-more-view">
+                <a href="javascript:void(0);"><span>MORE VIEW<em>(8/24)</em></span></a>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include('./inc/footer.html')

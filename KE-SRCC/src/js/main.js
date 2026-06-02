@@ -8,28 +8,57 @@ const commonFunction = (() => {
 	let prevDir = null; // 1: down, -1: up
 	let modalControl = null;
 	let pendingModalTargets = [];
+	let filterControl = null;
 
-	/*! S helper */
-	const delay = (n) => { // delay
+	const delay = (n) => { // 딜레이 함수 (밀리초 단위)
 		new Promise((resolve) => {
 			setTimeout(() => {
 				resolve();
 			}, n);
 		});
 	}
-	const getScrollDelta = () => {
+	const getScrollDelta = () => { // 스크롤 델타 계산
 		const currentScroll = window.scrollY || document.documentElement.scrollTop;
 		const delta = currentScroll - lastScroll;
 		lastScroll = currentScroll;
 
 		return delta;
 	}
-	/*! E helper */
-
-	/*! S 공통 스크립트 */
-	const setGnb = () => { // set gnb
-		const gnb = document.querySelector('.gnb');
+	const setGnb = () => { // gnb 설정
+		const gnbList = [...document.querySelectorAll('.gnb')];
+		const gnb = gnbList[gnbList.length - 1];
+		if(!gnb) return;
+		const list = gnb.querySelectorAll('.menu > li');
 		const delta = getScrollDelta();
+
+		list.forEach((item) => {
+			item.addEventListener('mouseenter', () => { // 마우스 오버 시
+				if(!item.querySelector('.depth2')) return;
+				item.querySelector('.depth2').style.opacity = '1';
+				item.querySelector('.depth2').style.visibility = 'visible';
+				item.querySelector('.depth2').style.pointerEvents = 'auto';
+			});
+			item.addEventListener('focusin', () => { // 포커스 시
+				if(!item.querySelector('.depth2')) return;
+				item.querySelector('.depth2').style.opacity = '1';
+				item.querySelector('.depth2').style.visibility = 'visible';
+				item.querySelector('.depth2').style.pointerEvents = 'auto';
+			});
+			item.addEventListener('mouseleave', () => { // 마우스 리브 시 실행할 코드
+				if(!item.querySelector('.depth2')) return;
+				item.querySelector('.depth2').style.opacity = '0';
+				item.querySelector('.depth2').style.visibility = 'hidden';
+				item.querySelector('.depth2').style.pointerEvents = 'none';
+			});
+			item.addEventListener('focusout', (event) => { // 포커스 아웃 시
+				if(!item.querySelector('.depth2')) return;
+				if(event.relatedTarget && event.relatedTarget.closest('.depth2')) return;
+				item.querySelector('.depth2').style.opacity = '0';
+				item.querySelector('.depth2').style.visibility = 'hidden';
+				item.querySelector('.depth2').style.pointerEvents = 'none';
+			});
+		});
+
 		if (delta === 0) return;
 		if (gnb.closest('#guide')) return;
 
@@ -62,7 +91,7 @@ const commonFunction = (() => {
 			gnb.classList.add('white');
 		}
 	};
-	const setFlatPickr = () => { // set flatPickr
+	const setFlatPickr = () => { // flatPickr 설정
 		const dateField = document.querySelectorAll('.date-field');
 
 		dateField.forEach((wrap) => {
@@ -79,7 +108,7 @@ const commonFunction = (() => {
 			wrap.addEventListener('click', () => fp.open());
 		});
 	}
-	const setSwiper = (target, addOption = {}) => { // set swiper slide
+	const setSwiper = (target, addOption = {}) => { // swiper 설정
 		try {
 			if (!Swiper) return;
 
@@ -100,7 +129,7 @@ const commonFunction = (() => {
 			console.error(new Error('Failed to initialize partners swiper'));
 		}
 	}
-	const updateDimByCount = (swiper, keepCount = 2, className = 'is-dimmed') => { // swiper slide dimmed
+	const updateDimByCount = (swiper, keepCount = 2, className = 'is-dimmed') => { // swiper dimmed 업데이트
 		const slides = [...(swiper?.slides || [])];
 		if (!slides.length || keepCount < 1) return;
 
@@ -111,7 +140,7 @@ const commonFunction = (() => {
 			slides[idx]?.classList.remove(className);
 		}
 	};
-	const setTabControl = () => { // tab control
+	const setTabControl = () => { // tab control 설정
 		const tabNav = document.querySelectorAll('.tab-nav');
 		
 		tabNav.forEach((nav) => {
@@ -146,7 +175,7 @@ const commonFunction = (() => {
 			});
 		});
 	}
-	const copyTextToClipboard = async (text) => { // copy text to clipboard
+	const copyTextToClipboard = async (text) => { // 클립보드 복사
 		if (!text) return false;
 
 		if (navigator.clipboard && window.isSecureContext) {
@@ -178,7 +207,7 @@ const commonFunction = (() => {
 		document.body.removeChild(textarea);
 		return copied;
 	};
-	const fileUpload = () => {
+	const fileUpload = () => { // 파일 업로드
 		const fileBoxes = document.querySelectorAll('.file-box');
 
 		if (!fileBoxes.length) return;
@@ -210,7 +239,7 @@ const commonFunction = (() => {
 			});
 		});
 	}
-	const toggleCheck = () => {
+	const toggleCheck = () => { // 체크 박스 토글 (개인정보 동의)
 		const toggleCheckBox = document.querySelectorAll('input[type="checkbox"][name^="toggle-agreement"]');
 
 		toggleCheckBox.forEach((el) => {
@@ -224,7 +253,7 @@ const commonFunction = (() => {
 			});
 		});
 	}
-	const setModalControl = () => {
+	const setModalControl = () => { // 모달 설정
 		const modalList = [...document.querySelectorAll('.modal')];
 
 		if (!modalList.length) {
@@ -316,15 +345,48 @@ const commonFunction = (() => {
 			getModal,
 		};
 	}
-	/*! E 공통 스크립트 */
+	const setFilterControl = () => { // 목록 필터 설정
+		const open = (target) => {
+			if(!target) return;
 
-	const init = () => { // 초기화 함수
+			document.querySelector(target).classList.remove('is-folded');
+		}
+
+		const reset = (target) => {
+			if(!target) return;
+
+			const targetElement = document.querySelector(target);
+			if(!targetElement) return;
+
+			targetElement.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach((el) => {
+				el.checked = false;
+			});
+			targetElement.querySelectorAll('input[type="text"]').forEach((el) => {
+				el.value = '';
+			});
+		}
+
+		const close = (target) => {
+			if(!target) return;
+
+			document.querySelector(target).classList.add('is-folded');
+		}
+
+		return {
+			open,
+			reset,
+			close
+		}
+	}
+
+	const init = () => { // 초기화
 		setGnb();
 		setFlatPickr();
 		setTabControl();
 		toggleCheck();
 		fileUpload();
 		modalControl = setModalControl();
+		filterControl = setFilterControl();
 
 		if (pendingModalTargets.length) {
 			pendingModalTargets.forEach((target) => {
@@ -332,15 +394,16 @@ const commonFunction = (() => {
 			});
 			pendingModalTargets = [];
 		}
+
 	}
 
 	return {
-		init,
-		setGnb,
-		setSwiper,
-		updateDimByCount,
-		copyTextToClipboard,
-		openModal: (target) => {
+		init, // 초기화
+		setGnb, // gnb 설정
+		setSwiper, // swiper 설정
+		updateDimByCount, // swiper dimmed 업데이트
+		copyTextToClipboard, // 클립보드 복사
+		openModal: (target) => { // 모달 on
 			if (modalControl) {
 				modalControl.openModal(target);
 				return;
@@ -349,9 +412,24 @@ const commonFunction = (() => {
 			//  -> 보류 했다가 init 완료 시점에 차례로 실행
 			pendingModalTargets.push(target);
 		},
-		closeModal: (target) => modalControl?.closeModal(target),
-		closeAllModals: () => modalControl?.closeAllModals(),
-		getModal: (target) => modalControl?.getModal(target),
+		closeModal: (target) => modalControl?.closeModal(target), // 모달 off
+		closeAllModals: () => modalControl?.closeAllModals(), // 모달 전체 off
+		getModal: (target) => modalControl?.getModal(target), // 모달 정보 가져오기
+		openFilter: (target) => { // 목록 필터 on
+			if(filterControl) {
+				filterControl.open(target);
+			}
+		},
+		closeFilter : (target) => { // 목록 필터 off
+			if(filterControl) {
+				filterControl.close(target);
+			}
+		},
+		resetFilter : (target) => { // 목록 필터 초기화
+			if(filterControl) {
+				filterControl.reset(target);
+			}
+		}
 	}
 })();
 
