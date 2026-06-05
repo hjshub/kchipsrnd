@@ -22,7 +22,7 @@ footer {
             align-items:flex-start;
 
             .f-logo {
-                @include c.icon-svg(s.$icon-logo);
+                @include c.icon-svg(s.$icon-logo-ke-srcc);
                 position:relative;
                 top:-10px;
 

@@ -30,7 +30,7 @@
     }
 
     .h-logo {
-        @include c.icon-svg(s.$icon-logo);
+        @include c.icon-svg(s.$icon-logo-ke-srcc);
     }
 
     .menu {
@@ -148,7 +148,7 @@
         color:#3B3B3B;
 
         .h-logo {
-            @include c.icon-svg(s.$icon-logo, $variant: 'blue');
+            @include c.icon-svg(s.$icon-logo-ke-srcc, $variant: 'blue');
         }
 
         .util-menu {

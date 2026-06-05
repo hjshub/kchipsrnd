@@ -378,13 +378,84 @@ const commonFunction = (() => {
 			close
 		}
 	}
+	const setGateMap = () => { // gate 페이지 center 표시
+		const centerFlag = document.querySelectorAll('.center-flag');
+		if(!centerFlag.length) return;
+
+		centerFlag.forEach((el) => {
+			const target = el.getAttribute('data-map-target');
+			el.addEventListener('mouseenter', () => {
+				el.classList.add('is-hovered');
+				el.querySelector('.center-info').classList.remove('!hidden');
+
+				gsap.to(el.querySelector('.center-wrap'), { 
+					height: 'auto',
+					duration: 0.4,
+				});
+				
+				gsap.fromTo(el.querySelector('.center-info'), { 
+					opacity: 0,
+				}, { 
+					opacity: 1,
+					duration: 1,
+				});
+				
+				document.querySelector(`.${target}`).style.fillOpacity = 1;
+				
+			});
+			el.addEventListener('mouseleave', () => {
+				el.classList.remove('is-hovered');
+				el.querySelector('.center-info').classList.add('!hidden');
+
+				gsap.to(el.querySelector('.center-wrap'), { 
+					height: '80px',
+					duration: 0.4,
+				});
+
+
+				document.querySelector(`.${target}`).style.fillOpacity = 0;
+			});
+		});
+	}
+	const setDropDown = () => {
+		const btnDropDown = document.querySelectorAll('.drop-down button');
+
+		btnDropDown.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const dropDown = btn.closest('dl');
+				if (!dropDown) return;
+
+				const isOpened = dropDown.classList.toggle('is-opened');
+
+				if(isOpened) {
+					btnDropDown.forEach((otherBtn) => {
+						if(otherBtn !== btn) {
+							const otherDropDown = otherBtn.closest('dl');
+							if (otherDropDown) {
+								otherDropDown.classList.remove('is-opened');
+								otherDropDown.querySelector('dd').classList.add('!hidden');
+							otherBtn.querySelector('em').textContent = '답변 열기';
+							}
+						}
+					});
+					dropDown.querySelector('dd').classList.remove('!hidden');
+				btn.querySelector('em').textContent = '답변 닫기';
+				}else {
+					dropDown.querySelector('dd').classList.add('!hidden');
+				btn.querySelector('em').textContent = '답변 열기';
+				}
+			});
+		});
+	}
 
 	const init = () => { // 초기화
+		setGateMap();
 		setGnb();
 		setFlatPickr();
 		setTabControl();
 		toggleCheck();
 		fileUpload();
+		setDropDown();
 		modalControl = setModalControl();
 		filterControl = setFilterControl();
 
