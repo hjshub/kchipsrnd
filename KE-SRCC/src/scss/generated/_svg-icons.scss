@@ -3,6 +3,17 @@
 // usage variant: @include c.icon-pseudo(s.$icon-{name}, $variant: "fff");
 // override size in media query: width/height
 
+$icon-all-menu: (
+  'url': url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M18 10H0V8H18V10ZM18 2H0V0H18V2Z' fill='%233D576B'/%3E %3C/svg%3E"),
+  'w': 18px,
+  'h': 10px,
+  'url--white': url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M18 10H0V8H18V10ZM18 2H0V0H18V2Z' fill='%23ffffff'/%3E %3C/svg%3E"),
+  'url--primary': url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M18 10H0V8H18V10ZM18 2H0V0H18V2Z' fill='%233d576b'/%3E %3C/svg%3E"),
+  'url--secondary': url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M18 10H0V8H18V10ZM18 2H0V0H18V2Z' fill='%233b3b3b'/%3E %3C/svg%3E"),
+  'url--accent': url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M18 10H0V8H18V10ZM18 2H0V0H18V2Z' fill='%23003197'/%3E %3C/svg%3E"),
+  'url--blue': url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M18 10H0V8H18V10ZM18 2H0V0H18V2Z' fill='%2301489d'/%3E %3C/svg%3E"),
+);
+
 $icon-arrow-next: (
   'url': url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M6 20.23L7.77 22L17.77 12L7.77 2L6 3.77L14.23 12L6 20.23Z' fill='%233D576B'/%3E %3C/svg%3E"),
   'w': 24px,
@@ -23,6 +34,17 @@ $icon-arrow-r: (
   'url--secondary': url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M0 8.825L3.7085 5L0 1.175L1.1417 0L6 5L1.1417 10L0 8.825Z' fill='%233b3b3b'/%3E %3C/svg%3E"),
   'url--accent': url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M0 8.825L3.7085 5L0 1.175L1.1417 0L6 5L1.1417 10L0 8.825Z' fill='%23003197'/%3E %3C/svg%3E"),
   'url--blue': url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M0 8.825L3.7085 5L0 1.175L1.1417 0L6 5L1.1417 10L0 8.825Z' fill='%2301489d'/%3E %3C/svg%3E"),
+);
+
+$icon-arrow-tail: (
+  'url': url("data:image/svg+xml,%3Csvg width='17' height='8' viewBox='0 0 17 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M16.3536 4.03568C16.5488 3.84042 16.5488 3.52384 16.3536 3.32858L13.1716 0.146595C12.9763 -0.0486672 12.6597 -0.0486672 12.4645 0.146595C12.2692 0.341857 12.2692 0.65844 12.4645 0.853702L15.2929 3.68213L12.4645 6.51056C12.2692 6.70582 12.2692 7.0224 12.4645 7.21766C12.6597 7.41293 12.9763 7.41293 13.1716 7.21766L16.3536 4.03568ZM0 3.68213V4.18213H16V3.68213V3.18213H0V3.68213Z' fill='white'/%3E %3C/svg%3E"),
+  'w': 17px,
+  'h': 8px,
+  'url--white': url("data:image/svg+xml,%3Csvg width='17' height='8' viewBox='0 0 17 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M16.3536 4.03568C16.5488 3.84042 16.5488 3.52384 16.3536 3.32858L13.1716 0.146595C12.9763 -0.0486672 12.6597 -0.0486672 12.4645 0.146595C12.2692 0.341857 12.2692 0.65844 12.4645 0.853702L15.2929 3.68213L12.4645 6.51056C12.2692 6.70582 12.2692 7.0224 12.4645 7.21766C12.6597 7.41293 12.9763 7.41293 13.1716 7.21766L16.3536 4.03568ZM0 3.68213V4.18213H16V3.68213V3.18213H0V3.68213Z' fill='%23ffffff'/%3E %3C/svg%3E"),
+  'url--primary': url("data:image/svg+xml,%3Csvg width='17' height='8' viewBox='0 0 17 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M16.3536 4.03568C16.5488 3.84042 16.5488 3.52384 16.3536 3.32858L13.1716 0.146595C12.9763 -0.0486672 12.6597 -0.0486672 12.4645 0.146595C12.2692 0.341857 12.2692 0.65844 12.4645 0.853702L15.2929 3.68213L12.4645 6.51056C12.2692 6.70582 12.2692 7.0224 12.4645 7.21766C12.6597 7.41293 12.9763 7.41293 13.1716 7.21766L16.3536 4.03568ZM0 3.68213V4.18213H16V3.68213V3.18213H0V3.68213Z' fill='%233d576b'/%3E %3C/svg%3E"),
+  'url--secondary': url("data:image/svg+xml,%3Csvg width='17' height='8' viewBox='0 0 17 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M16.3536 4.03568C16.5488 3.84042 16.5488 3.52384 16.3536 3.32858L13.1716 0.146595C12.9763 -0.0486672 12.6597 -0.0486672 12.4645 0.146595C12.2692 0.341857 12.2692 0.65844 12.4645 0.853702L15.2929 3.68213L12.4645 6.51056C12.2692 6.70582 12.2692 7.0224 12.4645 7.21766C12.6597 7.41293 12.9763 7.41293 13.1716 7.21766L16.3536 4.03568ZM0 3.68213V4.18213H16V3.68213V3.18213H0V3.68213Z' fill='%233b3b3b'/%3E %3C/svg%3E"),
+  'url--accent': url("data:image/svg+xml,%3Csvg width='17' height='8' viewBox='0 0 17 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M16.3536 4.03568C16.5488 3.84042 16.5488 3.52384 16.3536 3.32858L13.1716 0.146595C12.9763 -0.0486672 12.6597 -0.0486672 12.4645 0.146595C12.2692 0.341857 12.2692 0.65844 12.4645 0.853702L15.2929 3.68213L12.4645 6.51056C12.2692 6.70582 12.2692 7.0224 12.4645 7.21766C12.6597 7.41293 12.9763 7.41293 13.1716 7.21766L16.3536 4.03568ZM0 3.68213V4.18213H16V3.68213V3.18213H0V3.68213Z' fill='%23003197'/%3E %3C/svg%3E"),
+  'url--blue': url("data:image/svg+xml,%3Csvg width='17' height='8' viewBox='0 0 17 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M16.3536 4.03568C16.5488 3.84042 16.5488 3.52384 16.3536 3.32858L13.1716 0.146595C12.9763 -0.0486672 12.6597 -0.0486672 12.4645 0.146595C12.2692 0.341857 12.2692 0.65844 12.4645 0.853702L15.2929 3.68213L12.4645 6.51056C12.2692 6.70582 12.2692 7.0224 12.4645 7.21766C12.6597 7.41293 12.9763 7.41293 13.1716 7.21766L16.3536 4.03568ZM0 3.68213V4.18213H16V3.68213V3.18213H0V3.68213Z' fill='%2301489d'/%3E %3C/svg%3E"),
 );
 
 $icon-attached-file: (

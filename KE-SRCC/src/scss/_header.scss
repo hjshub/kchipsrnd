@@ -29,8 +29,21 @@
         }
     }
 
+    @include c.on-mobile {
+        height:120px;
+        padding-left:32px;
+        padding-right:32px;
+    }
+
     .h-logo {
         @include c.icon-svg(s.$icon-logo-ke-srcc);
+
+        @include c.on-mobile {
+            &::before {
+                width:204px;
+                height:72px;
+            }
+        }
     }
 
     .menu {
@@ -43,13 +56,15 @@
         color:currentColor;
         font-weight:600;
 
+        @include c.on-tablet {
+            gap:40px;
+        }
+
         > li {
             @include c.fl;
             align-items:center;
             height:60px;
             position:relative;
-            
-            
 
             &.on,
             &:hover {
@@ -114,6 +129,10 @@
                 }
             }
         }
+
+        @include c.on-mobile {
+            display:none;
+        }
     }
 
     .util-menu {
@@ -138,6 +157,18 @@
             }
             .u-search {
                 @include c.icon-svg(s.$icon-u-search,  $variant: 'white');
+                @include c.on-mobile {
+                    &::before {
+                        width:32px;
+                        height:32px;
+                    }
+                }
+            }
+
+            &:not(:has(.u-search)) {
+                @include c.on-mobile {
+                    display:none;
+                }
             }
         }
     }
@@ -149,6 +180,13 @@
 
         .h-logo {
             @include c.icon-svg(s.$icon-logo-ke-srcc, $variant: 'blue');
+
+            @include c.on-mobile {
+                &::before {
+                    width:204px;
+                    height:72px;
+                }
+            }
         }
 
         .util-menu {
@@ -167,6 +205,17 @@
                 }
                 .u-search {
                     @include c.icon-svg(s.$icon-u-search, $variant: 'primary');
+                    @include c.on-mobile {
+                        &::before {
+                            width:32px;
+                            height:32px;
+                        }
+                    }
+                }
+                &:not(:has(.u-search)) {
+                    @include c.on-mobile {
+                        display:none;
+                    }
                 }
             }
         }

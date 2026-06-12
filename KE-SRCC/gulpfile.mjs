@@ -17,8 +17,8 @@ import { Transform } from 'node:stream';
 const sass = gulpSass(dartSass);
 const bs = browserSync.create();
 const mode = { prod: false };
-const MOBILE_MEDIA_MAX_WIDTH = 768;
-const MOBILE_VW_BASE = 768;
+const MOBILE_MEDIA_MAX_WIDTH = 821;
+const MOBILE_VW_BASE = 750;
 const ENABLE_DEV_MINIFY = true;
 const ENABLE_PROD_MINIFY = false;
 const CLEAN_CSS_OPTIONS = {

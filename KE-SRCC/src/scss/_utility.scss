@@ -19,21 +19,36 @@ i, em {
 
 .--inner {
     width:100%;
-    max-width:1300px;
+    max-width:1380px;
     margin:0 auto;
+    padding:0 40px;
 
     &.md {
-        max-width:856px;
+        max-width:936px;
     }
 
     &.sm {
-        max-width:414px;
+        max-width:494px;
+    }
+
+    @include c.on-mobile {
+        &,
+        &.md,
+        &.sm {
+            max-width: none;
+            padding-left:32px;
+            padding-right:32px;
+        }
     }
 }
 
 .--divider {
     border-top:4px solid #01489D;
     margin:20px 0;
+
+    @include c.on-mobile {
+        margin:30px 0;
+    }
 }
 
 .--col {

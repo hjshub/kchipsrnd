@@ -6,7 +6,19 @@
 
 // breakpoint
 @mixin on-mobile {
-    @media (max-width: $bp-mobile) {
+    @media screen and (max-width: $bp-mobile) {
+        @content;
+    }
+}
+
+@mixin on-tablet {
+    @media screen and (max-width: $bp-tablet) {
+        @content;
+    }
+}
+
+@mixin bp($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
         @content;
     }
 }

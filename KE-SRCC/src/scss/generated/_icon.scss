@@ -17,19 +17,22 @@
 .icon-tel::before { width: 20px; height: 20px; background-position: -209px -56px; }
 .icon-user::before { width: 63px; height: 75px; background-position: 0px 0px; }
 
-@media (max-width: 768px) {
-  .icon::before { background-image: url('../img/sprite/sprite-mobile.png'); background-size: 440px 390px; }
+@media (max-width: 821px) {
+  .icon::before { background-image: url('../img/sprite/sprite-mobile.png'); background-size: 402px 390px; }
   .icon-about-info::before { width: 92px; height: 90px; background-position: -243px -154px; }
   .icon-about-network::before { width: 101px; height: 100px; background-position: -138px -154px; }
   .icon-about-path::before { width: 120px; height: 120px; background-position: 0px -270px; }
-  .icon-address::before { width: 34px; height: 44px; background-position: -406px 0px; }
-  .icon-email::before { width: 44px; height: 32px; background-position: -268px -116px; }
+  .icon-address::before { width: 40px; height: 42px; background-position: -292px -270px; }
+  .icon-email::before { width: 40px; height: 30px; background-position: -268px -116px; }
   .icon-member-eu::before { width: 134px; height: 112px; background-position: -130px 0px; }
   .icon-member-kor::before { width: 134px; height: 112px; background-position: -268px 0px; }
   .icon-member-us::before { width: 134px; height: 112px; background-position: 0px -154px; }
+  .icon-network-eu::before { width: 36px; height: 36px; background-position: -124px -354px; }
+  .icon-network-kor::before { width: 36px; height: 36px; background-position: -164px -354px; }
+  .icon-network-us::before { width: 36px; height: 36px; background-position: -204px -354px; }
   .icon-quat::before { width: 60px; height: 52px; background-position: -339px -154px; }
   .icon-slide-next::before { width: 80px; height: 80px; background-position: -124px -270px; }
   .icon-slide-prev::before { width: 80px; height: 80px; background-position: -208px -270px; }
-  .icon-tel::before { width: 40px; height: 40px; background-position: -292px -270px; }
+  .icon-tel::before { width: 40px; height: 36px; background-position: -336px -270px; }
   .icon-user::before { width: 126px; height: 150px; background-position: 0px 0px; }
 }

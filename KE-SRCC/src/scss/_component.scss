@@ -12,6 +12,13 @@
 
         &.home {
             @include c.icon-svg(s.$icon-home);
+
+            @include c.on-mobile {
+                &::before {
+                    width:18px;
+                    height:22px;
+                }
+            }
         }
 
         &:not(:last-of-type)::after {
@@ -21,6 +28,11 @@
             flex-shrink:0;
             background:transparent url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8.825L3.7085 5L0 1.175L1.1417 0L6 5L1.1417 10L0 8.825Z' fill='%23fff'/%3E%3C/svg%3E%0A") center / cover no-repeat;
             content:'';
+
+            @include c.on-mobile {
+                width:8px;
+                height:12px;
+            }
         }
 
         &:not(.current) {
@@ -30,6 +42,10 @@
         &.current {
             font-weight:700;
             color:#FECC2F;
+        }
+
+        @include c.on-mobile {
+            font-size:22px;
         }
     }
 }
@@ -42,6 +58,11 @@
         min-width:414px;
         border-radius:35px;
         overflow:hidden;
+
+        @include c.on-mobile {
+            border-radius:70px;
+        }
+
         span {
             width:100%;
 
@@ -55,6 +76,11 @@
                 color:#9D9D9D;
                 font-size:20px;
                 font-weight:700;
+
+                @include c.on-mobile {
+                    font-size:36px;
+                    height:120px;
+                }
 
                 &.on {
                     color:#fff;
@@ -116,20 +142,42 @@
     border-radius:10px;
     color:#3D576B;
 
+    @include c.on-mobile {
+        height:100px;
+        font-size:30px;
+    }
+
     a {
         @include c.fl(20px);
         @include c.icon-svg(s.$icon-pg-down);
         align-items:center;
 
+        @include c.on-mobile {
+            gap:20px;
+            
+            &::before {
+                width:24px;
+                height:15px;    
+            }
+        }
+
         span {
             @include c.fl(6px);
             align-items:center;
+
+            @include c.on-mobile {
+                gap:10px;
+            }
         }
     }
 
     em {
         font-size:14px;
         font-weight:400;
+
+        @include c.on-mobile {
+            font-size:24px;
+        }
     }
 }
 
@@ -225,6 +273,13 @@
             background-color:#fff;
             border-color:#003197;
         }
+
+        @include c.on-mobile {
+            height:120px;
+            font-size:28px;
+            padding-left:40px;
+            padding-right:40px;
+        }
     }
 
     textarea {
@@ -263,6 +318,12 @@
     border:1px solid #B1BCC4;
     border-style:solid;
 
+    @include c.on-mobile {
+        width:338px;
+        padding:0 24px;
+        height:70px;
+    }
+
     input[type="text"] {
         min-width:0;
         height:30px;
@@ -272,6 +333,10 @@
         background-color:transparent;
         width:calc(100% - 40px);
         outline:none;
+
+        @include c.on-mobile {
+            font-size:22px;
+        }
     }
 
     &:has(input[type="text"]:focus),
@@ -292,6 +357,16 @@
         height:30px;
         margin-top:2px;
         @include c.icon-svg(s.$icon-search);
+
+        @include c.on-mobile {
+            width:28px;
+            height:28px;
+
+            &::before {
+                width:100%;
+                height:100%;
+            }
+        }
     }
 }
 
@@ -311,6 +386,10 @@
             font-weight:700;
             line-height:1;
             color:#3B3B3B;
+
+            @include c.on-mobile {
+                font-size:22px;
+            }
         }
 
         .num {
@@ -318,6 +397,10 @@
             font-weight:700;
             line-height:1;
             color:#003197;
+
+            @include c.on-mobile {
+                font-size:36px;
+            }
         }
 
         & + button {
@@ -379,6 +462,10 @@
         background-color:#fff;
         border-color:#003197;
 
+        @include c.on-mobile {
+            padding-right:124px;
+        }
+
         &::placeholder {
             color:#9D9D9D;
         }
@@ -389,6 +476,12 @@
         top:50%;
         transform:translateY(-50%);
         right:30px;
+
+        @include c.on-mobile {
+            width:44px;
+            height:48px;
+            right:40px;
+        }
     }
 }
 
@@ -433,6 +526,12 @@ a, button, input[type=button], input[type=submit] {
         border:1px solid #B1BCC4;
         border-style:solid;
         color:#3B3B3B;
+
+        @include c.on-mobile {
+            width:100%;
+            height:120px;
+            font-size:36px;
+        }
     }
 
     &.btn--default {
@@ -455,6 +554,11 @@ a, button, input[type=button], input[type=submit] {
         color:#fff;
         border:0;
         background-color:#3D576B;
+
+        @include c.on-mobile {
+            height:100px;
+            font-size:32px;
+        }
     }
 
     &.btn--submit {
@@ -521,6 +625,13 @@ a, button, input[type=button], input[type=submit] {
             padding-right:70px;
             background-color:#fff;
 
+            @include c.on-mobile {
+                height:120px;
+                font-size:28px;
+                padding-left:40px;
+                padding-right: 85px;
+            }
+
             &[disabled]{
                 background-color:#F7F7F7;
                 color:#9D9D9D;
@@ -546,6 +657,13 @@ a, button, input[type=button], input[type=submit] {
                 border-style:solid;
                 border-color:#1F1F1F;
                 content:'';
+
+                @include c.on-mobile {
+                    width:18px;
+                    height:18px;
+                    border-width:0 0 4px 4px;
+                    right:40px;
+                }
             }
         }
     }
@@ -560,6 +678,11 @@ a, button, input[type=button], input[type=submit] {
 
             option {
                 color:#1F1F1F;
+            }
+
+            @include c.on-mobile {
+                font-size:28px;
+                padding-right:40px;
             }
         }
 
@@ -580,6 +703,12 @@ a, button, input[type=button], input[type=submit] {
                 border-style:solid;
                 border-top-color: currentColor;
                 content:'';
+
+                @include c.on-mobile {
+                    right:5px;
+                    top:8px;
+                    border-width:16px 10px 0 10px;
+                }
             }
         }
     }
@@ -610,6 +739,10 @@ a, button, input[type=button], input[type=submit] {
                 background-position: 2px center;
                 background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.3125L4.25 8.5625L10.1875 1' stroke='%23FECC2F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
                 background-repeat:no-repeat;
+
+                @include c.on-mobile {
+                    background-size: 24px 20px;
+                }
             }
         }
     }
@@ -619,6 +752,10 @@ a, button, input[type=button], input[type=submit] {
         align-items:center;
         color:#3B3B3B;
 
+        @include c.on-mobile {
+            font-size:28px;
+        }
+
         &::before {
             width:16px;
             height:16px;
@@ -626,6 +763,13 @@ a, button, input[type=button], input[type=submit] {
             border-radius:2px;
             background-color:#fff;
             content:'';
+
+            @include c.on-mobile {
+                width:32px;
+                height:32px;
+                border-radius:4px;
+                border-width:2px;
+            }
         }
     }
 }
@@ -638,6 +782,10 @@ a, button, input[type=button], input[type=submit] {
     .chk-wrap {
         @include c.fl;
         width:calc((100% - 3px) / 4);
+
+        @include c.on-mobile {
+            width:calc(50% - 0.125rem);
+        }
 
         @at-root {
             .chk-grp-block {
@@ -684,6 +832,11 @@ a, button, input[type=button], input[type=submit] {
         font-size:14px;
         background-color:#F7F7F7;
         text-align:center;
+
+        @include c.on-mobile {
+            min-height:100px;
+            font-size:28px;
+        }
     }
 
     &.hash {
@@ -700,7 +853,10 @@ a, button, input[type=button], input[type=submit] {
     @include c.fl-wrap;
     gap:10px 5px;
     width:100%;
-
+    
+    @include c.on-mobile {
+        gap:30px 20px;
+    }
     .chk-wrap {
         @include c.fl;
     }
@@ -730,6 +886,12 @@ a, button, input[type=button], input[type=submit] {
         background-color:transparent;
         border-radius:50px;
         text-align:center;
+
+        @include c.on-mobile {
+            font-size:24px;
+            padding:0 20px;
+            height:48px;
+        }
     }
 
     &.hash {
@@ -790,6 +952,10 @@ a, button, input[type=button], input[type=submit] {
         @include c.fl;
         width:calc((100% - 3px) / 4);
 
+        @include c.on-mobile {
+            width:calc(50% - 0.125rem);
+        }
+
         @at-root {
             .radio-grp-block {
                 &.col-2 {
@@ -835,6 +1001,11 @@ a, button, input[type=button], input[type=submit] {
         font-size:14px;
         background-color:#F7F7F7;
         text-align:center;
+
+        @include c.on-mobile {
+            min-height:100px;
+            font-size:28px;
+        }
     }
 
     &.hash {
@@ -851,6 +1022,10 @@ a, button, input[type=button], input[type=submit] {
     @include c.fl-wrap;
     gap:10px 5px;
     width:100%;
+
+    @include c.on-mobile {
+        gap:30px 20px;
+    }
 
     .radio-wrap {
         @include c.fl;
@@ -881,6 +1056,12 @@ a, button, input[type=button], input[type=submit] {
         background-color:transparent;
         border-radius:50px;
         text-align:center;
+
+        @include c.on-mobile {
+            font-size:24px;
+            padding:0 20px;
+            height:48px;
+        }
     }
 
     &.hash {
@@ -897,6 +1078,10 @@ a, button, input[type=button], input[type=submit] {
     @include c.fl(10px);
     align-items:center;
 
+    @include c.on-mobile {
+        gap:20px;
+    }
+
     > em {
         @include c.fl;
         align-items:center;
@@ -909,6 +1094,14 @@ a, button, input[type=button], input[type=submit] {
         letter-spacing: 0;
         color:rgb(var(--bg-rgb));
         background-color: rgb(var(--bg-rgb), 0.2);
+
+        @include c.on-mobile {
+            font-size:22px;
+            height:36px;
+            padding-left:15px;
+            padding-right:15px;
+            border-radius:24px;
+        }
     }
 
     &:not([class*="emp-"]) {
@@ -958,6 +1151,11 @@ a, button, input[type=button], input[type=submit] {
     padding:40px 0 50px;
     color:#000;
 
+    @include c.on-mobile {
+        width:686px;
+        padding:80px 0 100px;
+    }
+
     &.modal-shown {
         display:block;
     }
@@ -978,12 +1176,25 @@ a, button, input[type=button], input[type=submit] {
         height:40px;
         padding:0 40px 0 20px;
 
+        @include c.on-mobile {
+            height:80px;
+            padding: 0 80px 0 30px;
+        }
+
         a {
             @include c.icon-svg(s.$icon-close);
             position:absolute;
             right:15px;
             top:50%;
             transform:translateY(-50%);
+
+            @include c.on-mobile {
+                &::before {
+                    width:20px;
+                    height:20px;
+                }
+                right:30px;
+            }
         }
 
         .modal-title {
@@ -995,6 +1206,10 @@ a, button, input[type=button], input[type=submit] {
     .modal-body {
         padding:25px 0 35px;
 
+        @include c.on-mobile {
+            padding:50px 0 70px;
+        }
+
         .modal-content {
             display:flex;
             flex-direction:column;
@@ -1005,12 +1220,22 @@ a, button, input[type=button], input[type=submit] {
         .modal-content-title {
             font-size:24px;
             text-align:center;
+
+            @include c.on-mobile {
+                font-size:48px;
+                line-height:1.2;
+            }
         }
 
         .modal-content-desc {
             font-size:14px;
             color:#9D9D9D;
             text-align:center;
+
+            @include c.on-mobile {
+                font-size:28px;
+                padding:0 32px;
+            }
         }
     }
 
@@ -1019,9 +1244,17 @@ a, button, input[type=button], input[type=submit] {
         align-items:center;
         justify-content: center;
         padding:0 20px;
+
         .btn--default {
             height:55px;
             max-width:196px;
+
+            @include c.on-mobile {
+                width:324px;
+                max-width:none;
+                height:110px;
+                font-size:36px;
+            }
         }
     }
 
