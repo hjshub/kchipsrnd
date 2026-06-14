@@ -277,7 +277,7 @@
 
         @include c.on-mobile {
             height:120px;
-            font-size:28px;
+            // font-size:28px;
             padding-left:40px;
             padding-right:40px;
         }
@@ -336,7 +336,7 @@
         outline:none;
 
         @include c.on-mobile {
-            font-size:22px;
+            // font-size:22px;
         }
     }
 
@@ -362,6 +362,7 @@
         @include c.on-mobile {
             width:28px;
             height:28px;
+            right:24px;
 
             &::before {
                 width:100%;
