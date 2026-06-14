@@ -14,7 +14,6 @@
     align-items:center;
     border-bottom:1px solid rgba(228, 234, 239, 0.2);
     color:#fff;
-    backdrop-filter: blur(5px);
     transition-property: background-color, border-color, color;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
@@ -25,6 +24,7 @@
             .gnb {
                 position:fixed;
                 z-index:999;
+                backdrop-filter: blur(5px);
             }
         }
     }
