@@ -60,6 +60,7 @@
         overflow:hidden;
 
         @include c.on-mobile {
+            min-width:auto;
             border-radius:70px;
         }
 
@@ -489,21 +490,47 @@
     @include c.fl(10px);
     align-items: center;
 
+    @include c.on-mobile {
+        flex-wrap:wrap;
+        gap:20px 10px;
+
+        span:not(.date-field) {
+            font-size:32px;
+        }
+    }
+
     .date-field {
         max-width:240px;
+
+        @include c.on-mobile {
+            max-width:580px;
+        }
         
         &::before {
             width:18px;
             height:20px;
             right:16px;
+
+            @include c.on-mobile {
+                width:32px;
+                height:36px;
+                right:40px;
+            }
         }
 
         input[type=text] {
             padding-left:16px;
             padding-right:50px;
             height:45px;
+
+            @include c.on-mobile {
+                padding-left:40px;
+                padding-right:100px;
+                height:80px;
+            }
         }
     }
+    
 }
 
 /*! button */
@@ -590,6 +617,23 @@ a, button, input[type=button], input[type=submit] {
         font-size:18px;
         @include c.icon-svg(s.$icon-pg-next, $variant: white, $pseudo: after);
         background-color:#3D576B;
+
+        &::after {
+            flex-shrink:0;
+        }
+
+        @include c.on-mobile {
+            width:228px;
+            height:60px;
+            font-size:24px;
+            padding-left:40px;
+            padding-right:40px;
+
+            &::after {
+                width:12px;
+                height:20px;
+            }
+        }
     }
 }
 
