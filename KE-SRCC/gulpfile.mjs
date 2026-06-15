@@ -153,10 +153,13 @@ const paths = {
     // 예: { white: '#fff', primary: '#3D576B' }
     colorVariants: {
       white: '#fff',
+      black: '#000',
       primary: '#3D576B',
       secondary: '#3B3B3B',
       accent: '#003197',
-      blue: '#01489D'
+      blue: '#01489D',
+      gray: '#B1BCC4',
+      yellow: '#FECC2F'
     },
   },
   fonts: {

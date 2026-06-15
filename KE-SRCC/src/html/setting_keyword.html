@@ -1,0 +1,250 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | Profile Settings"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html', {
+    "isLoggedIn": true,
+    "gnbWhite": true
+})
+
+<main id="contents">
+    <h1 class="sr-only">Profile Settings</h1>
+    <section class="section register">
+        <div class="--inner md">
+            <div class="heading-title">
+                <h2>Profile Settings</h2>
+            </div>
+
+            <article>
+                <form method="post" action="">
+                    <div class="tab-nav-customed">
+                        <span><a href="setting_profile.html">Edit Profile</a></span>
+                        <span><a href="setting_keyword.html" class="on">Edit Keywords</a></span>
+                    </div>
+                    <div class="tab-contents">
+                        <header>
+                            <h3>My Research Areas</h3>
+                            <p>※ Select keywords that best describe your current research area (up to 5)</p>
+                        </header>
+                        <div class="register-form">
+                            <dl>
+                                <dt class="emp-blue">Research domain</dt>
+                                <dd>
+                                    <div class="chk-grp-block hash">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-1">
+                                            <label for="research-keyword-1">Logic</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-2">
+                                            <label for="research-keyword-2">Memory</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-3">
+                                            <label for="research-keyword-3">Photonics</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-4">
+                                            <label for="research-keyword-4">Power</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-5">
+                                            <label for="research-keyword-5">RF</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-6">
+                                            <label for="research-keyword-6">Sensors</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-7">
+                                            <label for="research-keyword-7">Quantum</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-8">
+                                            <label for="research-keyword-8">Analog</label>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="emp-blue">Research Layer</dt>
+                                <dd>
+                                    <div class="chk-grp-block hash">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-9">
+                                            <label for="research-keyword-9">Materials</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-10">
+                                            <label for="research-keyword-10">Process</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-11">
+                                            <label for="research-keyword-11">Design</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-12">
+                                            <label for="research-keyword-12">Packaging</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-13">
+                                            <label for="research-keyword-13">Characterisation</label>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="emp-blue">Application</dt>
+                                <dd>
+                                    <div class="chk-grp-block hash">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-14">
+                                            <label for="research-keyword-14">Al / HPC</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-15">
+                                            <label for="research-keyword-15">Automotive</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-16">
+                                            <label for="research-keyword-16">Healthcare</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-17">
+                                            <label for="research-keyword-17">Connectivity</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-18">
+                                            <label for="research-keyword-18">Energy</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-19">
+                                            <label for="research-keyword-19">IoT / Edge</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="research-keywords" id="research-keyword-20">
+                                            <label for="research-keyword-20">Security</label>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <header>
+                            <h3>My Research Interests</h3>
+                            <p>※ Select keywords that best describe your research interests (up to 5)</p>
+                        </header>
+                        <div class="register-form">
+                            <dl>
+                                <dt class="emp-blue">Research domain</dt>
+                                <dd>
+                                    <div class="chk-grp-block hash">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-1">
+                                            <label for="interests-keyword-1">Logic</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-2">
+                                            <label for="interests-keyword-2">Memory</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-3">
+                                            <label for="interests-keyword-3">Photonics</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-4">
+                                            <label for="interests-keyword-4">Power</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-5">
+                                            <label for="interests-keyword-5">RF</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-6">
+                                            <label for="interests-keyword-6">Sensors</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-7">
+                                            <label for="interests-keyword-7">Quantum</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-8">
+                                            <label for="interests-keyword-8">Analog</label>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="emp-blue">Research Layer</dt>
+                                <dd>
+                                    <div class="chk-grp-block hash">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-9">
+                                            <label for="interests-keyword-9">Materials</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-10">
+                                            <label for="interests-keyword-10">Process</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-11">
+                                            <label for="interests-keyword-11">Design</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-12">
+                                            <label for="interests-keyword-12">Packaging</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-13">
+                                            <label for="interests-keyword-13">Characterisation</label>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="emp-blue">Application</dt>
+                                <dd>
+                                    <div class="chk-grp-block hash">
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-14">
+                                            <label for="interests-keyword-14">Al / HPC</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-15">
+                                            <label for="interests-keyword-15">Automotive</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-16">
+                                            <label for="interests-keyword-16">Healthcare</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-17">
+                                            <label for="interests-keyword-17">Connectivity</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-18">
+                                            <label for="interests-keyword-18">Energy</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-19">
+                                            <label for="interests-keyword-19">IoT / Edge</label>
+                                        </span>
+                                        <span class="chk-wrap">
+                                            <input type="checkbox" name="interests-keywords" id="interests-keyword-20">
+                                            <label for="interests-keyword-20">Security</label>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn--default !w-full" type="submit"><em>Save Changes</em></button>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </section>
+</main>
+
+@@include('./inc/footer.html')

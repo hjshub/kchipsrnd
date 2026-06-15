@@ -6,8 +6,8 @@
       <a href="#">Ecosystem</a>
       <ul class="depth2">
         <li><a href="network_list.html">Organizations</a></li>
-        <li><a href="program_list.html">Calls &amp; Events</a></li>
         <li><a href="news_list.html">Semiconductor News</a></li>
+        <li><a href="program_list.html">Calls &amp; Events</a></li>
       </ul>
     </li>
     <li>
@@ -46,5 +46,48 @@
         </select>
       </span>
     </li>
+    <li class="md:!hidden">
+      <span class="btn-all-menu"><em class="sr-only">전체 메뉴</em></span>
+    </li>
   </ul>
+  
+  <div class="all-menu md:!hidden">
+    <ul>
+      <li><a href="index.html" class="alone">Home</a></li>
+      <li>
+        <a href="javascript:void(0);">Ecosystem</a>
+        <ul class="m-depth2 hidden">
+          <li><a href="network_list.html">Organizations</a></li>
+          <li><a href="news_list.html">Semiconductor News</a></li>
+          <li><a href="program_list.html">Calls &amp; Events</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0);">Publications</a>
+        <ul class="m-depth2 hidden">
+          <li><a href="report_list.html">Reports</a></li>
+          <li><a href="trend_list.html">Trend Briefings</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:void(0);">About</a>
+        <ul class="m-depth2 hidden">
+          <li><a href="about.html">About KE-SRCC</a></li>
+          <li><a href="notice_list.html">Notice</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="m-util">
+      @@if (context.isLoggedIn) {
+        <a href="mypage.html" class="m-u-mypage on">My Page</a>
+        <a href="" class="m-u-sign-out">Logout</a>
+      }
+      @@if (!context.isLoggedIn) {
+        <a href="login.html" class="m-u-sign-in">Login</a>
+      }
+      <a href="" class="m-u-language">Eng</a>
+    </div>
+  </div>
 </header>

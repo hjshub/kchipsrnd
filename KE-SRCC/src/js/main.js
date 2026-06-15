@@ -59,8 +59,7 @@ const commonFunction = (() => {
 			});
 		});
 
-		if (delta === 0) return;
-		if (gnb.closest('#guide')) return;
+		if (delta === 0 || gnb.closest('#guide')) return;
 
 		const dir = delta > 0 ? 1 : -1;
 
@@ -91,6 +90,30 @@ const commonFunction = (() => {
 			gnb.classList.add('white');
 		}
 	};
+	const allMenu = () => {
+		// 모바일 전체메뉴
+		const btnAllMenu = document.querySelector('.btn-all-menu');
+		const allMenu = document.querySelector('.all-menu');
+		const anchor = allMenu.querySelectorAll('a:not(.alone, .m-depth2 a)');
+
+		if(!btnAllMenu || !allMenu || allMenu.closest('#guide')) return;
+
+		btnAllMenu.addEventListener('click', () => {
+			document.documentElement.classList.toggle('m-open');
+		});
+
+		anchor.forEach((el) => {
+			el.addEventListener('click', () => {
+				const listOn = el.closest('li').classList.toggle('on');
+				anchor.forEach((otherEl) => {
+					if (otherEl !== el) {
+						otherEl.closest('li').classList.remove('on');
+					}
+				});
+
+			});
+		});
+	}
 	const setFlatPickr = () => { // flatPickr 설정
 		const dateField = document.querySelectorAll('.date-field');
 
@@ -451,6 +474,7 @@ const commonFunction = (() => {
 	const init = () => { // 초기화
 		setGateMap();
 		setGnb();
+		allMenu();
 		setFlatPickr();
 		setTabControl();
 		toggleCheck();
