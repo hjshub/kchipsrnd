@@ -116,7 +116,7 @@ const commonFunction = (() => {
 				const listOn = el.closest('li').classList.toggle('on');
 				anchor.forEach((otherEl) => {
 					if (otherEl !== el) {
-						otherEl.closest('li').classList.remove('on');
+						otherEl.closest('li')?.classList.remove('on');
 					}
 				});
 
