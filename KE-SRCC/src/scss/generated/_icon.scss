@@ -18,21 +18,21 @@
 .icon-user::before { width: 63px; height: 75px; background-position: 0px 0px; }
 
 @media (max-width: 821px) {
-  .icon::before { background-image: url('../img/sprite/sprite-mobile.png'); background-size: 402px 390px; }
-  .icon-about-info::before { width: 92px; height: 90px; background-position: -243px -154px; }
-  .icon-about-network::before { width: 101px; height: 100px; background-position: -138px -154px; }
-  .icon-about-path::before { width: 120px; height: 120px; background-position: 0px -270px; }
-  .icon-address::before { width: 40px; height: 42px; background-position: -292px -270px; }
-  .icon-email::before { width: 40px; height: 30px; background-position: -268px -116px; }
-  .icon-member-eu::before { width: 134px; height: 112px; background-position: -130px 0px; }
-  .icon-member-kor::before { width: 134px; height: 112px; background-position: -268px 0px; }
-  .icon-member-us::before { width: 134px; height: 112px; background-position: 0px -154px; }
-  .icon-network-eu::before { width: 36px; height: 36px; background-position: -124px -354px; }
-  .icon-network-kor::before { width: 36px; height: 36px; background-position: -164px -354px; }
-  .icon-network-us::before { width: 36px; height: 36px; background-position: -204px -354px; }
-  .icon-quat::before { width: 60px; height: 52px; background-position: -339px -154px; }
-  .icon-slide-next::before { width: 80px; height: 80px; background-position: -124px -270px; }
-  .icon-slide-prev::before { width: 80px; height: 80px; background-position: -208px -270px; }
-  .icon-tel::before { width: 40px; height: 36px; background-position: -336px -270px; }
-  .icon-user::before { width: 126px; height: 150px; background-position: 0px 0px; }
+  .icon::before { background-image: url('../img/sprite/sprite-mobile.png'); background-size: 359px 342px; }
+  .icon-about-info::before { width: 92px; height: 90px; background-position: 0px -124px; }
+  .icon-about-network::before { width: 101px; height: 100px; background-position: -124px 0px; }
+  .icon-about-path::before { width: 120px; height: 120px; background-position: 0px 0px; }
+  .icon-address::before { width: 40px; height: 42px; background-position: -229px -168px; }
+  .icon-email::before { width: 40px; height: 30px; background-position: 0px -312px; }
+  .icon-member-eu::before { width: 90px; height: 80px; background-position: -96px -124px; }
+  .icon-member-kor::before { width: 90px; height: 80px; background-position: -229px 0px; }
+  .icon-member-us::before { width: 90px; height: 80px; background-position: -229px -84px; }
+  .icon-network-eu::before { width: 36px; height: 36px; background-position: -272px -218px; }
+  .icon-network-kor::before { width: 36px; height: 36px; background-position: -323px 0px; }
+  .icon-network-us::before { width: 36px; height: 36px; background-position: -323px -40px; }
+  .icon-quat::before { width: 60px; height: 52px; background-position: -208px -218px; }
+  .icon-slide-next::before { width: 60px; height: 60px; background-position: -80px -218px; }
+  .icon-slide-prev::before { width: 60px; height: 60px; background-position: -144px -218px; }
+  .icon-tel::before { width: 40px; height: 36px; background-position: -273px -168px; }
+  .icon-user::before { width: 76px; height: 90px; background-position: 0px -218px; }
 }

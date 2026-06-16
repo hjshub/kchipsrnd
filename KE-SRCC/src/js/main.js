@@ -99,7 +99,16 @@ const commonFunction = (() => {
 		if(!btnAllMenu || !allMenu || allMenu.closest('#guide')) return;
 
 		btnAllMenu.addEventListener('click', () => {
-			document.documentElement.classList.toggle('m-open');
+			const opened = document.documentElement.classList.toggle('m-open');
+			
+			if(opened) {
+				allMenu.style.display = 'block';
+				gsap.to(allMenu, {alpha: 1, duration:0.2});
+			}else {
+				gsap.to(allMenu, {alpha: 0, duration:0.2, onComplete: () => {
+					allMenu.style.display = 'none';
+				}});
+			}
 		});
 
 		anchor.forEach((el) => {
@@ -149,7 +158,7 @@ const commonFunction = (() => {
 				...addOption
 			});
 		}catch {
-			console.error(new Error('Failed to initialize partners swiper'));
+			console.error(new Error(`Failed to initialize ${target} swiper`));
 		}
 	}
 	const updateDimByCount = (swiper, keepCount = 2, className = 'is-dimmed') => { // swiper dimmed 업데이트

@@ -95,6 +95,7 @@
         @include c.fl;
         width:100%;
         border-bottom:1px solid #B1BCC4;
+
         span {
             width:100%;
 
@@ -111,8 +112,8 @@
                 font-weight:400;
 
                 @include c.on-mobile {
-                    font-size:36px;
-                    height:120px;
+                    font-size:32px;
+                    height:100px;
                 }
 
                 &.on {
@@ -155,6 +156,7 @@
     @include c.on-mobile {
         height:100px;
         font-size:30px;
+        border-radius:20px;
     }
 
     a {
@@ -414,6 +416,7 @@
             }
         }
 
+        & + a,
         & + button {
             min-width:auto;
             width:300px;
@@ -671,8 +674,8 @@ a, button, input[type=button], input[type=submit] {
             width:228px;
             height:60px;
             font-size:24px;
-            padding-left:40px;
-            padding-right:40px;
+            padding-left:30px;
+            padding-right:30px;
 
             &::after {
                 width:12px;
