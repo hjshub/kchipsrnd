@@ -1049,6 +1049,10 @@ a, button, input[type=button], input[type=submit] {
         align-items:center;
         color:#3B3B3B;
 
+        @include c.on-mobile {
+            font-size:28px;
+        }
+
         &::before {
             width:18px;
             height:18px;
@@ -1056,6 +1060,12 @@ a, button, input[type=button], input[type=submit] {
             border-radius:50%;
             background-color:#fff;
             content:'';
+
+            @include c.on-mobile {
+                width:32px;
+                height:32px;
+                border-width:2px;
+            }
         }
     }
 }
@@ -1234,10 +1244,31 @@ a, button, input[type=button], input[type=submit] {
     &.emp-orange {
         --bg-rgb: 255, 141, 40;
     }
+    &.emp-teal {
+        --bg-rgb: 0, 195, 208;
+    }
+    &.emp-green {
+        > em {
+            color:#478B63;
+            background-color:#D7F2E2;
+        }
+    }
     &.emp-lime {
         > em {
             color:#726F13;
             background-color:#F0F5A9;
+        }
+    }
+    &.emp-red {
+        > em {
+            color:#9D2020;
+            background-color:#FFE8EE;
+        }
+    }
+    &.emp-pink {
+        > em {
+            color:#CB30E0;
+            background-color:#FBDFFF;
         }
     }
     &.emp-purple {
@@ -1245,12 +1276,6 @@ a, button, input[type=button], input[type=submit] {
             color:#6650C9;
             background-color:#EFE2FB;
         }
-    }
-    &.emp-teal {
-        --bg-rgb: 0, 195, 208;
-    }
-    &.emp-green {
-        --bg-rgb: 71, 139, 99;
     }
 }
 

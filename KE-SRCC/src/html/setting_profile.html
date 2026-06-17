@@ -23,7 +23,7 @@
                         <span><a href="setting_keyword.html">Edit Keywords</a></span>
                     </div>
                     <div class="tab-contents">
-                        <header><h3>Basic Information</h3></header>
+                        <header><h3>General Information</h3></header>
                         <div class="register-form">
                             <dl>
                                 <dt class="req">ID</dt>
@@ -37,7 +37,7 @@
                                 <dt class="req">Password</dt>
                                 <dd>
                                     <input type="password" placeholder="Please enter your password" autocomplete="off" required>
-                                    <p class="desc">Use 6-16 characters with a mix of letters, numbers, and symbols.</p>
+                                    <p class="desc">Must be 6-16 characters, including letters, numbers, and symbols</p>
                                 </dd>
                             </dl>
                             <dl>
@@ -47,21 +47,21 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt class="req">Name (English)</dt>
+                                <dt class="req">Full Name(In English)</dt>
                                 <dd>
-                                    <input type="text" placeholder="Please enter your english name" value="JM Kim" autocomplete="off" required>
+                                    <input type="text" placeholder="Enter full name in English" value="JM Kim" autocomplete="off" required>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>Name (Korean)</dt>
+                                <dt>Name(In Korean)</dt>
                                 <dd>
-                                    <input type="text" placeholder="Please enter your korean name" value="김정민" autocomplete="off">
+                                    <input type="text" placeholder="Enter name in Korean" value="김정민" autocomplete="off">
                                 </dd>
                             </dl>
                             <dl>
                                 <dt class="req">Nationality</dt>
                                 <dd>
-                                    <input type="text" placeholder="Please enter your nationality" value="South Korea" autocomplete="off" required>
+                                    <input type="text" placeholder="e.g. Korean, Belgian, German" value="South Korea" autocomplete="off" required>
                                 </dd>
                             </dl>
                             <dl>
@@ -81,7 +81,7 @@
                                             <option value="" disabled hidden>Select your gender...</option>
                                             <option value="">Male</option>
                                             <option value="" selected>Female</option>
-                                            <option value="">Not answer</option>
+                                            <option value="">Prefer not to say</option>
                                         </select>
                                     </span>
                                 </dd>
@@ -89,17 +89,17 @@
                             <dl>
                                 <dt class="req">E-mail</dt>
                                 <dd>
-                                    <input type="text" placeholder="ex) abc123@gmail.com" value="jmkim@smartlain.com" autocomplete="off" required>
+                                    <input type="text" placeholder="e.g. abc123@gmail.com" value="jmkim@smartlain.com" autocomplete="off" required>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>Phone</dt>
+                                <dt>Phone Number</dt>
                                 <dd>
                                     <div class="flex flex-col gap-[10px]">
                                         <span class="select-wrap default">
                                             <label for="countryCode-select"><em class="sr-only">선택</em></label>
                                             <select name="" id="countryCode-select">
-                                                <option value="" disabled hidden>Country code</option>
+                                                <option value="" disabled hidden>Enter number without spaces or dashes</option>
                                                 <option value="" selected>Korea(+82)</option>
                                                 <option value="">United States(+1)</option>
                                             </select>
@@ -112,7 +112,7 @@
                         <header><h3>Affiliation &amp; Position</h3></header>
                         <div class="register-form">
                             <dl>
-                                <dt class="req">Organization Type</dt>
+                                <dt class="req">Organisation Type</dt>
                                 <dd>
                                     <span class="select-wrap default">
                                         <label for="org-select"><em class="sr-only">선택</em></label>
@@ -120,16 +120,16 @@
                                             <option value="" disabled hidden>Select Organization Type...</option>
                                             <option value="" selected>University</option>
                                             <option value="">Research Institute</option>
-                                            <option value="">Corporation</option>
-                                            <option value="">Etc.</option>
+                                            <option value="">Company</option>
+                                            <option value="">Other</option>
                                         </select>
                                     </span>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt class="req">Organization Name</dt>
+                                <dt class="req">Organisation Name</dt>
                                 <dd>
-                                    <input type="text" placeholder="Please enter your Organization" value="smartlainLab" autocomplete="off" required>
+                                    <input type="text" placeholder="Enter organisation name" value="smartlainLab" autocomplete="off" required>
                                 </dd>
                             </dl>
                             <dl>
@@ -148,64 +148,64 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt class="req">Specific Country</dt>
+                                <dt class="req">Country</dt>
                                 <dd>
-                                    <input type="text" placeholder="Please enter your country (e.g., Belgium)" value="Belgium" autocomplete="off" required>
+                                    <input type="text" placeholder="Enter country (e.g., Belgium, Republic of Korea)" value="Belgium" autocomplete="off" required>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt class="req">Research Area</dt>
+                                <dt class="req">Research Area (Expertise)</dt>
                                 <dd>
-                                    <input type="text" placeholder="Please enter your Research Area" value="Next-Generation Logic Devices" autocomplete="off" required>
+                                    <input type="text" placeholder="e.g. neuromorphic computing, heterogeneous integration" value="Next-Generation Logic Devices" autocomplete="off" required>
                                 </dd>
                             </dl>
                         </div>
                         <header>
-                            <h3>Researcher DB Registration</h3>
-                            <p>※ The information below is collected solely for the Researcher Database and will not be made public. (Optional)</p>
+                            <h3>Researcher Profile (Optional)</h3>
+                            <p>※ The information below is collected exclusively for the Researcher Database and will remain strictly confidential.</p>
                         </header>
                         <div class="register-form">
                             <dl>
-                                <dt>Department</dt>
+                                <dt>Department / Division</dt>
                                 <dd>
                                     <input type="text" placeholder="e.g., Advanced Materials R&D Center" value="Advanced Materials R&D Center" autocomplete="off">
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>Position</dt>
+                                <dt>Current Position</dt>
                                 <dd>
                                     <input type="text" placeholder="e.g., Senior Engineer" value="Senior Engineer" autocomplete="off">
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>Employment Period</dt>
+                                <dt>Period of Employment</dt>
                                 <dd>
                                     <input type="text" placeholder="e.g., 2020.03 - Present" value="2020.03 - Present" autocomplete="off">
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>Highest Degree</dt>
+                                <dt>Highest Qualification</dt>
                                 <dd>
                                     <span class="select-wrap default">
                                         <label for="degree-select"><em class="sr-only">선택</em></label>
                                         <select name="" id="degree-select">
                                             <option value="" disabled hidden>Select your highest degree...</option>
-                                            <option value="" selected>Bachelor's Degree</option>
-                                            <option value="">Master's Degree</option>
-                                            <option value="">Doctorate / Ph.D</option>
+                                            <option value="" selected>Bachelor's</option>
+                                            <option value="">Master's</option>
+                                            <option value="">Doctorate(PhD)</option>
                                             <option value="">Other</option>
                                         </select>
                                     </span>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>Institution</dt>
+                                <dt>University / Institution</dt>
                                 <dd>
-                                    <input type="text" placeholder="e.g., KAIST, Stanford University" value="KAIST, Stanford University" autocomplete="off">
+                                    <input type="text" placeholder="e.g., KAIST, KU Leuven, etc." value="KAIST, Stanford University" autocomplete="off">
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>Field of Study</dt>
+                                <dt>Academic Discipline</dt>
                                 <dd>
                                     <input type="text" placeholder="e.g., Materials Science and Engineering" value="Materials Science and Engineering" autocomplete="off">
                                 </dd>

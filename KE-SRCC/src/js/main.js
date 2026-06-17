@@ -142,23 +142,27 @@ const commonFunction = (() => {
 	}
 	const setSwiper = (target, addOption = {}) => { // swiper 설정
 		try {
-			if (!Swiper) return;
+			if (!Swiper) return null;
 
 			const control = document.querySelector(`.slide-control[data-slide-match="${target}"]`);
 			const prevEl = control?.querySelector('.prev') || null;
 			const nextEl = control?.querySelector('.next') || null;
 
-			new Swiper(`.${target}`, {
+			return new Swiper(`.${target}`, {
 				observer: true,
 				observeParents: true,
 				navigation: {
 					prevEl,
 					nextEl
 				},
+				watchOverflow: true,
+				freeMode: false,
+				freeModeMomentum: false,
 				...addOption
 			});
 		}catch {
 			console.error(new Error(`Failed to initialize ${target} swiper`));
+			return null;
 		}
 	}
 	const updateDimByCount = (swiper, keepCount = 2, className = 'is-dimmed') => { // swiper dimmed 업데이트
@@ -171,6 +175,25 @@ const commonFunction = (() => {
 			const idx = (swiper.activeIndex + i) % slides.length;
 			slides[idx]?.classList.remove(className);
 		}
+	};
+	const handleSwipeResizable = (target, addOption = {}, breakpoint = 1280) => { // swiper resize 처리
+		let swiper = null;
+		
+		// 초기 생성
+		swiper = setSwiper(target, addOption);
+		
+		window.addEventListener('resize', () => {
+			const shouldEnable = window.innerWidth < breakpoint;
+			
+			if (shouldEnable && !swiper) {
+				// 활성화 필요
+				swiper = setSwiper(target, addOption);
+			} else if (!shouldEnable && swiper) {
+				// 비활성화 필요
+				swiper.destroy();
+				swiper = null;
+			}
+		});
 	};
 	const setTabControl = () => { // tab control 설정
 		const tabNav = document.querySelectorAll('.tab-nav');
@@ -506,6 +529,7 @@ const commonFunction = (() => {
 		setGnb, // gnb 설정
 		setSwiper, // swiper 설정
 		updateDimByCount, // swiper dimmed 업데이트
+		handleSwipeResizable, // swiper resize 처리
 		copyTextToClipboard, // 클립보드 복사
 		openModal: (target) => { // 모달 on
 			if (modalControl) {

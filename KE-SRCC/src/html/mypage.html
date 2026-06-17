@@ -15,8 +15,8 @@
       <div class="mypage-profile">
         <div class="mypage-thumb"><i class="icon icon-user"><em class="sr-only">프로필</em></i></div>
         <div class="mypage-info">
-          <p class="mypage-hello">Hello. <strong>JM Kim</strong> <a href="setting_profile.html" class="btn-setting"><em class="sr-only">설정</em></a></p>
-          <p class="mypage-desc">나의 연구 분야에 최적화된 파트너와 협력 기회를 안내해 드립니다.</p>
+          <p class="mypage-hello">Welcome. <strong>JM Kim</strong> <a href="setting_profile.html" class="btn-setting"><em class="sr-only">설정</em></a></p>
+          <p class="mypage-desc">Discover partnership and collaboration opportunities optimised for your research interests.</p>
         </div>
         <a href="community_list.html" class="btn--rounded !bg-[#0088FF]"><em>Community</em></a>
       </div>
@@ -36,7 +36,7 @@
 
       <div class="mypage-partners">
         <div class="section-head">
-          <h2>나의 관심 분야를<br class="block md:hidden"> 연구하는 분들이에요.</h2>
+          <h2>Researchers in <br class="block md:hidden">your fields of interest</h2>
           <div class="slide-control opacity-50" data-slide-match="partners-list">
             <button type="button" class="prev"><i class="icon icon-slide-prev"><em class="sr-only">이전</em></i></button>
             <button type="button" class="next"><i class="icon icon-slide-next"><em class="sr-only">다음</em></i></button>
@@ -236,7 +236,7 @@
       <div class="mypage-news-section">
         <article class="news-block">
           <div class="section-head col">
-            <h2>Tailored<br class="hidden md:block">News</h2>
+            <h2>Personalised <br class="hidden md:block">News</h2>
             <div class="slide-control" data-slide-match="news-list">
               <button type="button" class="prev"><i class="icon icon-slide-prev"><em class="sr-only">이전</em></i></button>
             <button type="button" class="next"><i class="icon icon-slide-next"><em class="sr-only">다음</em></i></button>
@@ -622,9 +622,7 @@
       setSwiper('partners-list', { 
         slidesPerView: 'auto',
         centeredSlides: false,
-        freeMode: false,
-        freeModeMomentum: false,
-        loop: true,
+        loop: false,
         speed: 800,
       });
 
@@ -632,9 +630,7 @@
       setSwiper('news-list', { 
         slidesPerView: 'auto',
         centeredSlides: false,
-        freeMode: false,
-        freeModeMomentum: false,
-        loop: true,
+        loop: false,
         speed: 800,
         on: {
           init(swiper) {

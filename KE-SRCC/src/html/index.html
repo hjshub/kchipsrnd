@@ -26,7 +26,7 @@
       </div>
       <div class="main-keyword">
         <dl>
-          <dt><span>추천키워드</span></dt>
+          <dt><span>Suggested</span></dt>
           <dd>
             <span>Fabless</span>
             <span>Korea Fabless</span>
@@ -324,6 +324,11 @@
                 <li class="swiper-slide"><a href="#"><img src="./img/thumb/@thumb_partners_03.png" alt=""></a></li>
                 <li class="swiper-slide"><a href="#"><img src="./img/thumb/@thumb_partners_04.png" alt=""></a></li>
                 <li class="swiper-slide"><a href="#"><img src="./img/thumb/@thumb_partners_05.png" alt=""></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./img/thumb/@thumb_partners_01.png" alt=""></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./img/thumb/@thumb_partners_02.png" alt=""></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./img/thumb/@thumb_partners_03.png" alt=""></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./img/thumb/@thumb_partners_04.png" alt=""></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./img/thumb/@thumb_partners_05.png" alt=""></a></li>
               </ul>
             </div>
             <div class="slide-control" data-slide-match="main-partners-swiper">
@@ -342,13 +347,13 @@
     window.addEventListener('load', () => {
       const commonFunction = window.commonFunction;
       const setSwiper = commonFunction.setSwiper;
+      const handleSwipeResizable = commonFunction.handleSwipeResizable;
 
       // Calls & Events slide
       setSwiper('main-program-swiper', { 
         slidesPerView: 'auto',
         centeredSlides: false,
-        freeMode: false,
-        freeModeMomentum: false,
+        spaceBetween:30,
         loop: false,
         speed: 800,
       });
@@ -357,8 +362,16 @@
       setSwiper('main-report-swiper', { 
         slidesPerView: 'auto',
         centeredSlides: false,
-        freeMode: false,
-        freeModeMomentum: false,
+        spaceBetween:30,
+        loop: false,
+        speed: 800,
+      });
+
+      // Semiconductor News slide
+      handleSwipeResizable('main-news-swiper', { 
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        spaceBetween:20,
         loop: false,
         speed: 800,
       });
@@ -367,10 +380,12 @@
       setSwiper('main-partners-swiper', { 
         slidesPerView: 'auto',
         centeredSlides: false,
-        freeMode: false,
-        freeModeMomentum: false,
+        spaceBetween:15,
         loop: false,
         speed: 800,
+        breakpoints: {
+          822: {spaceBetween: 30},
+}
       });
     }); 
   })();

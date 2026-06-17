@@ -1,5 +1,5 @@
 @@include('./inc/head.html', {
-    "title": "KCHIPSRND | register"
+    "title": "KCHIPSRND | Registration"
 })
 
 @@include('./inc/skipNavigation.html')
@@ -13,12 +13,12 @@
     <section class="section register">
         <div class="--inner md">
             <div class="heading-title">
-                <h2>Register</h2>
+                <h2>Registration</h2>
             </div>
 
             <article>
                 <form method="post" action="">
-                    <header><h3>Basic Information</h3></header>
+                    <header><h3>General Information</h3></header>
                     <div class="register-form">
                         <dl>
                             <dt class="req">ID</dt>
@@ -34,32 +34,32 @@
                             <dt class="req">Password</dt>
                             <dd>
                                 <input type="password" placeholder="Please enter your password" autocomplete="off" required>
-                                <p class="desc">Use 6-16 characters with a mix of letters, numbers, and symbols.</p>
+                                <p class="desc">Must be 6-16 characters, including letters, numbers, and symbols</p>
                             </dd>
                         </dl>
                         <dl>
                             <dt class="req">Confirm Password</dt>
                             <dd>
                                 <input type="password" placeholder="Confirm your password to proceed" autocomplete="off" required>
-                                <p class="error">Passwords do not match.</p>
+                                <p class="error">Passwords do not match. Please try again.</p>
                             </dd>
                         </dl>
                         <dl>
-                            <dt class="req">Name (English)</dt>
+                            <dt class="req">Full Name(In English)</dt>
                             <dd>
-                                <input type="text" placeholder="Please enter your english name" autocomplete="off" required>
+                                <input type="text" placeholder="Enter full name in English" autocomplete="off" required>
                             </dd>
                         </dl>
                         <dl>
-                            <dt>Name (Korean)</dt>
+                            <dt>Name(In Korean)</dt>
                             <dd>
-                                <input type="text" placeholder="Please enter your korean name" autocomplete="off">
+                                <input type="text" placeholder="Enter name in Korean" autocomplete="off">
                             </dd>
                         </dl>
                         <dl>
                             <dt class="req">Nationality</dt>
                             <dd>
-                                <input type="text" placeholder="Please enter your nationality" autocomplete="off" required>
+                                <input type="text" placeholder="e.g. Korean, Belgian, German" autocomplete="off" required>
                             </dd>
                         </dl>
                         <dl>
@@ -79,7 +79,7 @@
                                         <option value="" selected disabled hidden>Select your gender...</option>
                                         <option value="">Male</option>
                                         <option value="">Female</option>
-                                        <option value="">Not answer</option>
+                                        <option value="">Prefer not to say</option>
                                     </select>
                                 </span>
                             </dd>
@@ -87,17 +87,17 @@
                         <dl>
                             <dt class="req">E-mail</dt>
                             <dd>
-                                <input type="text" placeholder="ex) abc123@gmail.com" autocomplete="off" required>
+                                <input type="text" placeholder="e.g. abc123@gmail.com" autocomplete="off" required>
                             </dd>
                         </dl>
                         <dl>
-                            <dt>Phone</dt>
+                            <dt>Phone Number</dt>
                             <dd>
                                 <div class="flex flex-col gap-[10px]">
                                     <span class="select-wrap default">
                                         <label for="countryCode-select"><em class="sr-only">선택</em></label>
                                         <select name="" id="countryCode-select">
-                                            <option value="" selected disabled hidden>Country code</option>
+                                            <option value="" selected disabled hidden>Enter number without spaces or dashes</option>
                                             <option value="">Korea(+82)</option>
                                             <option value="">United States(+1)</option>
                                         </select>
@@ -110,7 +110,7 @@
                     <header><h3>Affiliation &amp; Position</h3></header>
                     <div class="register-form">
                         <dl>
-                            <dt class="req">Organization Type</dt>
+                            <dt class="req">Organisation Type</dt>
                             <dd>
                                 <span class="select-wrap default">
                                     <label for="org-select"><em class="sr-only">선택</em></label>
@@ -118,16 +118,16 @@
                                         <option value="" selected disabled hidden>Select Organization Type...</option>
                                         <option value="">University</option>
                                         <option value="">Research Institute</option>
-                                        <option value="">Corporation</option>
-                                        <option value="">Etc.</option>
+                                        <option value="">Company</option>
+                                        <option value="">Other</option>
                                     </select>
                                 </span>
                             </dd>
                         </dl>
                         <dl>
-                            <dt class="req">Organization Name</dt>
+                            <dt class="req">Organisation Name</dt>
                             <dd>
-                                <input type="text" placeholder="Please enter your Organization" autocomplete="off" required>
+                                <input type="text" placeholder="Enter organisation name" autocomplete="off" required>
                             </dd>
                         </dl>
                         <dl>
@@ -146,146 +146,220 @@
                             </dd>
                         </dl>
                         <dl>
-                            <dt class="req">Specific Country</dt>
+                            <dt class="req">Country</dt>
                             <dd>
-                                <input type="text" placeholder="Please enter your country (e.g., Belgium)" autocomplete="off" required>
+                                <input type="text" placeholder="Enter country (e.g., Belgium, Republic of Korea)" autocomplete="off" required>
                             </dd>
                         </dl>
                         <dl>
-                            <dt class="req">Research Area</dt>
+                            <dt class="req">Research Area (Expertise)</dt>
                             <dd>
-                                <input type="text" placeholder="Please enter your Research Area" autocomplete="off" required>
+                                <input type="text" placeholder="e.g. neuromorphic computing, heterogeneous integration" autocomplete="off" required>
                             </dd>
                         </dl>
                     </div>
                     <header>
-                        <h3>Researcher DB Registration</h3>
-                        <p>※ The information below is collected solely for the Researcher Database and will not be made public. (Optional)</p>
+                        <h3>Researcher Profile (Optional)</h3>
+                        <p>※ The information below is collected exclusively for the Researcher Database and will remain strictly confidential.</p>
                     </header>
                     <div class="register-form">
                         <dl>
-                            <dt>Department</dt>
+                            <dt>Department / Division</dt>
                             <dd>
                                 <input type="text" placeholder="e.g., Advanced Materials R&D Center" autocomplete="off">
                             </dd>
                         </dl>
                         <dl>
-                            <dt>Position</dt>
+                            <dt>Current Position</dt>
                             <dd>
                                 <input type="text" placeholder="e.g., Senior Engineer" autocomplete="off">
                             </dd>
                         </dl>
                         <dl>
-                            <dt>Employment Period</dt>
+                            <dt>Period of Employment</dt>
                             <dd>
                                 <input type="text" placeholder="e.g., 2020.03 - Present" autocomplete="off">
                             </dd>
                         </dl>
                         <dl>
-                            <dt>Highest Degree</dt>
+                            <dt>Highest Qualification</dt>
                             <dd>
                                 <span class="select-wrap default">
                                     <label for="degree-select"><em class="sr-only">선택</em></label>
                                     <select name="" id="degree-select">
                                         <option value="" selected disabled hidden>Select your highest degree...</option>
-                                        <option value="">Bachelor's Degree</option>
-                                        <option value="">Master's Degree</option>
-                                        <option value="">Doctorate / Ph.D</option>
+                                        <option value="">Bachelor's</option>
+                                        <option value="">Master's</option>
+                                        <option value="">Doctorate(PhD)</option>
                                         <option value="">Other</option>
                                     </select>
                                 </span>
                             </dd>
                         </dl>
                         <dl>
-                            <dt>Institution</dt>
+                            <dt>University / Institution</dt>
                             <dd>
-                                <input type="text" placeholder="e.g., KAIST, Stanford University" autocomplete="off">
+                                <input type="text" placeholder="e.g., KAIST, KU Leuven, etc." autocomplete="off">
                             </dd>
                         </dl>
                         <dl>
-                            <dt>Field of Study</dt>
+                            <dt>Academic Discipline</dt>
                             <dd>
                                 <input type="text" placeholder="e.g., Materials Science and Engineering" autocomplete="off">
                             </dd>
                         </dl>
                     </div>
 
-                    <div class="consent-box">
-                        <header>
-                            <h4>Privacy Policy Consent (Required)</h4>
-                            <p>Under Article 15 of the Personal Information Protection Act, please consent to the following data collection and use.</p>
-                        </header>
-                        <div class="consent-info">
-                            <dl>
-                                <dt>Purpose of Collection and Use</dt>
-                                <dd>
-                                    <p>Member identification and verification, Service provision and delivery of notices,</p>
-                                    <p>Researcher database management and networking service operation</p>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>Data Collected</dt>
-                                <dd>
-                                    <p>(Required): ID, Password, Name (English), Nationality, Date of Birth, Email, Organization Type, Organization Name, Specific Country, Research Area</p>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>Retention and Use Period</dt>
-                                <dd>
-                                    <p>Until membership withdrawal (However, retained as required by relevant laws and regulations)</p>
-                                </dd>
-                            </dl>
-                            <div class="consent-desc">You have the right to refuse consent. However, refusing consent will restrict your account registration and use of services.</div>
-                        </div>
-                        <div class="agreement-box">
-                            <div class="chk-grp">
-                                <span class="chk-wrap">
-                                    <input type="checkbox" name="toggle-agreement-1" id="agree-1">
-                                    <label for="agree-1">I Agree</label>
-                                </span>
-                                <span class="chk-wrap">
-                                    <input type="checkbox" name="toggle-agreement-1" id="disagree-1">
-                                    <label for="disagree-1">I Do Not Agree</label>
-                                </span>
+                    <div class="consent-form">
+                        <div class="customed-scroll">
+                            <header>
+                                <h4>Privacy Notice and Consent Form</h4>
+                                <p>Korea-EU Semiconductor R&D Cooperation Center - Website Registration</p>
+                            </header>
+                            <div class="consent-info">
+                                <dl>
+                                    <dt>A. Purpose of Collection and Use of Personal Data</dt>
+                                    <dd>
+                                        <p>
+                                            KE-SRCC collects and uses personal data for website registration and user management, the establishment
+                                            and operation of the researcher database, the provision of personalised research information and
+                                            recommendation services, service usage statistics analysis, and security and prevention of unauthorized use
+                                        </p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>B. Items of Personal Data Collected</dt>
+                                    <dd>
+                                        <div class="dot emp">
+                                            <span>
+                                                <strong>General Members</strong>
+                                                <span class="dash">
+                                                    <b>Mandatory items</b>
+                                                    <em>
+                                                        [Account info] User ID, Password, Full Name (English), Nationality, Date of Birth, Gender, E-mail Address
+                                                        [Affiliation info] Organization Type, Organization Name, Current Location, Research Area
+                                                    </em>
+                                                </span>
+                                                <span class="dash">
+                                                    <b>Optional items</b>
+                                                    <em>
+                                                        Full Name (Korean), Phone Number (including country code), Consent to receive marketing /
+                                                        informational e-mails
+                                                    </em>
+                                                </span>
+                                            </span>
+                                            <span>
+                                                <strong>Researcher Profile (Optional • For Researcher DB purposes; Public disclosure is optional)</strong>
+                                                <span class="dash">
+                                                    <b>Affiliation</b>
+                                                    <em>
+                                                        Organization Type, Organization Name, Current Location, Country, Department, Current Position, Period of Employment
+                                                    </em>
+                                                </span>
+                                                <span class="dash">
+                                                    <b>Education</b>
+                                                    <em>
+                                                        Highest Degree, Institution of Graduation, Field of Study
+                                                    </em>
+                                                </span>
+                                                <span class="dash">
+                                                    <b>Research</b>
+                                                    <em>
+                                                        Research Domain, Keywords of Interest (Research Domain / Layer / Application)
+                                                    </em>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <p class="consent-desc"><strong>[Automatically Collected Items]</strong> Service usage records, access logs, cookies, and IP addresses (Purpose: service statistics analysis, security, and prevention of unauthorized use)</p>
+                                        <p>※ Children under the age of 14 are not permitted to register via this website.</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>C. Outsourcing of Personal Data Processing</dt>
+                                    <dd>
+                                        <p>
+                                            To ensure seamless service delivery and system management, the Korea-Europe Semiconductor R&D
+                                            Cooperation Center entrusts the processing of personal data to professional external contractors as follows:
+                                        </p>
+                                        <div class="dot">
+                                            <span>Contractors : Smartrain Co., Ltd. (Website Maintenance), Cafe24 Corp. (Server Hosting)</span>
+                                            <span>Outsourced Tasks : Website system management and maintenance, server operations, and data storage</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>D. Retention and Use Period of Personal Data</dt>
+                                    <dd>
+                                        <p>
+                                            To ensure seamless service delivery and system management, the Korea-Europe Semiconductor R&D
+                                            Cooperation Center entrusts the processing of personal data to professional external contractors as follows:
+                                        </p>
+                                        <div class="dot">
+                                            <span>Retained until account deletion (membership withdrawal).</span>
+                                            <span>
+                                                However, in the event of an ongoing investigation regarding a violation of relevant laws, the data will be
+                                                retained until the conclusion of the investigation
+                                            </span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>E. Right to Refuse Consent and Consequences of Refusal</dt>
+                                    <dd>
+                                        <p>
+                                            Users have the right to refuse consent to the collection and use of their personal data. If you do not agree to
+                                            the mandatory items, website registration and service usage will be restricted. Refusing consent to optional
+                                            items will not affect your access to basic services.
+                                        </p>
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="consent-box">
-                        <header>
-                            <h4>Privacy Policy Consent (Optional)</h4>
-                        </header>
-                        <div class="consent-info">
-                            <dl>
-                                <dt>Purpose of Collection and Use</dt>
-                                <dd>
-                                    <p>Researcher database registration and detailed profile provision</p>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>수집 항목</dt>
-                                <dd>
-                                    <p>(Optional) Gender, Phone, Department, Position, Employment Period, Highest Degree, Institution, Field of Study, Keywords of Interest</p>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>Retention and Use Period</dt>
-                                <dd>
-                                    <p>UUntil membership withdrawal</p>
-                                </dd>
-                            </dl>
-                            <div class="consent-desc">You may still use the basic services even if you do not agree to these optional items.</div>
-                        </div>
-                        <div class="agreement-box">
-                            <div class="chk-grp">
-                                <span class="chk-wrap">
-                                    <input type="checkbox" name="toggle-agreement-2" id="agree-2">
-                                    <label for="agree-2">I Agree</label>
-                                </span>
-                                <span class="chk-wrap">
-                                    <input type="checkbox" name="toggle-agreement-2" id="disagree-2">
-                                    <label for="disagree-2">I Do Not Agree</label>
-                                </span>
+                        <div class="consent-box">
+                            <div class="consent-items-title">Consent Items</div>
+                            <div class="consent-item">
+                                <div class="chk-grp">
+                                    <div class="chk-wrap">
+                                        <input type="checkbox" name="consentItems-1" id="consentItems-1">
+                                        <label for="consentItems-1"><em class="sr-only">agree</em></label>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <strong>[Mandatory] I agree to the collection, use, and outsourcing of my personal data.</strong>
+                                    <span>
+                                        Items collected : User ID, Password, Full Name (Korean/English), Nationality, Date of Birth, Gender, 
+                                        E-mail Address, Automatically collected items (access logs, etc.)
+                                    </span>
+                                    <span>Contractors : Smartrain Co., Ltd. (Maintenance), Cafe24 Corp. (Hosting)</span>
+                                </div>
+                            </div>
+                            <div class="consent-item">
+                                <div class="chk-grp">
+                                    <div class="chk-wrap">
+                                        <input type="checkbox" name="consentItems-2" id="consentItems-2">
+                                        <label for="consentItems-2"><em class="sr-only">agree</em></label>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <strong>[Optional] I agree to the collection and use of my Researcher Profile information.</strong>
+                                    <span>
+                                        Items collected : Affiliation, Education, Research Areas, Keywords of Interest, etc. (For the purpose of building and utilizing the Researcher DB)
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="consent-item">
+                                <div class="chk-grp">
+                                    <div class="chk-wrap">
+                                        <input type="checkbox" name="consentItems-3" id="consentItems-3">
+                                        <label for="consentItems-3"><em class="sr-only">agree</em></label>
+                                    </div>
+                                </div>
+                                <div class="dot">
+                                    <strong>[Optional] I agree to be displayed as a Recommended Researcher.</strong>
+                                    <span>
+                                        By checking this box, your profile may be recommended to other members as a potential research partner.
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
