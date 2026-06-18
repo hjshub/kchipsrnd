@@ -244,6 +244,10 @@
                 overflow:hidden;
                 height:100vh;
 
+                @supports (height: 100dvh) {
+                    height:calc(100dvh);
+                }
+
                 .gnb {
                     background-color:#fff;
                     border-color:#B1BCC4;
@@ -277,12 +281,6 @@
                     }
                 }
             }
-
-            @supports (height: 100dvh) {
-                :root.m-open {
-                    height:calc(100dvh - 120px);
-                }
-            }
         }
 
         .all-menu {
@@ -296,7 +294,11 @@
             background-color:#fff;
             overflow:hidden;
             overflow-y:auto;
-            padding-bottom:160px;
+            padding-bottom:60px;
+
+            @supports (height: 100dvh) {
+                height:calc(100dvh - 120px);
+            }
 
             > ul {
                 > li {
@@ -414,12 +416,6 @@
                         }
                     }
                 }
-            }
-        }
-
-        @supports (height: 100dvh) {
-            .all-menu {
-                height:calc(100dvh - 120px);
             }
         }
     }

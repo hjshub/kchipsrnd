@@ -94,7 +94,7 @@ const commonFunction = (() => {
 		// 모바일 전체메뉴
 		const btnAllMenu = document.querySelector('.btn-all-menu');
 		const allMenu = document.querySelector('.all-menu');
-		const anchor = allMenu.querySelectorAll('a:not(.alone, .m-depth2 a)');
+		const anchor = allMenu?.querySelectorAll('a:not(.alone, .m-depth2 a)');
 
 		if(!btnAllMenu || !allMenu || allMenu.closest('#guide')) return;
 

@@ -133,24 +133,89 @@ section {
 }
 
 #gate {
-    width:100vw;
+    width:100%;
     min-height:100vh;
+
     @include c.bg(transparent, '../img/common/bg_gate.png');
+
+    @supports (min-height:100dvh){
+        min-height:100dvh;
+    }
+
+    @include c.bp(1280px) {
+        @include c.bg(transparent, '../img/common/bg_gate_m.png');
+    }
+    
 
     header {
         @include c.fl-col(15px);
         align-items: center;
+        justify-content: center;
         padding-top:95px;
         color:#fff;
         font-size:16px;
         font-weight:700;
+        text-align:center;
+
+        @include c.bp(1650px) {
+            gap:1vw;
+            padding-top:6vw;
+            font-size:1.6vw;
+        }
+
+        @include c.bp(1280px) {
+            min-height:30vh;
+            gap:20px;
+            padding:0;
+            font-size:24px;
+
+            @supports (min-height:30dvh){
+                min-height:30dvh;
+            }
+        }
+
+        @include c.on-mobile {
+            gap:20px;
+            padding:0;
+            font-size:24px;
+        }
 
         h2 {
             font-size:48px;
+
+            @include c.bp(1650px) {
+                font-size:3.2vw;
+            }
+
+            @include c.bp(1280px) {
+                font-size:60px;
+                padding:0 50px;
+            }
+
+            @include c.on-mobile {
+                font-size:60px;
+                padding:0 50px;
+            }
+        }
+
+        p {
+            @include c.bp(1280px) {
+                padding:0 100px;
+            }
+
+            @include c.on-mobile {
+                padding:0 130px;
+            }
+        }
+
+        * {
+            word-break: keep-all;
+            word-wrap: break-word;
+            overflow-wrap:break-word;
         }
     }
 
-    .map {
+    .gate-map {
         @include c.fl;
         justify-content: center;
         align-items: center;
@@ -158,20 +223,162 @@ section {
         width:1559px;
         height:598px;
         margin:120px auto 0;
+
+        @include c.bp(1650px) {
+            width:92.79762vw;
+            height:35.59524vw;
+            margin:0;
+            position:absolute;
+            top:50%;
+            left:50%;
+            @apply -translate-x-1/2 -translate-y-1/2;
+        }
+
+        @include c.bp(1280px) {
+            display:none;
+        }
+
+        svg {
+            width:100%;
+            height:100%;
+        }
+
+        .map-ke-srcc,
+        .map-ku-srcc,
+        .map-etri {
+            fill-opacity: 0;
+            transition-property: fill-opacity;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
     }
 
-    .map-ke-srcc,
-    .map-ku-srcc,
-    .map-etri {
-        fill-opacity: 0;
-        transition-property: fill-opacity;
-        transition-duration: 0.3s;
-        transition-timing-function: ease;
+    .logo-ku-srcc {
+        @include c.icon-svg(s.$icon-logo-ku-srcc);
+
+        @include c.bp(1280px) {
+            &::before {
+                width:224px;
+                height:52px;
+            }
+        }
+
+        @include c.on-mobile {
+            &::before {
+                width:224px;
+                height:52px;
+            }
+        }
+    }
+
+    .logo-ke-srcc {
+        @include c.icon-svg(s.$icon-logo-ke-srcc);
+
+        &::before {
+            width:128px;
+            height:46px;
+        }
+
+        @include c.bp(1280px) {
+            &::before {
+                width:220px;
+                height:80px;
+            }
+        }
+
+        @include c.on-mobile {
+            &::before {
+                width:220px;
+                height:80px;
+            }
+        }
+    }
+
+    .logo-etri {
+        @include c.icon-svg(s.$icon-logo-etri);
+
+        @include c.bp(1280px) {
+            &::before {
+                width:166px;
+                height:68px;
+            }
+        }
+
+        @include c.on-mobile {
+            &::before {
+                width:166px;
+                height:68px;
+            }
+        }
+    }
+
+    [data-map-target="map-ku-srcc"] {
+        top:266px;
+        right:390px;
+        --theme-color: #FE3401;
+
+        @include c.bp(1650px) {
+            top:15.83333vw;
+            right:23.21429vw;
+        }
+
+        @include c.bp(1280px) {
+            top:0;
+            right:0;
+            --theme-color: #FF8D28;
+        }
+    }
+
+    [data-map-target="map-ke-srcc"] {
+        top:198px;
+        left:-42px;
+        --theme-color: #0092FF;
+
+        @include c.bp(1650px) {
+            top:11.78571vw;
+            left:-2.5vw;
+        }
+
+        @include c.bp(1280px) {
+            top:0;
+            left:0;
+        }
+    }
+
+    [data-map-target="map-etri"] {
+        bottom:490px;
+        left:563px;
+        --theme-color: #45C422;
+
+        &::before {
+            top:80px;
+            bottom:auto;
+        }
+
+        @include c.bp(1650px) {
+            bottom:29.16667vw;
+            left:33.5119vw;
+
+            &::before {
+                top:4.7619vw;
+                bottom:auto;
+            }
+        }
+
+        @include c.bp(1280px) {
+            bottom:0;
+            left:0;
+            --theme-color: #71B261;
+        }
     }
 
     .center-flag {
         position:absolute;
         width:324px;
+
+        @include c.bp(1650px) {
+            width:19.28571vw;
+        }
 
         .center-wrap {
             @include c.fl-col;
@@ -187,6 +394,12 @@ section {
             border-color:var(--theme-color);
             overflow:hidden;
 
+            @include c.bp(1650px) {
+                height:4.7619vw;
+                border-radius:0.89286vw;
+                border-width:0.05952vw;
+            }
+
             .center-info {
                 @include c.fl-col(35px);
                 width:100%;
@@ -195,12 +408,24 @@ section {
                 color:#fff;
                 padding:45px 0 40px;
 
+                @include c.bp(1650px) {
+                    @include c.fl-col(2.08333vw);
+                    padding:2.67857vw 0 2.38095vw;
+                }
+
                 .center-name {
                     @include c.fl-col(10px);
                     width:100%;
                     align-items:center;
                     font-size:14px;
                     font-weight:500;
+
+                    @include c.bp(1650px) {
+                        @include c.fl-col(0.59524vw);
+                        font-size:14px;
+                        font-weight:500;
+                        padding:0 2vw;
+                    }
 
                     strong {
                         font-size:32px;
@@ -209,6 +434,10 @@ section {
 
                 .center-dir-link {
                     @include c.fl-col(10px);
+
+                    @include c.bp(1650px) {
+                        @include c.fl-col(0.59524vw);
+                    }
                     
                     a {
                         @include c.fl(28px);
@@ -225,6 +454,15 @@ section {
                         transition-property: background-color, border-color;
                         transition-duration: 0.3s;
                         transition-timing-function: ease;
+
+                        @include c.bp(1650px) {
+                            @include c.fl(1.66667vw);
+                            width:14vw;
+                            height:4vw;
+                            border-radius:0.59524vw;
+                            border-width:0.05952vw;
+                            font-size:14px;
+                        }
 
                         &:hover,
                         &:focus {
@@ -248,44 +486,9 @@ section {
             transition-duration: 0.3s;
             transition-timing-function: ease;
             content:'';
-        }
 
-        .logo-ku-srcc {
-            @include c.icon-svg(s.$icon-logo-ku-srcc);
-        }
-
-        .logo-ke-srcc {
-            @include c.icon-svg(s.$icon-logo-ke-srcc);
-            &::before {
-                width:128px;
-                height:46px;
-            }
-        }
-
-        .logo-etri {
-            @include c.icon-svg(s.$icon-logo-etri);
-        }
-
-        &[data-map-target="map-ku-srcc"] {
-            top:266px;
-            right:390px;
-            --theme-color: #FE3401;
-        }
-
-        &[data-map-target="map-ke-srcc"] {
-            top:198px;
-            left:-42px;
-            --theme-color: #0092FF;
-        }
-
-        &[data-map-target="map-etri"] {
-            bottom:490px;
-            left:563px;
-            --theme-color: #45C422;
-
-            &::before {
-                top:80px;
-                bottom:auto;
+            @include c.bp(1650px) {
+                bottom:4.7619vw;
             }
         }
 
@@ -296,6 +499,158 @@ section {
 
             [class*=logo-] {
                 display:none;
+            }
+        }
+    }
+
+    .gate-map-mobile {
+        @include c.fl-col;
+        width:100%;
+        min-height:64vh;
+        gap:40px;
+
+        @supports (min-height:64dvh) {
+            min-height:64dvh;
+        }
+
+        @include c.on-mobile {
+            gap:40px;
+        }
+
+        .center-flag-mobile {
+            @include c.fl-col;
+            justify-content: center;
+            width:100%;
+            min-height:240px;
+            flex-grow:1;
+            position:relative;
+
+            @include c.on-mobile {
+                min-height:240px;
+            }
+
+            & + .center-flag-mobile {
+                &::before {
+                    position:absolute;
+                    width:auto;
+                    height:1px;
+                    right:32px;
+                    left:32px;
+                    top:-20px;
+                    background-color:rgba(#fff, 0.3);
+                    content:'';
+
+                    @include c.on-mobile {
+                        right:32px;
+                        left:32px;
+                        top:-20px;
+                    }
+                }
+            }
+
+            .center-wrap {
+                @include c.fl-col(20px);
+                width:100%;
+                height:100%;
+                padding:0 32px;
+
+                @include c.on-mobile {
+                    gap:20px;
+                    padding:0 32px;
+                }
+
+                .center-info {
+                    @include c.fl(40px);
+                    align-items:flex-start;
+                    width:100%;
+                    color:#fff;
+
+                    @include c.on-mobile {
+                        gap:40px;
+                    }
+
+                    [class*=logo-] {
+                        flex-shrink: 0;
+                        min-width:240px;
+
+                        @include c.on-mobile {
+                            min-width:240px;
+                        }
+                    }
+
+                    .center-name {
+                        @include c.fl-col(10px);
+                        width:100%;
+                        align-items: flex-start;
+                        font-size:24px;
+                        font-weight:500;
+
+                        @include c.on-mobile {
+                            gap:10px;
+                            font-size:24px;
+                        }
+                        
+                        strong {
+                            line-height:1;
+                            font-size:40px;
+                            color:var(--theme-color);
+
+                            @include c.on-mobile {
+                                font-size:40px;
+                            }
+                        }
+                    }
+                }
+
+                .center-dir-link {
+                    @include c.fl(10px);
+                    width:100%;
+
+                    @include c.on-mobile {
+                        gap:10px;
+                    }
+                    
+                    a {
+                        @include c.fl(40px);
+                        color:#fff;
+                        justify-content: center;
+                        width:100%;
+                        height:80px;
+                        border-radius:20px;
+                        border-width:1px;
+                        border-style:solid;
+                        border-color:rgba(#fff, 0.5);
+                        font-size:28px;
+                        font-weight:500;
+                        @include c.icon-svg(s.$icon-pg-next, $variant:white, $pseudo:after);
+                        transition-property: background-color, border-color;
+                        transition-duration: 0.3s;
+                        transition-timing-function: ease;
+
+                        @include c.on-mobile {
+                            gap:40px;
+                            height:80px;
+                            border-radius:20px;
+                            font-size:28px;
+
+                            &::before {
+                                width:20px;
+                                height:12px;
+                            }
+                        }
+
+                        &::before {
+                            width:20px;
+                            height:12px;
+                        }
+
+                        &:hover,
+                        &:focus {
+                            background-color:var(--theme-color);
+                            border-color:var(--theme-color);
+                        }
+                    }
+                }
             }
         }
     }
@@ -569,7 +924,7 @@ section {
 
                 @include c.on-mobile {
                     font-size:32px;
-                    min-height:80px;
+                    min-height:72px;
                 }
             }
 
@@ -674,14 +1029,14 @@ section {
 
                     .title {
                         @apply line-clamp-2;
-                        height:48px;
+                        min-height:48px;
                         font-size:20px;
                         font-weight:700;
                         line-height:1.2;
 
                         @include c.on-mobile {
                             font-size:32px;
-                            height:80px;
+                            min-height:72px;
                         }
                     }
 
@@ -778,14 +1133,14 @@ section {
 
                     .title {
                         @apply line-clamp-2;
-                        height:48px;
+                        min-height:48px;
                         font-size:20px;
                         font-weight:700;
                         line-height:1.2;
 
                         @include c.on-mobile {
                             font-size:32px;
-                            height:80px;
+                            min-height:72px;
                         }
                     }
 
@@ -891,14 +1246,14 @@ section {
 
                     .title {
                         @apply line-clamp-2;
-                        height:48px;
+                        min-height:48px;
                         font-size:20px;
                         font-weight:700;
                         line-height:1.2;
 
                         @include c.on-mobile {
                             font-size:32px;
-                            height:80px;
+                            min-height:72px;
                         }
                     }
 
@@ -987,14 +1342,14 @@ section {
 
                     .title {
                         @apply line-clamp-2;
-                        height:48px;
+                        min-height:48px;
                         font-size:20px;
                         font-weight:700;
                         line-height:1.2;
 
                         @include c.on-mobile {
                             font-size:32px;
-                            height:80px;
+                            min-height:72px;
                         }
                     }
 
@@ -3057,7 +3412,7 @@ section {
 
                         .title {
                             @apply line-clamp-2;
-                            height:48px;
+                            min-height:48px;
                             font-size:20px;
                             font-weight:700;
                             line-height:1.2;
@@ -3067,7 +3422,7 @@ section {
 
                             @include c.on-mobile {
                                 font-size:32px;
-                                height:80px;
+                                min-height:72px;
                             }
                         }
 
@@ -3174,14 +3529,14 @@ section {
 
                         .title {
                             @apply line-clamp-2;
-                            height:48px;
+                            min-height:48px;
                             font-size:20px;
                             font-weight:700;
                             line-height:1.2;
 
                             @include c.on-mobile {
                                 font-size:36px;
-                                height:82px;
+                                min-height:82px;
                             }
                         }
 
@@ -3445,11 +3800,12 @@ section {
                                 -webkit-line-clamp:2;
                                 -webkit-box-orient:vertical;
                                 font-size:20px;
-                                height:55px;
+                                min-height:55px;
                                 line-height:1.4;
 
                                 @include c.on-mobile {
                                     font-size:32px;
+                                    min-height:82px;
                                 }
                             }
 
@@ -3516,6 +3872,7 @@ section {
                         word-break: keep-all;
                         word-wrap: break-word;
                         overflow-wrap: break-word;
+                        min-height:84px;
 
                         @include c.on-mobile {
                             font-size:36px;
@@ -3787,6 +4144,15 @@ section {
                         font-size:20px;
                         line-height:1.2;
 
+                        > em {
+                            @apply line-clamp-2;
+                            min-height:48px;
+
+                            @include c.on-mobile {
+                                min-height:72px;
+                            }
+                        }
+
                         @include c.on-mobile {
                             font-size:32px;
                             gap:0;
@@ -3940,8 +4306,12 @@ section {
     }
 
     .mypage-recommend-grid {
-        @include c.fl-row(30px);
+        @include c.fl(30px);
         margin-top:93px;
+
+        @include c.bp(1080px){
+            flex-direction:column;
+        }
 
         @include c.on-mobile {
             margin-top:120px;
@@ -4002,7 +4372,7 @@ section {
                         width:100%;
                         height:100%;
                         position:relative;
-                        padding:18px 64px 18px 20px;
+                        padding:18px 48px 18px 20px;
                         color:#3B3B3B;
 
                         @include c.on-mobile {
@@ -4012,7 +4382,7 @@ section {
 
                         &::before {
                             position:absolute;
-                            right:30px;
+                            right:20px;
                             top:50%;
                             transform:translateY(-50%);
 
@@ -4047,14 +4417,14 @@ section {
 
                         .title {
                             @apply line-clamp-2;
-                            height:48px;
+                            min-height:48px;
                             font-size:20px;
                             font-weight:700;
                             line-height:1.2;
 
                             @include c.on-mobile {
                                 font-size:32px;
-                                height:80px;
+                                min-height:72px;
                             }
                         }
 
@@ -4117,7 +4487,7 @@ section {
                         width:100%;
                         height:100%;
                         position:relative;
-                        padding:20px 64px 20px 20px;
+                        padding:20px 48px 20px 20px;
                         color:#3B3B3B;
 
                         @include c.on-mobile {
@@ -4127,7 +4497,7 @@ section {
 
                         &::before {
                             position:absolute;
-                            right:30px;
+                            right:20px;
                             top:50%;
                             transform:translateY(-50%);
 
@@ -4162,14 +4532,14 @@ section {
 
                         .title {
                             @apply line-clamp-2;
-                            height:48px;
+                            min-height:48px;
                             font-size:20px;
                             font-weight:700;
                             line-height:1.2;
 
                             @include c.on-mobile {
                                 font-size:32px;
-                                height:80px;
+                                min-height:72px;
                             }
                         }
 
