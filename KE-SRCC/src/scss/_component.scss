@@ -1285,17 +1285,17 @@ a, button, input[type=button], input[type=submit] {
     position:fixed;
     top:50%;
     left:50%;
-    width:414px;
+    width:640px;
     transform:translate(-50%, -50%);
     border-radius:10px;
     background-color:#fff;
-    z-index:111;
-    padding:40px 0 50px;
+    z-index:1111;
+    padding:40px 0;
     color:#000;
 
     @include c.on-mobile {
         width:686px;
-        padding:80px 0 100px;
+        padding:80px 0;
     }
 
     &.modal-shown {
@@ -1304,7 +1304,32 @@ a, button, input[type=button], input[type=submit] {
 
     &.dialog {
         top:150px;
+        width:414px;
         transform:translate(-50%, 0);
+
+        @include c.on-mobile {
+            top:50%;
+            width:686px;
+            transform:translate(-50%, -50%);
+        }
+
+        .modal-body {
+            .modal-content-title {
+                font-size:24px;
+
+                @include c.on-mobile {
+                    font-size:48px;
+                }
+            }
+
+            .modal-content-desc {
+                padding:0;
+                
+                @include c.on-mobile {
+                    padding:0 32px;
+                }
+            }
+        }
     }
 
     .modal-header {
@@ -1331,9 +1356,12 @@ a, button, input[type=button], input[type=submit] {
             transform:translateY(-50%);
 
             @include c.on-mobile {
+                width:24px;
+                height:24px;
+
                 &::before {
-                    width:20px;
-                    height:20px;
+                    width:100%;
+                    height:100%;
                 }
                 right:30px;
             }
@@ -1346,10 +1374,12 @@ a, button, input[type=button], input[type=submit] {
     }
 
     .modal-body {
-        padding:25px 0 35px;
+        padding-top:25px;
+        padding-bottom:35px;
 
         @include c.on-mobile {
-            padding:50px 0 70px;
+            padding-top:40px;
+            padding-bottom:60px;
         }
 
         .modal-content {
@@ -1360,12 +1390,12 @@ a, button, input[type=button], input[type=submit] {
         }
 
         .modal-content-title {
-            font-size:24px;
+            font-size:32px;
             text-align:center;
+            line-height:1.2;
 
             @include c.on-mobile {
                 font-size:48px;
-                line-height:1.2;
             }
         }
 
@@ -1373,11 +1403,103 @@ a, button, input[type=button], input[type=submit] {
             font-size:14px;
             color:#9D9D9D;
             text-align:center;
+            padding:0 25px;
 
             @include c.on-mobile {
                 font-size:28px;
                 padding:0 32px;
             }
+
+            .terms_content {
+                max-height:502px;
+                color:#3B3B3B;
+                font-size:16px;
+                text-align:left;
+                padding-right:23px;
+
+                @include c.on-mobile {
+                    max-height:580px;
+                    font-size:32px;
+                    padding-right:30px;
+                }
+
+                ol {
+                    li {
+                        strong {
+                            font-size:20px;
+
+                            @include c.on-mobile {
+                                font-size:28px;
+                            }
+                        }
+
+                        & ~ li  {
+                            margin-top:40px;
+                            
+                            @include c.on-mobile {
+                                margin-top:50px;
+                            }
+                        }
+                    }
+                }
+
+                .dot {
+                    @include c.fl-col(5px);
+                    font-size:16px;
+
+                    @include c.on-mobile {
+                        font-size:28px;
+                        gap:10px;
+                    }
+
+                    > strong {
+                        font-size:16px;
+                        font-weight:700;
+                        line-height:1.7;
+
+                        @include c.on-mobile {
+                            font-size:28px;
+                        }
+                    }
+
+                    > span {
+                        @include c.fl-col(10px);
+                        position:relative;
+                        width:100%;
+                        padding-left:25px;
+                        line-height:1.4;
+
+                        &::before {
+                            position:absolute;
+                            top:9px;
+                            left:10px;
+                            width:3px;
+                            height:3px;
+                            border-radius: 50%;
+                            background-color: currentColor;
+                            content:'';
+                        }
+
+                        @include c.on-mobile {
+                            padding-left:50px;
+
+                            &::before {
+                                position:absolute;
+                                top:18px;
+                                left:20px;
+                                width:5px;
+                                height:5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:not(:has(.modal-footer > *)) {
+        .modal-body {
+            padding-bottom:0 !important;
         }
     }
 
@@ -1413,7 +1535,7 @@ a, button, input[type=button], input[type=submit] {
     width:100vw;
     height:100vh;
     background:rgba(0,0,0,0.8);
-    z-index:10;
+    z-index:1110;
 }
 
 html.modal-open {

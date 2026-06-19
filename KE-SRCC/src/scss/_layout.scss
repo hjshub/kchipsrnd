@@ -5356,3 +5356,71 @@ section {
         }
     }
 }
+
+/*! error */
+.error-page {
+    @include c.fl-col;
+    min-height:100vh;
+    @supports(min-height:100dvh) {
+        min-height:100dvh;
+    }
+    justify-content: center;
+    overflow:hidden;
+
+    header {
+        @include c.fl-col;
+        align-items: center;
+        position:relative;
+        padding-bottom:330px;
+
+        @include c.on-mobile {
+            padding-bottom:55vw;
+        }
+
+        &::after {
+            @include c.bg($image: '../img/common/bg_error.png');
+            width:1920px;
+            height:330px;
+            position:absolute;
+            bottom:0;
+            left:50%;
+            transform:translateX(-50%);
+            content:'';
+
+            @include c.on-mobile {
+                width:256vw;
+                height:44vw;
+            }
+        }
+
+        * {
+            line-height:1;
+        }
+
+        h2 {
+            font-size:240px;
+            font-weight:900;
+
+            @include c.on-mobile {
+                font-size:240px;
+            }
+        }
+        
+        p {
+            font-size:64px;
+            font-weight:700;
+
+            @include c.on-mobile {
+                font-size:64px;
+            }
+        }
+
+        & + .btn-wrap {
+            margin-top:40px;
+
+            @include c.on-mobile {
+                margin-top:100px;
+            }
+        }
+    }
+}

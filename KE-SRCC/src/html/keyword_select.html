@@ -290,11 +290,10 @@
     </section>
 </main>
 
-@@include('./inc/footer.html')
-
 @@include('./inc/modal.html', {
     "id": "keywordSetupComplete",
     "show": false,
+    "dialog": true,
     "label": "Setup Complete",
     "title": "",
     "contentTitle": "<b>Setup Complete!</b>",
@@ -309,3 +308,5 @@
         commonFunction.openModal('keywordSetupComplete'); // 인자 값을 모달의 data-modal-match 값과 매칭
     });
 </script>
+
+@@include('./inc/footer.html')

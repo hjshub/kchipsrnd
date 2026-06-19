@@ -47,11 +47,10 @@
     </section>
 </main>
 
-@@include('./inc/footer.html')
-
 @@include('./inc/modal.html', {
     "id": "findIdResult",
     "show": false,
+    "dialog": true,
     "label": "Find ID Result",
     "title": "",
     "contentTitle": "The ID registered<br>under your name<br><b>JM Kim,</b> is <b class='text-[#01489D] underline'>ultralain.</b>",
@@ -66,3 +65,5 @@
         commonFunction.openModal('findIdResult'); // 인자 값을 모달의 data-modal-match 값과 매칭
     });
 </script>
+
+@@include('./inc/footer.html')
