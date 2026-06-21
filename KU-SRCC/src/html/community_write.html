@@ -1,0 +1,74 @@
+@@include('./inc/head.html', {
+    "title": "KCHIPSRND | Community"
+})
+
+@@include('./inc/skipNavigation.html')
+@@include('./inc/header.html')
+
+<main id="contents">
+    <h1 class="sr-only">Community</h1>
+    <section class="top-kv community">
+        <div class="--inner">
+            <div class="breadcrumb">
+                <span class="home"><em class="sr-only">홈</em></span>
+                <span class="current">Community</span>
+            </div>
+
+            <div class="heading-title">
+                <h2>Community</h2>
+                <span class="desc">다양한 전문가들과 자유롭게 의견을 나누고 정보를 교류해 보세요.</span>
+            </div>
+        </div>
+    </section>
+    <section class="section write">
+        <div class="--inner">
+            <article>
+                <header>
+                    <h3>Create a New Post</h3>
+                </header>
+
+                <div class="write-form">
+                    <dl class="items-center">
+                        <dt>Category</dt>
+                        <dd>
+                            <span class="select-wrap default">
+                                <label for="category-select"><em class="sr-only">선택</em></label>
+                                <select name="" id="category-select" required>
+                                    <option value="" selected disabled hidden>Select category...</option>
+                                    <option value="">Event Sharing</option>
+                                    <option value="">Partner Search</option>
+                                    <option value="">Resource Sharing</option>
+                                    <option value="">Inquiries & Suggestions</option>
+                                    <option value="">Others</option>
+                                </select>
+                            </span>
+                        </dd>
+                    </dl>
+                    <dl class="items-center">
+                        <dt>Title</dt>
+                        <dd><input title="Title" type="text" placeholder="Enter text here"></dd>
+                    </dl>
+                    <dl class="items-center">
+                        <dt>Name</dt>
+                        <dd><input title="Name" type="text" placeholder="Enter author name..."></dd>
+                    </dl>
+                    <dl class="items-center">
+                        <dt>Password</dt>
+                        <dd><input title="Password" type="password" placeholder="Enter password (4-8 digits)..."></dd>
+                    </dl>
+                    <dl>
+                        <dt>Content</dt>
+                        <dd><textarea title="Content" rows="5" placeholder="Enter text here"></textarea></dd>
+                    </dl>
+                </div>
+
+                <div class="btn-wrap">
+                    <button type="button" class="btn--cancel"><em>Cancel</em></button>
+                    <button type="button" class="btn--submit"><em>Post</em></button>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+@@include('./inc/footer.html')

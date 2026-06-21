@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @@if (context.title) {
+    <title>@@title</title>
+    }
+    @@if (!context.title) {
+    <title>KCHIPSRND</title>
+    }
+    <link rel="stylesheet" href="js/lib/vendor.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/lib/vendor.js"></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>

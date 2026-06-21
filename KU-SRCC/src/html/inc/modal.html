@@ -1,0 +1,22 @@
+<div class="modal@@if (context.show) { modal-shown}@@if (context.dialog) { dialog}" data-modal-match="@@id" role="dialog" aria-modal="true" aria-label="@@label">
+    <header class="modal-header">
+        <span class="modal-title">@@title</span>
+        <a href="javascript:void(0);" class="btn-modal-close" aria-label="modal close"></a>
+    </header>
+    <div class="modal-body">
+        <div class="modal-content">
+            <div class="modal-content-title">@@contentTitle</div>
+            @@if (context.contentFile) {
+            <div class="modal-content-desc">@@contentFile</div>
+            }
+            @@if (!context.contentFile) {
+            <div class="modal-content-desc">@@contentDesc</div>
+            }
+            
+        </div>
+    </div>
+    <div class="modal-footer">
+        @@footer
+    </div>
+</div>
+<div class="modal-dimmed" aria-label="modal close"></div>

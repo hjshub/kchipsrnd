@@ -1,0 +1,60 @@
+@use 'core' as c;
+
+// ─── utility ───────────────────────────────────
+select {
+    appearance:none;
+}
+i, em {
+    font-style:normal;
+}
+
+.--uppercase {
+    text-transform: uppercase;
+}
+
+.--in {
+    width:100%;
+    padding:0 40px;
+}
+
+.--inner {
+    width:100%;
+    max-width:1380px;
+    margin:0 auto;
+    padding:0 40px;
+
+    &.md {
+        max-width:936px;
+    }
+
+    &.sm {
+        max-width:494px;
+    }
+
+    @include c.on-mobile {
+        &,
+        &.md,
+        &.sm {
+            max-width: none;
+            padding-left:32px;
+            padding-right:32px;
+        }
+    }
+}
+
+.--divider {
+    border-top:4px solid #FF8D28;
+    margin:20px 0;
+
+    @include c.on-mobile {
+        margin:30px 0;
+    }
+}
+
+.--col {
+    @include c.fl-col;
+}
+
+.--row {
+    @include c.fl-wrap;
+}

@@ -1,0 +1,167 @@
+@use 'core' as c;
+@use 'generated/svg-icons' as s;
+
+// ─── footer ───────────────────────────────────
+footer {
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:300px;
+    padding-left:160px;
+    padding-right:160px;
+    color:#fff;
+    background-color:#13221C;
+
+    @include c.bp(1460px) {
+        padding-left:40px;
+        padding-right:40px;
+    }
+
+    @include c.bp(1024px) {
+        height:auto;
+        padding-top:40px;
+        padding-bottom:40px;
+    }
+
+    @include c.on-mobile {
+        align-items: flex-start;
+        padding-left:32px;
+        padding-right:32px;
+        padding-top:88px;
+        padding-bottom:0;
+        height:960px;
+    }
+
+    .footer-inner {
+        @include c.fl;
+        width:100%;
+        justify-content:space-between;
+
+        .footer-company {
+            @include c.fl(85px);
+            align-items:flex-start;
+
+            @include c.bp(1460px) {
+                gap:40px;
+            }
+
+            @include c.bp(1024px) {
+                @include c.fl-col(40px);
+            }
+
+            @include c.on-mobile {
+                gap:56px;
+            }
+            
+
+            .f-logo {
+                @include c.icon-svg(s.$icon-logo-etri);
+                position:relative;
+                top:7px;
+
+                &::before {
+                    width:198px;
+                    height:82px;
+                }
+
+                @include c.on-mobile {
+                    top:0;
+                    
+                    &::before {
+                        width:260px;
+                        height:108px;
+                    }
+                }
+            }
+            
+            .footer-details {
+                @include c.fl-col(12px);
+                justify-content:center;
+
+                @include c.on-mobile {
+                    gap:20px;
+                }
+
+                .icon {
+                    mix-blend-mode:luminosity;
+                }
+
+                .footer- {
+                    &name {
+                        font-size:24px;
+
+                        @include c.on-mobile {
+                            font-size:36px;
+                        }
+                    }
+                    &address {
+                        @include c.fl(10px);
+                        align-items:center;
+                        font-size:18px;
+                        font-style:normal;
+
+                        @include c.on-mobile {
+                            font-size:28px;
+                            gap:32px;
+                            margin-top:40px;
+                        }
+                    }
+                    &contact-list {
+                        @include c.fl(30px);
+                        font-size:18px;
+
+                        @include c.on-mobile {
+                            font-size:28px;
+                            @include c.fl-col(8px);
+                        }
+                        
+                        span {
+                            @include c.fl(10px);
+                            align-items:center;
+
+                            @include c.on-mobile {
+                                gap:32px;
+                            }
+                        }
+                    }
+                    &meta {
+                        @include c.fl(30px);
+                        font-size:14px;
+                        margin-top:15px;
+                        color:#A9BDB5;
+
+                        @include c.on-mobile {
+                            font-size:28px;
+                            gap:60px;
+                            margin-top:40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .select-wrap {
+            select {
+                min-width:207px;
+                border-bottom:1px solid #B2C5D3;
+                border-style:solid;
+                padding-bottom:15px;
+            }
+
+            @include c.on-mobile {
+                select {
+                    min-width:auto;
+                    width:100%;
+                }
+            }
+        }
+
+        @include c.on-mobile {
+            @include c.fl-col(60px);
+            .footer-copyright {
+                font-size:24px;
+                color:#A9BDB5;
+            }
+        }
+    }
+}
