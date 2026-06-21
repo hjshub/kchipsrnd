@@ -180,7 +180,7 @@ const commonFunction = (() => {
 		let swiper = null;
 		
 		// 초기 생성
-		swiper = setSwiper(target, addOption);
+		if(window.innerWidth < breakpoint) swiper = setSwiper(target, addOption);
 		
 		window.addEventListener('resize', () => {
 			const shouldEnable = window.innerWidth < breakpoint;
