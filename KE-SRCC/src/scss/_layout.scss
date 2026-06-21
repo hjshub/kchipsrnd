@@ -788,6 +788,9 @@ section {
     &.mypage { // mypage
         &::before {
             @include c.bg(transparent, '../img/common/kv_mypage.png');
+            @include c.on-mobile {
+                background-image:url('../img/common/kv_mypage_m.png');
+            }
         }
     }
     &.ecosystem { // ecosystem
