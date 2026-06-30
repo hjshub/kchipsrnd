@@ -1,21 +1,24 @@
 @@include('./inc/head.html', {
-    "title": "KCHIPSRND | 공지사항"
+    "title": "KCHIPSRND | 동향보고서"
 })
 
 @@include('./inc/skipNavigation.html')
-@@include('./inc/header.html')
+@@include('./inc/header.html', {
+    "isLoggedIn": true,
+    "gnbWhite": false
+})
 
 <main id="contents">
-    <h1 class="sr-only">공지사항</h1>
-    <section class="top-kv notice">
+    <h1 class="sr-only">동향보고서</h1>
+    <section class="top-kv trend">
         <div class="--inner">
             <div class="breadcrumb">
                 <span class="home"><em class="sr-only">홈</em></span>
-                <span class="current">공지사항</span>
+                <span class="current">동향보고서</span>
             </div>
 
             <div class="heading-title">
-                <h2>공지사항</h2>
+                <h2>동향보고서</h2>
             </div>
         </div>
     </section>
@@ -30,8 +33,7 @@
                 </span>
             </div>
             <div class="--divider"><em class="sr-only">구분선</em></div>
-            <p class="empty">등록된 글이 없습니다.</p>
-            <!-- <div class="list-wrap">
+            <div class="list-wrap">
                 <ul>
                     <li>
                         <a href="#">
@@ -127,7 +129,7 @@
             </div>
             <div class="list-more-view">
                 <a href="javascript:void(0);"><span>MORE VIEW<em>(9/15)</em></span></a>
-            </div> -->
+            </div>
         </div>
     </section>
 </main>

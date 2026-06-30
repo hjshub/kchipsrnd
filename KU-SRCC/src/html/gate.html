@@ -1,0 +1,118 @@
+@@include('./inc/head.html', {
+  "title": "KCHIPSRND | Gate"
+})
+
+<main id="gate">
+  <h1 class="sr-only">Gate</h1>
+
+  <section>
+    <header>
+      <h2>Global Semiconductor Partnership Network</h2>
+      <p>Select a regional center below to explore our global networks, technical trends, and collaborative research initiatives.</p>
+    </header>
+
+    <!-- web -->
+    <div class="gate-map">
+      @@include('./inc/map.html')
+
+      <div class="center-flag" data-map-target="map-ku-srcc">
+        <div class="center-wrap">
+          <span class="logo-ku-srcc"><em class="sr-only">미국지사</em></span>
+          <div class="center-info !hidden">
+            <div class="center-name">
+              <strong>Korea-U.S.</strong>
+              <em>Semiconductor R&D Cooperation Center</em>
+            </div>
+            <div class="center-dir-link">
+              <a href="">KOREAN</a>
+              <a href="">ENGLISH</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-flag" data-map-target="map-ke-srcc">
+        <div class="center-wrap">
+          <span class="logo-ke-srcc"><em class="sr-only">유럽지사</em></span>
+          <div class="center-info !hidden">
+            <div class="center-name">
+              <strong>Korea-EU</strong>
+              <em>Semiconductor R&D Collaboration Center</em>
+            </div>
+            <div class="center-dir-link">
+              <a href="">KOREAN</a>
+              <a href="">ENGLISH</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="center-flag" data-map-target="map-etri">
+        <div class="center-wrap">
+          <span class="logo-etri"><em class="sr-only">한국지사</em></span>
+          <div class="center-info !hidden">
+            <div class="center-name">
+              <strong>Korea</strong>
+              <em>National Semiconductor Research<br>Policy Center</em>
+            </div>
+            <div class="center-dir-link">
+              <a href="">KOREAN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // web -->
+
+    <!-- mobile -->
+    <div class="gate-map-mobile lg:!hidden">
+      <div class="center-flag-mobile" data-map-target="map-etri">
+        <div class="center-wrap">
+          <div class="center-info">
+            <span class="logo-etri"><em class="sr-only">한국지사</em></span>
+            <div class="center-name">
+              <strong>Korea</strong>
+              <em>National Semiconductor Research<br>Policy Center</em>
+            </div>
+          </div>
+          <div class="center-dir-link">
+            <a href="">KOREAN</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-flag-mobile" data-map-target="map-ke-srcc">
+        <div class="center-wrap">
+          <div class="center-info">
+            <span class="logo-ke-srcc"><em class="sr-only">유럽지사</em></span>
+            <div class="center-name">
+              <strong>Korea-EU</strong>
+              <em>Semiconductor R&D<br>Collaboration Center</em>
+            </div>
+          </div>
+          <div class="center-dir-link">
+            <a href="">KOREAN</a>
+            <a href="">ENGLISH</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-flag-mobile" data-map-target="map-ku-srcc">
+        <div class="center-wrap">
+          <div class="center-info">
+            <span class="logo-ku-srcc"><em class="sr-only">미국지사</em></span>
+            <div class="center-name">
+              <strong>Korea-U.S.</strong>
+              <em>Semiconductor R&D<br>Cooperation Center</em>
+            </div>
+          </div>
+          <div class="center-dir-link">
+            <a href="">KOREAN</a>
+            <a href="">ENGLISH</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // mobile -->
+  </section>
+</main>
