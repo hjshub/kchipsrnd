@@ -5383,10 +5383,10 @@ section {
     overflow:hidden;
 
     header {
-        @include c.fl-col;
+        @include c.fl-col(40px);
         align-items: center;
         position:relative;
-        padding-bottom:330px;
+        padding-bottom:410px;
 
         @include c.on-mobile {
             padding-bottom:55vw;
@@ -5413,20 +5413,22 @@ section {
         }
 
         h2 {
-            font-size:240px;
+            font-size:80px;
             font-weight:900;
 
             @include c.on-mobile {
-                font-size:240px;
+                font-size:80px;
             }
         }
         
         p {
-            font-size:64px;
+            font-size:20px;
             font-weight:700;
+            line-height:1.4;
+            text-align:center;
 
             @include c.on-mobile {
-                font-size:64px;
+                font-size:28px;
             }
         }
 
