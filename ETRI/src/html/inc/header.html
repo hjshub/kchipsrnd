@@ -7,7 +7,9 @@
     <li><a href="#">공지사항</a></li>
   </ul>
   <ul class="util-menu">
-    <li><a href="" class="u-search"><em class="sr-only">검색</em></a></li>
+    <!-- S 2026-07-01 수정 -->
+    <li><a href="javascript:void(0);" class="u-search btn-toggle-search"><em class="sr-only">검색</em></a></li>
+    <!-- E 2026-07-01 수정 -->
     <li class="md:!hidden">
       <span class="btn-all-menu"><em class="sr-only">전체 메뉴</em></span>
     </li>
@@ -21,4 +23,30 @@
       <li><a href="#">공지사항</a></li>
     </ul>
   </div>
+
+  <!-- S 2026-07-01 추가 -->
+  <div class="top-search-block !hidden" tabindex="0">
+    <div class="--inner md">
+      <a href="javascript:void(0);" class="btn-close-search"><em>Close</em></a>
+      <div class="top-search-wrap">
+        <label for="topSearch"><em class="sr-only">검색</em></label>
+        <input type="text" placeholder="검색어를 입력하세요" id="topSearch" autocomplete="off">
+        <button type="button"><em class="sr-only">검색 버튼</em></button>
+      </div>
+      <div class="top-keyword">
+        <dl>
+          <dt><span>Suggested</span></dt>
+          <dd>
+            <span>Fabless</span>
+            <span>Korea Fabless</span>
+            <span>System Semiconductor</span>
+            <span>Semiconductorr</span>
+            <span>AI</span>
+            <span>IP</span>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <!-- E 2026-07-01 추가 -->
 </header>

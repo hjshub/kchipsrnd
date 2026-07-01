@@ -7,7 +7,9 @@ const commonFunction = (() => {
 	let lastScroll = 0;
 	let prevDir = null; // 1: down, -1: up
 	let modalControl = null;
+	let toastControl = null;
 	let pendingModalTargets = [];
+	let pendingToastTargets = [];
 	let filterControl = null;
 
 	const delay = (n) => { // 딜레이 함수 (밀리초 단위)
@@ -66,8 +68,9 @@ const commonFunction = (() => {
 		// 초기 1회 또는 방향 전환 시에만 실행
 		if (prevDir === null || dir !== prevDir) {
 			if (dir === 1) {
-				document.documentElement.classList.remove('up');
+				document.documentElement.classList.remove('up', 'open-search');
 				document.documentElement.classList.add('down');
+				document.querySelector('.top-search-block').classList.add('!hidden');
 				gsap.set(gnb, { y: 0 });
 			} else {
 				document.documentElement.classList.remove('down');
@@ -106,7 +109,9 @@ const commonFunction = (() => {
 				gsap.to(allMenu, {alpha: 1, duration:0.2});
 			}else {
 				gsap.to(allMenu, {alpha: 0, duration:0.2, onComplete: () => {
+					allMenu.scrollTop = 0;
 					allMenu.style.display = 'none';
+					anchor.forEach((el) => el.closest('li')?.classList.remove('on'));
 				}});
 			}
 		});
@@ -400,6 +405,35 @@ const commonFunction = (() => {
 			getModal,
 		};
 	}
+	const setToastPopup = () => { // toast팝업
+		const toastPopup = [...document.querySelectorAll('.toast-popup')];
+
+		if (!toastPopup.length) {
+			return {
+				openToastPopup: () => {},
+				removeToastPopup: () => {},
+			};
+		}
+
+		const openToastPopup = (target) => {
+			const toast = toastPopup.find((item) => item.dataset.toastId === target) || null;
+			if(!toast) return;
+			
+			toast.classList.remove('hidden');
+		};
+
+		const removeToastPopup = (target) => {
+			const toast = toastPopup.find((item) => item.dataset.toastId === target) || null;
+			if(!toast) return;
+			
+			toast.remove();
+		};
+		
+		return {
+			openToastPopup,
+			removeToastPopup
+		}
+	}
 	const setFilterControl = () => { // 목록 필터 설정
 		const open = (target) => {
 			if(!target) return;
@@ -472,7 +506,7 @@ const commonFunction = (() => {
 			});
 		});
 	}
-	const setDropDown = () => {
+	const setDropDown = () => { // dropdown list
 		const btnDropDown = document.querySelectorAll('.drop-down button');
 
 		btnDropDown.forEach((btn) => {
@@ -502,16 +536,42 @@ const commonFunction = (() => {
 			});
 		});
 	}
+	const openTopSearch = () => { // 상단 검색 영역 
+		const btnToggleSearch = document.querySelector('.btn-toggle-search');
+		const btnCloseSearch = document.querySelector('.btn-close-search');
+		const topSearchBlock = document.querySelector('.top-search-block');
+		if(!topSearchBlock || !btnToggleSearch) return;
+		
+		btnToggleSearch.addEventListener('click', function(){
+			const open = topSearchBlock.classList.toggle('!hidden');
+
+			if(!open) {
+				document.documentElement.classList.add('open-search');
+				topSearchBlock.focus();
+			} else {
+				document.documentElement.classList.remove('open-search');
+			}
+		});
+
+		btnCloseSearch.addEventListener('click', function(){
+			document.documentElement.classList.remove('open-search');
+			topSearchBlock.classList.add('!hidden');
+			btnToggleSearch.focus();
+		});
+
+	}
 
 	const init = () => { // 초기화
 		setGateMap();
 		setGnb();
+		openTopSearch();
 		allMenu();
 		setFlatPickr();
 		setTabControl();
 		toggleCheck();
 		fileUpload();
 		setDropDown();
+		toastControl = setToastPopup();
 		modalControl = setModalControl();
 		filterControl = setFilterControl();
 
@@ -520,6 +580,13 @@ const commonFunction = (() => {
 				modalControl.openModal(target);
 			});
 			pendingModalTargets = [];
+		}
+
+		if(pendingToastTargets.length) {
+			pendingToastTargets.forEach((target) => {
+				toastControl.openToastPopup(target);
+			});
+			pendingToastTargets = [];
 		}
 
 	}
@@ -531,6 +598,21 @@ const commonFunction = (() => {
 		updateDimByCount, // swiper dimmed 업데이트
 		handleSwipeResizable, // swiper resize 처리
 		copyTextToClipboard, // 클립보드 복사
+		openToastPopup: (target) => { // 토스트 팝업 on
+			if (toastControl) {
+				toastControl.openToastPopup(target);
+				return;
+			}
+			// init (초기화) 전에 토스트 팝업 호출 시도한 경우 배열로 저장
+			//  -> 보류 했다가 init 완료 시점에 차례로 실행
+			pendingToastTargets.push(target);
+		},
+		removeToastPopup: (target) => {
+			if (toastControl) {
+				toastControl.removeToastPopup(target);
+				return;
+			}
+		},
 		openModal: (target) => { // 모달 on
 			if (modalControl) {
 				modalControl.openModal(target);

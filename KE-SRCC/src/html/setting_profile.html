@@ -212,13 +212,29 @@
                             </dl>
                         </div>
                     </div>
+                    <!-- S 2026-07-01 수정 -->
                     <div class="btn-wrap">
-                        <button class="btn--default !w-full" type="submit"><em>Save Changes</em></button>
+                        <button class="btn--default on" type="submit"><em>Save Changes</em></button>
+                        <button class="btn--default" data-modal-target="deleteAccount" type="button"><em>Delete Account</em></button>
                     </div>
+                    <!-- E 2026-07-01 수정 -->
                 </form>
             </article>
         </div>
     </section>
 </main>
+
+<!-- S 2026-07-01 추가 -->
+@@include('./inc/modal.html', {
+    "id": "deleteAccount",
+    "show": false,
+    "dialog": true,
+    "label": "Delete Account",
+    "title": "",
+    "contentTitle": "<b>Are you sure you want to<br>delete your account?</b>",
+    "contentDesc": "Your account information and all posts will be<br>permanently deleted and cannot be restored.",
+    "footer": "<a href='javascript:void(0);' class='btn--default btn-modal-close !bg-[#1D1D1B] !text-white'>Cancel</a> <a href='' class='btn--default on'>Delete Account</a>"
+})
+<!-- S 2026-07-01 추가 -->
 
 @@include('./inc/footer.html')

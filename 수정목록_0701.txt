@@ -1,0 +1,58 @@
+
+#수정목록
+- 상단 검색영역 (3개 지사 공통) - 완료
+- 하단 쿠키레이어(GDPR) - 완료
+- 404.html -> error.html (3개 지사 공통) - 완료
+- 비밀번호 찾기 메일 템플릿 - 완료
+- 회원탈퇴 버튼, 모달 추가 - 완료
+- 목록 레이아웃 반응형 센터정렬 -> 좌측정렬로 - 완료
+- 파비콘
+- 전체검색결과 페이지 - 완료
+
+#수정파일
+[css,js,이미지] 그대로 옮겨주세요~!
+
+[html]
+<!-- S 2026-07-01 추가 -->
+<!-- E 2026-07-01 추가 -->
+
+<!-- S 2026-07-01 수정 -->
+<!-- E 2026-07-01 수정 -->
+
+#유럽지사
+1. file_index.html - 파일 목록
+2. error.html - 공통 에러 페이지(신규) 기존 404.html 삭제
+3. setting_profile.html - 회원탈퇴 버튼, 모달 추가
+4. 공통 하단 -> 하단 쿠키레이어(GDPR) 추가
+5. 공통 상단 -> 상단 검색영역 추가
+6. 목록 페이지 등록 게시물 없는 경우 추가
+   community_list.html 
+   notice_list.html
+   network_list.html
+   news_list.html
+   program_list.html
+   report_list.html
+   trend_list.html
+7. search_result.html 전체검색결과(신규)
+8. mail_form.html 비밀번호 찾기 메일 템플릿(신규)
+
+
+#미국지사
+1. file_index.html - 파일 목록
+2. error.html - 공통 에러 페이지(신규) 기존 404.html 삭제
+3. 공통 하단 -> 하단 쿠키레이어(GDPR) 추가
+4. 공통 상단 -> 상단 검색영역 추가
+5. 목록 페이지 등록 게시물 없는 경우 추가
+   community_list.html 
+   information_list.html
+6. search_result.html 전체검색결과(신규)
+
+#한국지사
+1. file_index.html - 파일 목록
+2. error.html - 공통 에러 페이지(신규) 기존 404.html 삭제
+3. 공통 하단 -> 하단 쿠키레이어(GDPR) 추가
+4. 공통 상단 -> 상단 검색영역 추가
+5. 목록 페이지 등록 게시물 없는 경우 추가
+   news_list.html 
+   trend_list.html
+6. search_result.html 전체검색결과(신규)

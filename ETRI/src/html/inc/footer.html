@@ -29,5 +29,27 @@
         <div class="footer-copyright block md:hidden"><p>@ETRI All Rights Reserved.</p></div>
       </div>
     </footer>
+
+    <!-- S 2026-07-01 추가 -->
+    <div class="toast-popup hidden" data-toast-id="acceptGDPR">
+      <div class="toast-info">
+        By clicking “Accept All Cookies”, you agree to the storing of cookies on your device 
+        to enhance site navigation, analyze site usage, and assist in our marketing efforts. 
+        View our <a href="javascript:void(0)" data-modal-target="privacyPolicy">Privacy Policy</a> for more information.
+      </div>
+      <div class="toast-btn-wrap">
+        <button type="button" class="btn-accept">Accept</button>
+        <button type="button" class="btn-deny">Deny</button>
+      </div>
+    </div>
+    
+    <script>
+      window.addEventListener('load', function(){
+        const commonFunction = window.commonFunction;
+        commonFunction.openToastPopup('acceptGDPR'); // 쿠키 레이어 오픈
+        // commonFunction.removeToastPopup('acceptGDPR'); // 쿠키 레이어 제거
+      });
+    </script>
+    <!-- E 2026-07-01 추가 -->
   </body>
 </html>
