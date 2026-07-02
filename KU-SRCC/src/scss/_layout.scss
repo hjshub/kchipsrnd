@@ -4332,7 +4332,7 @@ section {
     }
 }
 
-/*! about KE-SRCC */
+/*! about KU-SRCC */
 .about-kuSrcc-hero {
     display:flex;
     align-items:stretch;
@@ -4691,6 +4691,10 @@ section {
     padding:100px 0 200px;
     background-color:#F5F5F5;
 
+    @include c.on-mobile {
+        padding:120px 0 200px;
+    }
+
     .about-value-list {
         @include c.fl;
         background-color:#fff;
@@ -4720,9 +4724,12 @@ section {
             }
 
             @include c.on-mobile {
+                align-items:flex-start;
+                justify-content: center;
                 width:100%;
-                padding-left:240px;
-                gap:40px;
+                padding:0 0 0 240px;
+                gap:20px;
+                min-height:200px;
 
                 .icon {
                     position:absolute;
@@ -4760,6 +4767,7 @@ section {
 
                 @include c.on-mobile {
                     font-size:28px;
+                    text-align:left;
                 }
             }
         }
