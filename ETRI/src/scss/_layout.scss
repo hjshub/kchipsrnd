@@ -661,6 +661,14 @@ section {
     min-height:calc(100vh - 300px);
     overflow:hidden;
 
+    &.main {
+        background-color:#f5f5f5;
+
+        @include c.on-mobile {
+            background-color:transparent;
+        }
+    }
+
     @include c.on-mobile {
         padding-top:120px;
         min-height:calc(100vh - 960px);
@@ -2933,7 +2941,7 @@ section {
         position:absolute;
         top:-60px;
         bottom:0;
-        z-index:-1;
+        z-index:0;
         @include c.bg(transparent, '../img/common/hero_bg_main.png');
         content:'';
 
@@ -2950,6 +2958,7 @@ section {
         top:50%;
         transform:translateY(calc(-50% - 30px));
         left:8.33333vw;
+        z-index:1;
 
         @include c.on-mobile {
             position:unset;
@@ -2966,7 +2975,7 @@ section {
             line-height:1.4;
 
             @include c.on-mobile {
-                font-size:60px;
+                font-size:56px;
             }
         }
         .desc {
@@ -3146,10 +3155,14 @@ section {
 
     .main-list-block {
         &.half {
-            @include c.fl(58px);
+            @include c.fl(50px);
 
             @include c.bp(1280px) {
                 flex-direction:column;
+            }
+
+            @include c.on-mobile {
+                gap:160px;
             }
         }
 
@@ -3171,6 +3184,12 @@ section {
                 flex-direction:column;
                 font-size:28px;
                 align-items: flex-start;
+            }
+
+            &.col {
+                @include c.fl-col(20px);
+                align-items:flex-start;
+                line-height:1;
             }
 
             h2 {
@@ -3231,158 +3250,152 @@ section {
 
         .news-block {
             width:100%;
-            overflow:hidden;
 
             .list-box {
-                @include c.fl-col(22px);
+                @include c.fl-col(10px);
+                padding:20px 0;
 
-                @include c.bp(1280px) {
-                    flex-direction:row;
-                    gap:0;
+                @include c.on-mobile {
+                    padding:40px 0;
+                    gap:20px;
                 }
 
                 li {
-                    @include c.bp(1280px) {
-                        width:calc((100% - 40px) / 3);
-                    }
-
-                    @include c.on-mobile {
-                        width:538px;
-                    }
+                    width:100%;
 
                     a {
-                        @include c.fl(20px);
+                        @include c.fl-col(20px);
                         width:100%;
-                        height:100%;
+                        padding:30px;
                         font-size:20px;
+                        border:1px solid #E4EAEF;
+                        border-radius:15px;
 
-                        @include c.bp(1280px) {
-                            flex-direction:column;
-                        }
-                        
                         @include c.on-mobile {
-                            gap:20px;
+                            gap:50px;
                         }
 
-                        .thumb {
-                            flex-shrink:0;
-                            width:200px;
-
-                            @include c.bp(1280px) {
-                                width:100%;
-
-                                img {
-                                    width:100%;
-                                }
-                            }
+                        strong {
+                            @apply line-clamp-1;
+                            font-size:20px;
 
                             @include c.on-mobile {
+                                font-size:32px;
                             }
                         }
 
-                        .news-info {
-                            @include c.fl-col(20px);
-                            width:100%;
-                            padding-top:5px;
-                            padding-bottom:5px;
+                        .date {
+                            font-size:16px;
+                            color:#9D9D9D;
 
                             @include c.on-mobile {
-                                gap:30px;
-                            }
-
-                            strong {
-                                overflow:hidden;
-                                display:-webkit-box;
-                                -webkit-line-clamp:2;
-                                -webkit-box-orient:vertical;
-                                font-size:20px;
-                                min-height:55px;
-                                line-height:1.4;
-
-                                @include c.on-mobile {
-                                    font-size:32px;
-                                    min-height:82px;
-                                }
-                            }
-
-                            em {
-                                font-size:16px;
-                                color:#9D9D9D;
-
-                                @include c.on-mobile {
-                                    font-size:24px;
-                                }
+                                font-size:24px;
                             }
                         }
                     }
                 }
             }
 
-            
+            .view-more-list {
+                @include c.fl;
+                justify-content: flex-end;
+                margin-top:20px;
+
+                a,
+                button {
+                    gap:20px;
+                    font-size:12px;
+                    color:#3B3B3B;
+                    @include c.icon-svg(s.$icon-arrow-long-tail, $pseudo:after);
+
+                    @include c.on-mobile {
+                        font-size:24px;
+                        gap:20px;
+
+                        &::after {
+                            width:62px;
+                            height:16px;
+                        }
+                    }
+                }
+            }
         }
 
         .rnd-policy-block {
-            background-color:#F5F5F5;
-            padding-bottom:200px;
+            width: 615px;
+            height:510px;
+            flex-shrink:0;
+
+            @include c.bp(1280px) {
+                width:100%;
+            }
 
             @include c.on-mobile {
-                padding-bottom:200px;
+                height:1160px;
             }
             
-            .about-info {
-                display:flex;
-                justify-content: space-between;
+            .rnd-policy-info {
+                @include c.fl-col(30px);
                 width:100%;
-                padding:40px 50px;
-                height:240px;
-                @include c.bg(transparent, '../img/common/main_bg_about.png');
+                height:100%;
+                padding:40px 26px;
+                border-radius:15px;
+                @include c.bg(transparent, '../img/common/main_bg_center.png');
                 position:relative;
 
-                @include c.bp(1280px) {
-                    @include c.fl-col(50px);
-                    height:auto;
-                }
-
                 @include c.on-mobile {
-                    padding:90px 60px 240px;
-                    height:1320px;
-                    @include c.bg(transparent, '../img/common/main_bg_about_m.png');
+                    padding:60px;
+                    border-radius:30px;
+                    gap:40px;
+                    
+                    @include c.bg(transparent, '../img/common/main_bg_center_m.png');
                 }
 
                 * {
                     color:#fff;
                 }
 
-                h2 {
-                    font-size:36px;
-                    @include c.on-mobile {
-                        font-size:48px;
-                    }
-                }
-                
-                span {
-                    font-size:18px;
-                    line-height:1.4;
+                .main-list-head {
+                    h2 {
+                        font-size:36px;
 
-                    @include c.on-mobile {
-                        font-size:32px;
+                        @include c.on-mobile {
+                            font-size:48px;
+                        }
+                    }
+                    
+                    span {
+                        font-size:18px;
+                        line-height:1.4;
+                        position:relative;
+
+                        @include c.on-mobile {
+                            font-size:28px;
+                        }
+
+                        &::before {
+                            display:inline-flex;
+                            position:absolute;
+                            left:0;
+                            top:-10px;
+                            width:16px;
+                            height:2px;
+                            background-color:#71B261;
+                            content:'';
+                        }
                     }
                 }
 
                 .btn-arrow-tail {
-                    width:200px;
-                    height:40px;
+                    width:264px;
+                    height:50px;
                     border-radius:50px;
+                    align-self: center;
                     flex-shrink: 0;
 
                     @include c.on-mobile {
-                        position:absolute;
-                        bottom:120px;
-                        left:60px;
-                        right:60px;
-                        width:auto;
-                        height:72px;
-                        border-radius:12px;
+                        width:100%;
+                        height:100px;
                     }
                 }
 
@@ -3394,22 +3407,18 @@ section {
                     }
 
                     li {
-                        @include c.fl-col(20px);
-                        justify-content: space-between;
+                        @include c.fl-col(25px);
                         align-items: center;
+                        width:100%;
                         height:100%;
-                        padding: 0 30px;
+                        padding: 0;
                         text-align:center;
-
-                        @include c.bp(1280px) {
-                            width:100%;
-                        }
 
                         @include c.on-mobile {
                             flex-direction:row;
                             gap:40px;
                             justify-content: flex-start;
-                            padding:44px 0;
+                            padding:30px 0;
                             font-size:32px;
                             text-align: left;
                         }
@@ -3424,6 +3433,29 @@ section {
                             }
                         }
 
+                        span {
+                            @include c.fl-col(15px);
+                            font-size:14px;
+
+                            @include c.on-mobile {
+                                gap:20px;
+                                font-size:24px;
+                            }
+
+                            strong {
+                                @include c.fl;
+                                align-items:center;
+                                justify-content: center;
+                                min-height:52px;
+                                font-size:18px;
+
+                                @include c.on-mobile {
+                                    min-height:auto;
+                                    font-size:32px;
+                                }
+                            }
+                        }
+
                         i {
                             display:flex;
                             align-items: center;
@@ -3431,50 +3463,60 @@ section {
                             width:80px;
                             height:80px;
                             border-radius:50%;
-                            background: radial-gradient(
-                                circle at 50% 40%,
-                                rgba(60, 80, 120, 0.1) 100%
-                            );
+                            position: relative;
+                            background: 
+                                radial-gradient(
+                                    circle at 50% 25%,
+                                    rgba(170, 185, 170, 0.25) 0%,
+                                    rgba(255, 255, 255, 0) 20%
+                                ),
+                                radial-gradient(
+                                    circle at 50% 50%,
+                                    rgba(140, 160, 140, 0.25) 0%,
+                                    rgba(120, 140, 120, 0.2) 50%,
+                                    rgba(100, 120, 100, 0.25) 100%
+                                );
                             box-shadow:
-                                inset 0 6px 16px rgba(0, 0, 0, 0.5),     // 상단 안쪽 그림자 (오목 핵심)
-                                inset 0 -2px 6px rgba(255, 255, 255, 0.1), // 하단 미세 반사광
-                                inset 2px 0 8px rgba(0, 0, 0, 0.05),        // 좌측 그림자
-                                inset -2px 0 8px rgba(0, 0, 0, 0.05),       // 우측 그림자
-                                0 4px 12px rgba(0, 0, 0, 0.4);             // 외부 그림자
+                                inset 0 8px 18px rgba(0, 0, 0, 0.35),       // 상단 그림자 
+                                inset 0 -4px 8px rgba(155, 175, 155, 0.15), // 하단 반사광
+                                inset 6px 0 12px rgba(0, 0, 0, 0.08),        // 좌측 그림자
+                                inset -6px 0 12px rgba(0, 0, 0, 0.08),       // 우측 그림자
+                                inset 0 0 35px rgba(0, 0, 0, 0.2),           // 중앙 깊이감
+                                0 8px 18px rgba(0, 0, 0, 0.25);              // 외부 그림자
                             
                             // 테두리 - 유리 느낌
-                            border: 1px solid rgba(255, 255, 255, 0.22);
-                            backdrop-filter: blur(4px);
+                            border: 1px solid rgba(170, 185, 170, 0.25);
+                            backdrop-filter: blur(8px);
 
                             @include c.on-mobile {
-                                width:160px;
-                                height:160px;
+                                width:140px;
+                                height:140px;
                             }
 
-                            &.info-network {
-                                @include c.icon-svg(s.$icon-about-network);
+                            &.info-policy-01 {
+                                @include c.icon-svg(s.$icon-policy-01);
                                 @include c.on-mobile {
                                     &::before {
-                                        width:82px;
-                                        height:80px;
+                                        width:62px;
+                                        height:62px;
                                     }
                                 }
                             }
-                            &.info-hub {
-                                @include c.icon-svg(s.$icon-about-hub);
+                            &.info-policy-02 {
+                                @include c.icon-svg(s.$icon-policy-02);
                                 @include c.on-mobile {
                                     &::before {
-                                        width:88px;
-                                        height:75px;
+                                        width:64px;
+                                        height:64px;
                                     }
                                 }
                             }
-                            &.info-col {
-                                @include c.icon-svg(s.$icon-about-col);
+                            &.info-policy-03 {
+                                @include c.icon-svg(s.$icon-policy-03);
                                 @include c.on-mobile {
                                     &::before {
-                                        width:88px;
-                                        height:78px;
+                                        width:78px;
+                                        height:48px;
                                     }
                                 }
                             }
