@@ -4356,7 +4356,7 @@ section {
     @include c.on-mobile {
         min-height:1160px;
         padding-top:30px;
-        padding-bottom:200px;
+        padding-bottom:140px;
 
 
         &::before { 
@@ -4639,9 +4639,11 @@ section {
             }
 
             @include c.on-mobile {
-                flex-direction:row;
                 width:100%;
-                gap:60px;
+                min-height:260px;
+                padding:0 60px 0 280px;
+                justify-content: center;
+                gap:30px;
             }
 
             .icon {
@@ -4649,11 +4651,23 @@ section {
                 top:30px;
                 left:50%;
                 transform:translateX(-50%);
+
+                @include c.on-mobile {
+                    width:160px;
+                    justify-content:center;
+                    top:50%;
+                    left:70px;
+                    transform:translate(0, -50%);
+                }
             }
 
             strong {
                 color:#003197;
                 font-size:24px;
+
+                @include c.on-mobile {
+                    font-size:40px;
+                }
             }
 
             em {
@@ -4664,6 +4678,10 @@ section {
                 word-break: keep-all;
                 word-wrap:break-word;
                 overflow-wrap:break-word;
+
+                @include c.on-mobile {
+                    font-size:28px;
+                }
             }
         }
     }
@@ -4680,13 +4698,21 @@ section {
 
         @include c.bp(1280px) {
             flex-wrap:wrap;
+            border-radius:15px;
+            border:1px solid #E4EAEF;
+        }
+
+        @include c.on-mobile {
+            padding:60px;
+            gap:40px;
         }
 
         li {
             @include c.fl-col(15px);
-            align-items: center;
             width:100%;
+            align-items: center;
             padding:0 55px;
+            position:relative;
 
             @include c.bp(1280px) {
                 width:50%;
@@ -4695,6 +4721,15 @@ section {
 
             @include c.on-mobile {
                 width:100%;
+                padding-left:240px;
+                gap:40px;
+
+                .icon {
+                    position:absolute;
+                    top:50%;
+                    left:0;
+                    transform:translateY(-50%);
+                }
             }
 
             & ~ li {
@@ -4708,6 +4743,10 @@ section {
             strong {
                 color:#003197;
                 font-size:24px;
+
+                @include c.on-mobile {
+                    font-size:40px;
+                }
             }
 
             em {
@@ -4718,6 +4757,10 @@ section {
                 word-break: keep-all;
                 word-wrap:break-word;
                 overflow-wrap:break-word;
+
+                @include c.on-mobile {
+                    font-size:28px;
+                }
             }
         }
     }
