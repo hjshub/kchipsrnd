@@ -35,12 +35,14 @@ const commonFunction = (() => {
 
 		list.forEach((item) => {
 			item.addEventListener('mouseenter', () => { // 마우스 오버 시
+				gnb.classList.add('active');
 				if(!item.querySelector('.depth2')) return;
 				item.querySelector('.depth2').style.opacity = '1';
 				item.querySelector('.depth2').style.visibility = 'visible';
 				item.querySelector('.depth2').style.pointerEvents = 'auto';
 			});
 			item.addEventListener('focusin', () => { // 포커스 시
+				gnb.classList.add('active');
 				if(!item.querySelector('.depth2')) return;
 				item.querySelector('.depth2').style.opacity = '1';
 				item.querySelector('.depth2').style.visibility = 'visible';
@@ -60,6 +62,14 @@ const commonFunction = (() => {
 				item.querySelector('.depth2').style.pointerEvents = 'none';
 			});
 		});
+
+		const handleGnbLeave = (event) => {
+			if (event.relatedTarget && gnb.contains(event.relatedTarget)) return;
+			gnb.classList.remove('active');
+		};
+
+		gnb.addEventListener('mouseout', handleGnbLeave);
+		gnb.addEventListener('focusout', handleGnbLeave);
 
 		if (delta === 0 || gnb.closest('#guide')) return;
 

@@ -4610,6 +4610,19 @@ section {
                     }
                 }
             }
+
+            p {
+                font-size:18px;
+                color:#6B6B6B;
+                line-height:1.4;
+                word-break: keep-all;
+                word-wrap:break-word;
+                overflow-wrap:break-word;
+
+                @include c.on-mobile {
+                    font-size:24px;
+                }
+            }
         }
     }
 
@@ -4646,6 +4659,16 @@ section {
                 gap:30px;
             }
 
+            [lang=en] & {
+                padding-bottom:30px;
+
+                @include c.on-mobile {
+                    padding-top:40px;
+                    padding-bottom:40px;
+                    gap:10px;
+                }
+            }
+
             .icon {
                 position:absolute;
                 top:30px;
@@ -4668,6 +4691,22 @@ section {
                 @include c.on-mobile {
                     font-size:40px;
                 }
+
+                [lang=en] & {
+                    @include c.fl;
+                    align-items: center;
+                    min-height:60px;
+                    font-size:20px;
+                    text-align:center;
+                    word-break: keep-all;
+                    word-wrap: break-word;
+                    overflow-wrap:break-word;
+
+                    @include c.on-mobile {
+                        min-height:auto;
+                        font-size:30px;
+                    }
+                }
             }
 
             em {
@@ -4681,6 +4720,14 @@ section {
 
                 @include c.on-mobile {
                     font-size:28px;
+                }
+
+                [lang=en] & {
+                    font-size:16px;
+
+                    @include c.on-mobile {
+                        font-size:24px;
+                    }
                 }
             }
         }
@@ -4754,6 +4801,18 @@ section {
                 @include c.on-mobile {
                     font-size:40px;
                 }
+
+                [lang=en] & {
+                    font-size:20px;
+                    text-align:center;
+                    word-break: keep-all;
+                    word-wrap: break-word;
+                    overflow-wrap:break-word;
+
+                    @include c.on-mobile {
+                        font-size:30px;
+                    }
+                }
             }
 
             em {
@@ -4768,6 +4827,14 @@ section {
                 @include c.on-mobile {
                     font-size:28px;
                     text-align:left;
+                }
+
+                [lang=en] & {
+                    font-size:16px;
+
+                    @include c.on-mobile {
+                        font-size:24px;
+                    }
                 }
             }
         }

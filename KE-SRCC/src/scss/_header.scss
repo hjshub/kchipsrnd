@@ -244,7 +244,8 @@
         }
     }
 
-    &.white {
+    &.white,
+    &.active {
         background-color:#fff;
         border-color:#B1BCC4;
         color:#3B3B3B;
@@ -294,6 +295,10 @@
                 }
             }
         }
+    }
+
+    &.active {
+        // transition:none;
     }
 
     @include c.on-mobile {
