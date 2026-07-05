@@ -148,10 +148,25 @@ footer {
                 padding-bottom:15px;
             }
 
+            &.customed.is-enhanced {
+                .custom-select-trigger {
+                    min-width:207px;
+                    padding-bottom:15px;
+                    border-bottom:1px solid #B2C5D3;
+                }
+            }
+
             @include c.on-mobile {
                 select {
                     min-width:auto;
                     width:100%;
+                }
+
+                &.customed.is-enhanced {
+                    .custom-select-trigger {
+                        min-width:auto;
+                        width:100%;
+                    }
                 }
             }
         }

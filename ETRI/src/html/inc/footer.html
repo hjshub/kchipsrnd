@@ -19,10 +19,10 @@
         <div class="footer-family-site">
           <span class="select-wrap customed" aria-label="패밀리 사이트">
             <label for="family-site-select"><em class="sr-only">패밀리 사이트 선택</em></label>
-            <select name="family-site" id="family-site-select">
+            <select name="family-site" id="family-site-select" onchange="if(this.value){location.href=this.value;}">
               <option value="" selected disabled hidden>Family Site</option>
-              <option value="">1</option>
-              <option value="">2</option>
+              <option value="">KE-SRCC</option>
+              <option value="">KU-SRCC</option>
             </select>
           </span>
         </div>

@@ -546,6 +546,190 @@ const commonFunction = (() => {
 			});
 		});
 	}
+	const setCustomSelect = () => { // custom select 설정
+		const customSelectList = [...document.querySelectorAll('.gnb .select-wrap.customed select, #footer .select-wrap.customed select')];
+
+		if (!customSelectList.length) return;
+
+		const closeSelect = (wrap) => {
+			const trigger = wrap.querySelector('.custom-select-trigger');
+			if (!trigger) return;
+
+			wrap.classList.remove('is-opened');
+			trigger.setAttribute('aria-expanded', 'false');
+		};
+
+		const closeAllSelect = (exceptWrap = null) => {
+			document.querySelectorAll('.select-wrap.customed.is-enhanced.is-opened').forEach((wrap) => {
+				if (wrap !== exceptWrap) {
+					closeSelect(wrap);
+				}
+			});
+		};
+
+		customSelectList.forEach((select, selectIndex) => {
+			const wrap = select.closest('.select-wrap.customed');
+			if (!wrap || wrap.classList.contains('is-enhanced')) return;
+
+			const optionList = [...select.options];
+			const selectableOptions = optionList.filter((option) => !option.disabled && !option.hidden);
+			if (!selectableOptions.length) return;
+
+			const listboxId = select.id ? `${select.id}-listbox` : `custom-select-listbox-${selectIndex}`;
+			const trigger = document.createElement('button');
+			const listbox = document.createElement('ul');
+			let optionButtons = [];
+			let currentOptionIndex = select.selectedIndex;
+
+			trigger.type = 'button';
+			trigger.className = 'custom-select-trigger';
+			trigger.setAttribute('aria-haspopup', 'listbox');
+			trigger.setAttribute('aria-expanded', 'false');
+			trigger.setAttribute('aria-controls', listboxId);
+			trigger.setAttribute('aria-label', wrap.getAttribute('aria-label') || wrap.querySelector('.sr-only')?.textContent?.trim() || '선택');
+
+			listbox.className = 'custom-select-options';
+			listbox.id = listboxId;
+			listbox.setAttribute('role', 'listbox');
+
+			const syncSelectedState = () => {
+				const selectedOption = optionList[currentOptionIndex] || optionList[0];
+				trigger.textContent = selectedOption?.textContent?.trim() || '';
+
+				listbox.querySelectorAll('.custom-select-option').forEach((button) => {
+					const isSelected = Number(button.getAttribute('data-option-index')) === currentOptionIndex;
+					button.classList.toggle('is-selected', isSelected);
+					button.setAttribute('aria-selected', String(isSelected));
+				});
+			};
+
+			const openSelect = (focusSelected = true) => {
+				closeAllSelect(wrap);
+				wrap.classList.add('is-opened');
+				trigger.setAttribute('aria-expanded', 'true');
+
+				if (!focusSelected) return;
+
+				const selectedButton = optionButtons.find((button) => Number(button.getAttribute('data-option-index')) === currentOptionIndex);
+				(selectedButton || optionButtons[0])?.focus();
+			};
+
+			const selectOption = (option) => {
+				if (select.selectedIndex === option.index) {
+					closeSelect(wrap);
+					return;
+				}
+
+				select.selectedIndex = option.index;
+				currentOptionIndex = option.index;
+				syncSelectedState();
+				closeSelect(wrap);
+				select.dispatchEvent(new Event('change', { bubbles: true }));
+			};
+
+			optionButtons = selectableOptions.map((option) => {
+				const item = document.createElement('li');
+				const button = document.createElement('button');
+
+				button.type = 'button';
+				button.className = 'custom-select-option';
+				button.setAttribute('role', 'option');
+				button.setAttribute('data-option-index', String(option.index));
+				button.textContent = option.textContent?.trim() || '';
+
+				button.addEventListener('click', () => {
+					selectOption(option);
+				});
+
+				button.addEventListener('keydown', (event) => {
+					const currentIndex = optionButtons.indexOf(button);
+
+					if (event.key === 'ArrowDown') {
+						event.preventDefault();
+						optionButtons[(currentIndex + 1) % optionButtons.length]?.focus();
+					}
+
+					if (event.key === 'ArrowUp') {
+						event.preventDefault();
+						optionButtons[(currentIndex - 1 + optionButtons.length) % optionButtons.length]?.focus();
+					}
+
+					if (event.key === 'Home') {
+						event.preventDefault();
+						optionButtons[0]?.focus();
+					}
+
+					if (event.key === 'End') {
+						event.preventDefault();
+						optionButtons[optionButtons.length - 1]?.focus();
+					}
+
+					if (event.key === 'Enter' || event.key === ' ') {
+						event.preventDefault();
+						selectOption(option);
+					}
+
+					if (event.key === 'Escape') {
+						event.preventDefault();
+						closeSelect(wrap);
+						trigger.focus();
+					}
+
+					if (event.key === 'Tab') {
+						closeSelect(wrap);
+					}
+				});
+
+				item.appendChild(button);
+				listbox.appendChild(item);
+
+				return button;
+			});
+
+			trigger.addEventListener('click', () => {
+				if (wrap.classList.contains('is-opened')) {
+					closeSelect(wrap);
+					return;
+				}
+
+				openSelect(false);
+			});
+
+			trigger.addEventListener('keydown', (event) => {
+				if (event.key === 'ArrowDown' || event.key === 'ArrowUp' || event.key === 'Enter' || event.key === ' ') {
+					event.preventDefault();
+					openSelect();
+				}
+
+				if (event.key === 'Escape') {
+					event.preventDefault();
+					closeSelect(wrap);
+				}
+			});
+
+			select.addEventListener('change', () => {
+				currentOptionIndex = select.selectedIndex;
+				syncSelectedState();
+			});
+
+			wrap.append(trigger, listbox);
+			select.tabIndex = -1;
+			select.setAttribute('aria-hidden', 'true');
+			wrap.classList.add('is-enhanced');
+			syncSelectedState();
+		});
+
+		document.addEventListener('click', (event) => {
+			if (!(event.target instanceof Element) || event.target.closest('.select-wrap.customed.is-enhanced')) return;
+			closeAllSelect();
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') {
+				closeAllSelect();
+			}
+		});
+	}
 	const openTopSearch = () => { // 상단 검색 영역 
 		const btnToggleSearch = document.querySelector('.btn-toggle-search');
 		const btnCloseSearch = document.querySelector('.btn-close-search');
@@ -572,6 +756,7 @@ const commonFunction = (() => {
 	}
 
 	const init = () => { // 초기화
+		setCustomSelect();
 		setGateMap();
 		setGnb();
 		openTopSearch();
