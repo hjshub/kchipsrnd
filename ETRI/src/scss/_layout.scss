@@ -2178,7 +2178,7 @@ section {
                     }
                 }
 
-                & + .btn-wrap {
+                & ~ .btn-wrap {
                     margin-top:60px;
 
                     @include c.on-mobile {

@@ -1,0 +1,41 @@
+
+#수정파일
+[css] 그대로 옮겨주세요~!
+
+[html]
+<!-- s 20260707 추가 -->
+<!-- e 20260707 추가 -->
+
+<!-- s 20260707 수정 -->
+<!-- e 20260707 수정 -->
+
+#유럽지사
+style.css
+
+keyword_select.html -> 약관동의 체크박스 -> 라디오 버튼
+mypage.html -> 목록 데이터 없는 경우 텍스트 추가
+
+
+contact.html
+faq.html
+network_list.html
+network_view.html
+news_list.html
+news_view.html
+notice_list.html
+notice_view.html
+program_list.html
+program_view.html
+report_list.html
+report_view.html
+trend_list.html
+trend_view.html
+
+--> 상단 타이틀 문구 수정
+
+
+#미국지사
+style.css
+
+#한국지사
+style.css

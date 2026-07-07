@@ -710,6 +710,10 @@ section {
         &.swiper-button-disabled {
             opacity:0.5;
         }
+
+        &.swiper-button-lock {
+            display:none;
+        }
     }
 }
 
@@ -2480,7 +2484,7 @@ section {
                     }
                 }
 
-                & + .btn-wrap {
+                & ~ .btn-wrap {
                     margin-top:60px;
 
                     @include c.on-mobile {
@@ -4380,6 +4384,18 @@ section {
                     }
                 }
             }
+
+            .empty {
+                text-align:center;
+                padding:150px 0;
+                font-size:20px;
+                font-weight:500;
+
+                @include c.on-mobile {
+                    padding:240px 0;
+                    font-size:28px;
+                }
+            }
         }
     }
 }
@@ -4762,12 +4778,36 @@ section {
         }
     }
 
+    .empty {
+        text-align:center;
+        padding:80px 0;
+        font-size:20px;
+        font-weight:500;
+
+        @include c.on-mobile {
+            padding:160px 0;
+            font-size:28px;
+        }
+    }
+
 }
 
 .mypage-community {
     padding-top:70px;
     padding-bottom:200px;
     background-color:rgba(228, 234, 239, 0.5);
+
+    .empty {
+        text-align:center;
+        padding:80px 0;
+        font-size:20px;
+        font-weight:500;
+
+        @include c.on-mobile {
+            padding:160px 0;
+            font-size:28px;
+        }
+    }
 }
 
 /*! trend briefings */

@@ -319,6 +319,19 @@
     }
 }
 
+// flatpickr-calendar 내부 input: focus 스타일 제거
+.flatpickr-calendar input[type=text],
+.flatpickr-calendar input[type=password],
+.flatpickr-calendar input[type=email],
+.flatpickr-calendar input[type=number] {
+    &:focus,
+    &.active,
+    &:not(:placeholder-shown) {
+        background-color:unset;
+        border-color:unset;
+    }
+}
+
 /*! search */
 .search-wrap {
     position:relative;
