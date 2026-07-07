@@ -13,9 +13,11 @@
 style.css
 
 keyword_select.html -> 약관동의 체크박스 -> 라디오 버튼
-mypage.html -> 목록 데이터 없는 경우 텍스트 추가
+mypage.html -> 목록 데이터 없는 경우 텍스트 추가, 상단 타이틀 문구 국문/영문 추가
 
-
+community_list.html
+community_view.html
+community_write.html
 contact.html
 faq.html
 network_list.html
@@ -31,7 +33,7 @@ report_view.html
 trend_list.html
 trend_view.html
 
---> 상단 타이틀 문구 수정
+--> 상단 타이틀 문구 국문/영문 추가
 
 
 #미국지사

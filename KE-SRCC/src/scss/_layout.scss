@@ -843,6 +843,14 @@ section {
             word-wrap:break-word;
             overflow-wrap:break-word;
 
+            [lang="ko"] &:lang(en) {
+                display:none;
+            }
+
+            [lang="en"] &:lang(ko) {
+                display:none;
+            }
+
             @include c.on-mobile {
                 font-size:24px;
             }
@@ -4202,6 +4210,14 @@ section {
                 word-break: keep-all;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
+
+                [lang="ko"] &:lang(en) {
+                    display:none;
+                }
+
+                [lang="en"] &:lang(ko) {
+                    display:none;
+                }
 
                 @include c.on-mobile {
                     font-size:28px;
