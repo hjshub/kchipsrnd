@@ -2114,8 +2114,14 @@ section {
 
                     .comment-submit {
                         display:flex;
+                        gap:20px;
                         justify-content: flex-end;
 
+                        @include c.on-mobile {
+                            gap:30px;
+                        }
+
+                        a,
                         button {
                             @include c.fl(8px);
                             font-size:14px;
@@ -2123,13 +2129,28 @@ section {
                             color:#9D9D9D;
                             letter-spacing:0.3px;
 
-                            @include c.icon-svg(s.$icon-send, $pseudo: after);
-
                             @include c.on-mobile {
                                 font-size:24px;
-                                &::after {
-                                    width:24px;
-                                    height:20px;
+                            }
+
+                            &.comment {
+                                @include c.icon-svg(s.$icon-send, $pseudo: after);
+                                @include c.on-mobile {
+                                    &::after {
+                                        width:24px;
+                                        height:20px;
+                                    }
+                                }
+                            }
+
+                            &.cancel {
+                                @include c.icon-svg(s.$icon-cancel, $pseudo: after);
+
+                                @include c.on-mobile {
+                                    &::after {
+                                        width:22px;
+                                        height:22px;
+                                    }
                                 }
                             }
                         }

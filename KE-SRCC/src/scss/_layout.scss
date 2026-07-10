@@ -3877,6 +3877,11 @@ section {
             .weekly-issue {
                 @include c.fl-col(5px);
                 color:#fff;
+                width:85%;
+
+                @include c.bp(1280px) {
+                    width:100%;
+                }
 
                 @include c.on-mobile {
                     gap:10px;
@@ -3904,11 +3909,11 @@ section {
                     font-size:16px;
                     color:rgba(#fff, 0.8);
                     font-weight:500;
+                    @apply line-clamp-1;
 
                     @include c.on-mobile {
                         font-size:28px;
                         padding-left:40px;
-                        @apply line-clamp-1;
                     }
 
                     &::before {
@@ -4400,17 +4405,17 @@ section {
                     }
                 }
             }
+        }
 
-            .empty {
-                text-align:center;
-                padding:150px 0;
-                font-size:20px;
-                font-weight:500;
+        .empty {
+            text-align:center;
+            padding:150px 0;
+            font-size:20px;
+            font-weight:500;
 
-                @include c.on-mobile {
-                    padding:240px 0;
-                    font-size:28px;
-                }
+            @include c.on-mobile {
+                padding:240px 0;
+                font-size:28px;
             }
         }
     }
@@ -4428,6 +4433,7 @@ section {
     .mypage-news-section {
         .news-block {
             @include c.fl-row(30px);
+            align-items:flex-start;
 
             .section-head {
                 width:192px;
@@ -4528,6 +4534,20 @@ section {
                             }
                         }
                     }
+                }
+            }
+
+            .empty {
+                width:45vw;
+                text-align:center;
+                padding:40px 0;
+                font-size:20px;
+                font-weight:500;
+
+                @include c.on-mobile {
+                    width:100%;
+                    padding:160px 0;
+                    font-size:28px;
                 }
             }
         }
@@ -4792,20 +4812,19 @@ section {
                 }
             }
         }
-    }
 
-    .empty {
-        text-align:center;
-        padding:80px 0;
-        font-size:20px;
-        font-weight:500;
+        .empty {
+            text-align:left;
+            padding:80px 0;
+            font-size:20px;
+            font-weight:500;
 
-        @include c.on-mobile {
-            padding:160px 0;
-            font-size:28px;
+            @include c.on-mobile {
+                padding:160px 0;
+                font-size:28px;
+            }
         }
     }
-
 }
 
 .mypage-community {
