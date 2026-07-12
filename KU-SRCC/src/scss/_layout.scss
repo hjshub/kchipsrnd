@@ -2063,10 +2063,19 @@ section {
                 }
 
                 .comment-credentials {
-                    @include c.fl-wrap;
+                    @include c.fl;
+                    border-bottom:1px solid #B1BCC4;
+
+                    @include c.on-mobile {
+                        flex-direction:column;
+                    }
 
                     > div  {
-                        width:50%;
+                        @include c.fl;
+                        align-items:center;
+                        justify-content: center;
+                        width:100%;
+                        min-height:70px;
 
                         & ~ div {
                             border-left: 1px solid #B1BCC4;
@@ -2083,6 +2092,7 @@ section {
 
                     input {
                         width:100%;
+                        height:70px;
                         background:transparent;
                         border:none;
 
@@ -2090,7 +2100,6 @@ section {
                 }
                 
                 .comment-input {
-                    border-top:1px solid #B1BCC4;
                     padding:25px 25px 40px;
 
                     @include c.on-mobile {
@@ -4366,10 +4375,10 @@ section {
     display:flex;
     align-items:stretch;
     width:100%;
-    min-height:840px;
+    min-height:500px;
     position:relative;
     padding-top:20px;
-    padding-bottom:120px;
+    padding-bottom:65px;
     color:#fff;
 
     &::before {
@@ -4383,9 +4392,9 @@ section {
     }
 
     @include c.on-mobile {
-        min-height:1160px;
+        min-height:960px;
         padding-top:30px;
-        padding-bottom:140px;
+        padding-bottom:80px;
 
 
         &::before { 
@@ -4401,30 +4410,31 @@ section {
 
     .heading-title {
         @include c.fl-col(20px);
-        line-height:1.4;
-        padding-top:50px;
-        position:relative;
+        line-height:1.2;
 
-        &::before {
-            position:absolute;
-            left:0;
-            top:0;
-            width:40px;
-            height:2px;
-            background-color:#FF8D28;
-            content:'';
+        @include c.on-mobile {
+            gap:40px;
+            line-height:1.4;
         }
 
         h2 {
-            font-size:66px;
+            font-size:50px;
             font-weight:900;
+
+            [lang=en] & {
+                font-size:40px;
+
+                @include c.on-mobile {
+                    font-size:52px;
+                }
+            }
 
             @include c.on-mobile {
                 font-size:52px;
             }
         }
         .desc {
-            font-size:30px;
+            font-size:24px;
             font-weight:700;
             color:#FF8D28;
 
@@ -4433,12 +4443,13 @@ section {
             }
         }
         .desc2 {
-            font-size:24px;
+            font-size:18px;
             color:rgba(#fff, 1);
-            margin-top:30px;
+            margin-top:10px;
 
             @include c.on-mobile {
-                font-size:28px;
+                font-size:24px;
+                margin-top:20px;
             }
         }
     }
@@ -4472,6 +4483,10 @@ section {
 
         .about-network-text {
             line-height:1.4;
+
+            [lang=en] & {
+                white-space: nowrap;
+            }
 
             h2 {
                 font-size:36px;
@@ -4518,12 +4533,17 @@ section {
             box-shadow:0 4px 15px 0 rgba(#000, 0.15);
             position:relative;
 
+            [lang=en] & {
+                gap:10px;
+            }
+
             @include c.on-mobile {
                 padding:60px 40px;
             }
 
             & ~ li {
                 @include c.icon-svg(s.$icon-plus);
+                align-items:flex-start;
 
                 &::before {
                     position:absolute;
@@ -4541,10 +4561,21 @@ section {
 
             > div {
                 @include c.fl(25px);
+                align-items:center;
                 width:100%;
+                min-height:90px;
+
+                [lang=en] & {
+                    min-height:120px;
+
+                    @include c.on-mobile {
+                        min-height:auto;
+                    }
+                }
 
                 @include c.on-mobile {
                     gap:40px;
+                    min-height:auto;
                 }
 
                 span {
@@ -4599,7 +4630,6 @@ section {
 
                 h4 {
                     width:100%;
-                    align-self:center;
                     font-size:24px;
                     font-weight:700;
                     color:#3B3B3B;
@@ -4607,6 +4637,10 @@ section {
                     word-break:keep-all;
                     word-wrap:break-word;
                     overflow-wrap:break-word;
+
+                    [lang=en] & {
+                        font-size:20px;
+                    }
 
                     @include c.on-mobile {
                         font-size:40px;
@@ -4689,11 +4723,15 @@ section {
             }
 
             [lang=en] & {
-                padding-bottom:30px;
+                padding-bottom:25px;
+                padding-right:25px;
+                padding-left:25px;
 
                 @include c.on-mobile {
                     padding-top:40px;
                     padding-bottom:40px;
+                    padding-right:50px;
+                    padding-left:280px;
                     gap:10px;
                 }
             }
@@ -4753,6 +4791,7 @@ section {
 
                 [lang=en] & {
                     font-size:16px;
+                    line-height:1.2;
 
                     @include c.on-mobile {
                         font-size:24px;
