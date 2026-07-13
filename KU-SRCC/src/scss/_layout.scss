@@ -1006,12 +1006,17 @@ section {
                     align-items:center;
                     justify-content:center;
                     width:100%;
-                    // height:400px;
                     border:1px solid #E4EAEF;
                     overflow:hidden;
 
                     img {
-                        width:100%;
+                        width:100% !important;
+                        height:400px !important;
+                        max-width:303px;
+
+                        @include c.on-mobile {
+                            height:400px !important;
+                        }
                     }
                 }
 
@@ -2066,8 +2071,9 @@ section {
                     @include c.fl;
                     border-bottom:1px solid #B1BCC4;
 
-                    @include c.on-mobile {
+                    @include c.bp(1024px) {
                         flex-direction:column;
+                        border-bottom:0;
                     }
 
                     > div  {
@@ -2076,12 +2082,24 @@ section {
                         justify-content: center;
                         width:100%;
                         min-height:70px;
+                        overflow:hidden;
 
                         & ~ div {
                             border-left: 1px solid #B1BCC4;
                         }
 
-                        @include c.on-mobile {
+                        &:last-of-type {
+                            width:324px;
+                            flex-shrink: 0;
+                            padding:10px;
+
+                            @include c.bp(1024px) {
+                                width:100%;
+                                justify-content: flex-start;
+                            }
+                        }
+
+                        @include c.bp(1024px) {
                             width:100%;
                             & ~ div {
                                 border-left: none;
@@ -3287,7 +3305,12 @@ section {
                         overflow:hidden;
 
                         img {
-                            width:100%;
+                            width:100% !important;
+                            height:400px !important;
+
+                            @include c.on-mobile {
+                                height:710px !important;
+                            }
                         }
                     }
 
